@@ -1,1 +1,25 @@
+<section>
+  <div class='business-images'>
+    <% business.images.each do |image| %>
+     <div>
+       <img src="#" alt=''/>
+     </div>
+    <% end %>
+  </div>
 
+  <div class='info'>
+     <h3><%=business.name%></h3>
+     <h3>Owned by: <%=business.owner%></h3>
+     <h4>Location: <%=business.location%></h4>
+     <h4>Category<%=business.category%></h4>
+     <p><%=business.description%></p>
+  </div>
+
+  <div>
+    <h4>Interested?</h4>
+  </div>
+
+  <div>
+    <h4>Status</h4>
+  </div>
+</section>
