@@ -1,32 +1,19 @@
 class MessagesController < ApplicationController
 
-  def new
-    @user = User.find(params[:user_id])
-    @message = @user.messages.build
-  end
+ before_filter :authenticate_user!
 
   def create
-    @user = User.find(params[:user_id])
-    @message = @user.messages.build(msg_params)
-    if @message.save
-      redirect_to user_path(@user)
-    end
-  end
+    @conversation = Conversation.find(params[:conversation_id])
+    @message = @conversation.messages.build(message_params)
+    @message.user_id = current_user.id
+    @message.save!
 
+    @path = conversation_path(@conversation)
+  end
 
   private
-  def msg_params
-    params.require(:message).permit(:content, :to_user).merge(from_user: current_user)
+
+  def message_params
+    params.require(:message).permit(:body)
   end
 end
-
-
-def create
-    @dog = Dog.find(params[:dog_id])
-    @message = Message.new(msg_params)
-    if @message.save
-      redirect_to "/dogs/#{@dog.id}"
-    else
-      render :new
-    end
-  end
