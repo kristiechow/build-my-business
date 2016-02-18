@@ -1,13 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :owners, only: [:new, :create, :edit, :update, :destroy] do
-    resources :messages, only: [:index, :show, :new, :create, :destroy]
-    get '/inbox' => 'messages#index'
-  end
+  resources :owners, only: [:new, :create, :edit, :update, :destroy]
 
   resources :developers do
-    resources :messages, only: [:index, :show, :new, :create, :destroy]
-    get '/inbox' => 'messages#index'
     resources :reviews, only: [:new, :create, :edit, :update, :destroy]
   end
 
@@ -15,6 +10,11 @@ Rails.application.routes.draw do
     get '/login' => 'sessions#new'
     get '/register' => 'users#new'
     get '/logout' => 'session#destroy'
+
+
+  resources :conversations do
+  resources :messages
+  end
 
 
 resources :businesses
