@@ -1,8 +1,15 @@
 class Photo < ActiveRecord::Base
   has_attached_file :image
-  belongs_to :photoable, polymorphic: true
+  belongs_to :business
 
-  validates_attachment :image, presence: true,
-                     content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] },
-                     size: { in: 0..5.megabytes }
+  has_attached_file :image, styles: {
+                                        thumb: '100x100>',
+                                        square: '200x200#',
+                                        medium: '300x300>'
+                                      }
+
+  validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
+
+  validates_attachment_size :image, :less_than => 5.megabytes
+
 end

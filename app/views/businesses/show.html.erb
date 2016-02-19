@@ -1,18 +1,17 @@
 <section>
   <div class='business-images'>
-    <% business.images.each do |image| %>
+    <% @business.photos.each do |photo| %>
      <div>
-       <img src="#" alt=''/>
+       <%=image_tag photo.image.url(:square) %>
      </div>
     <% end %>
   </div>
 
   <div class='info'>
-     <h3><%=business.name%></h3>
-     <h3>Owned by: <%=business.owner%></h3>
-     <h4>Location: <%=business.location%></h4>
-     <h4>Category<%=business.category%></h4>
-     <p><%=business.description%></p>
+     <h3><%=@business.name%></h3>
+     <h4>Location: <%=@business.location%></h4>
+     <h4>Category<%=@business.category%></h4>
+     <p><%=@business.description%></p>
   </div>
 
   <div>
