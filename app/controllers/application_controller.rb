@@ -14,4 +14,6 @@ class ApplicationController < ActionController::Base
   def ensure_current_user
     redirect_to new_session_path unless current_user
   end
+
+
 end
