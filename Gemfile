@@ -26,6 +26,8 @@ gem 'pry-rails'
 gem 'bcrypt', '~> 3.1.7'
 
 gem "paperclip", "~> 4.3"
+gem 'aws-sdk', '< 2.0'
+
 gem 'normalize-rails'
 gem "private_pub"
 gem "thin"
