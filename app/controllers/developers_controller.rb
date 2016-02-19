@@ -19,7 +19,7 @@ class DevelopersController < ApplicationController
     @developer = Developer.new(developer_params)
     if @developer.save
       flash.notice = "You're in! Welcome."
-      session[:developer_id] = @developer.id
+      session[:user_id] = @developer.id
       redirect_to root_path
     else
       render :new
