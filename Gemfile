@@ -28,6 +28,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'normalize-rails'
 gem "private_pub"
 gem "thin"
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

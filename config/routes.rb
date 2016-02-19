@@ -7,10 +7,6 @@ Rails.application.routes.draw do
   end
 
   resource :session, only: [:new, :create, :destroy]
-    get '/login' => 'sessions#new'
-    get '/registerd' => 'developers#new'
-    get '/registero' => 'owners#new'
-    get '/logout' => 'session#destroy'
 
 
   resources :conversations do
@@ -21,5 +17,10 @@ Rails.application.routes.draw do
 resources :businesses
 
 root to: "businesses#index"
+get '/about' => 'about#about'
+    get '/login' => 'sessions#new'
+    get '/registerd' => 'developers#new'
+    get '/registero' => 'owners#new'
+    get '/logout' => 'session#destroy'
 
 end
