@@ -63,5 +63,4 @@ group :test do
 end
 
 gem 'omniauth-facebook'
-gem 'omniauth-twitter'
 gem 'omniauth-github'
