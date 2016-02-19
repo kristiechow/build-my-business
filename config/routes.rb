@@ -25,4 +25,7 @@ root to: "businesses#index"
 
   resources :photos, only: [:new, :create, :destroy]
 
+  get 'auth/:provider/callback' => "sessions#create"
+  delete 'sign_out' => "sessions#destroy", as: 'sign_out'
+
 end
