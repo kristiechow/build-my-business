@@ -22,8 +22,9 @@
           <%= link_to 'inbox', conversations_path %>
           <%= link_to 'Logout', session_path, method: :delete %>
         <% else %>
-          <%= link_to 'Business Registration', new_owner_path%>
-          <%= link_to 'Become Our Developer', new_developer_path%>
+        Sign up as a
+          <%= link_to 'Business', new_owner_path%>
+          <%= link_to 'Developer', new_developer_path%>
           <%= link_to 'Login', new_session_path%>
         <% end %>
     </nav>
