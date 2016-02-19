@@ -21,5 +21,4 @@ resources :businesses
 
 root to: "businesses#index"
 
-
 end

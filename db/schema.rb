@@ -11,9 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160218232527) do
 
-  # These are extensions that must be enabled in order to support this database
+
+
+ActiveRecord::Schema.define(version: 20160219003443) do
+
+
   enable_extension "plpgsql"
 
   create_table "businesses", force: :cascade do |t|
@@ -35,10 +38,33 @@ ActiveRecord::Schema.define(version: 20160218232527) do
     t.integer  "recipient_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+
   end
 
   add_index "conversations", ["recipient_id"], name: "index_conversations_on_recipient_id", using: :btree
   add_index "conversations", ["sender_id"], name: "index_conversations_on_sender_id", using: :btree
+
+  
+  create_table "create_contact_infos", force: :cascade do |t|
+    t.string   "skype_id"
+    t.string   "slack_id"
+    t.string   "phone_number"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "developers", force: :cascade do |t|
+    t.string   "first_name",      null: false
+    t.string   "last_name",       null: false
+    t.string   "email",           null: false
+    t.string   "password_digest", null: false
+    t.string   "description"
+    t.string   "avatar"
+    t.string   "location"
+    t.string   "contact_info"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
 
   create_table "messages", force: :cascade do |t|
     t.text     "body"
