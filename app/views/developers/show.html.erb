@@ -5,3 +5,4 @@
 <h4>Bio: <%= @developer.description %></h4>
 <%= link_to image_tag(@developer.avatar.url(:thumb)), @developer.avatar.url %>
 
+<%= link_to "leave reivew", new_developer_review_path(@developer) %>
