@@ -7,8 +7,7 @@ class ApplicationController < ActionController::Base
   before_action :ensure_current_user, only: [:new, :create, :update, :destroy]
 
   def current_user
-    owner = Owner.find_by(id: session[:owner_id]) if session[:owner_id]
-    developer = Developer.find_by(id: session[:developer_id]) if session[:developer_id]
+    user = User.find_by(id: session[:user_id]) if session[:user_id]
   end
 
   def ensure_current_user

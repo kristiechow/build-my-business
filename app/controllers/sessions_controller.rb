@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      flash.notice = "Welcome back to Build my Business #{user.username}"
+      flash.notice = "Welcome back to Build my Business #{user.first_name}"
       redirect_to root_path
     else
       flash[:error] = 'Login failed'

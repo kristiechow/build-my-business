@@ -13,11 +13,22 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<% if user_signed_in? %>
-<%= current_user.first_name %>
-<%= current_user.id %>
-<% end %>
-<%= yield %>
+  <header id="header">
+    <h1 id="header-title"><%= link_to 'BuildMyBusiness', root_path%></a></h1>
+    <nav>
+        <%= link_to 'Home', root_path %>
+        <% if current_user %>
+          <%= link_to current_user.first_name, user_path(current_user) %>
+          <%= link_to 'Logout', session_path, method: :delete %>
+        <% else %>
+          <%= link_to 'Business Registration', new_owner_path%>
+          <%= link_to 'Become Our Developer', new_developer_path%>
+          <%= link_to 'Login', new_session_path%>
+        <% end %>
+    </nav>
+  </header>
+
+  <%= yield %>
 
 </body>
 </html>
