@@ -11,12 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+ActiveRecord::Schema.define(version: 20160219010750) do
 
-
-
-ActiveRecord::Schema.define(version: 20160219003443) do
-
-
+  # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "businesses", force: :cascade do |t|
@@ -38,13 +35,11 @@ ActiveRecord::Schema.define(version: 20160219003443) do
     t.integer  "recipient_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-
   end
 
   add_index "conversations", ["recipient_id"], name: "index_conversations_on_recipient_id", using: :btree
   add_index "conversations", ["sender_id"], name: "index_conversations_on_sender_id", using: :btree
 
-  
   create_table "create_contact_infos", force: :cascade do |t|
     t.string   "skype_id"
     t.string   "slack_id"
@@ -76,6 +71,34 @@ ActiveRecord::Schema.define(version: 20160219003443) do
 
   add_index "messages", ["conversation_id"], name: "index_messages_on_conversation_id", using: :btree
   add_index "messages", ["user_id"], name: "index_messages_on_user_id", using: :btree
+
+  create_table "owners", force: :cascade do |t|
+    t.string   "first_name",      null: false
+    t.string   "last_name",       null: false
+    t.string   "email",           null: false
+    t.string   "password_digest", null: false
+    t.string   "description"
+    t.string   "skills"
+    t.string   "avatar"
+    t.string   "location"
+    t.string   "contact_info"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "photoable_id"
+    t.string   "photoable_type"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
+  add_index "photos", ["photoable_type", "photoable_id"], name: "index_photos_on_photoable_type_and_photoable_id", using: :btree
 
   create_table "reviews", force: :cascade do |t|
     t.string   "comment",              null: false
