@@ -22,4 +22,6 @@ resources :businesses
 
 root to: "businesses#index"
 
+  resources :photos, only: [:new, :create, :destroy]
+
 end
