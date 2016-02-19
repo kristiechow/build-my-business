@@ -1,15 +1,14 @@
-class CreateOwners < ActiveRecord::Migration
+class CreateUsers < ActiveRecord::Migration
   def change
-    create_table :owners do |t|
+    create_table :users do |t|
       t.string :first_name, null: false
-   	  t.string :last_name, null: false
+      t.string :last_name, null: false
       t.string :email, null: false
       t.string :password_digest, null: false
       t.string :description
       t.string :skills
-      t.string :avatar
       t.string :location
-      t.string :contact_info
+      t.string :type
 
       t.timestamps null: false
     end
