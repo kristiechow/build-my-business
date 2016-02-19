@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 resources :businesses
 
 root to: "businesses#index"
-get '/about' => 'about#about'
+    get '/about' => 'about#about'
     get '/login' => 'sessions#new'
     get '/registerd' => 'developers#new'
     get '/registero' => 'owners#new'
