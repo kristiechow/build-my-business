@@ -1,0 +1,7 @@
+<% @developers.each do |developer| %>
+<div>
+<%= developer.first_name %>
+<%= link_to "Send Message", "#", class: "btn btn-success btn-xs start-conversation",
+                    "data-sid" => current_user.id, "data-rip" => developer.id %>
+</div>
+<% end %>
