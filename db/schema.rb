@@ -33,12 +33,9 @@ ActiveRecord::Schema.define(version: 20160219010750) do
   create_table "conversations", force: :cascade do |t|
     t.integer  "sender_id"
     t.integer  "recipient_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
-
-  add_index "conversations", ["recipient_id"], name: "index_conversations_on_recipient_id", using: :btree
-  add_index "conversations", ["sender_id"], name: "index_conversations_on_sender_id", using: :btree
 
   create_table "create_contact_infos", force: :cascade do |t|
     t.string   "skype_id"
@@ -52,8 +49,9 @@ ActiveRecord::Schema.define(version: 20160219010750) do
     t.text     "body"
     t.integer  "conversation_id"
     t.integer  "user_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.boolean  "read",            default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "messages", ["conversation_id"], name: "index_messages_on_conversation_id", using: :btree
@@ -101,6 +99,4 @@ ActiveRecord::Schema.define(version: 20160219010750) do
     t.datetime "updated_at",      null: false
   end
 
-  add_foreign_key "messages", "conversations"
-  add_foreign_key "messages", "users"
 end
