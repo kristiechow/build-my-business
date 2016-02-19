@@ -29,6 +29,7 @@ gem "paperclip", "~> 4.3"
 gem 'normalize-rails'
 gem "private_pub"
 gem "thin"
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
