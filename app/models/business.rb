@@ -1,4 +1,4 @@
 class Business < ActiveRecord::Base
   has_one :owner
-  has_many :photos, as: :photoable
+  has_many :photos
 end

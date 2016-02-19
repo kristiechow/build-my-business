@@ -9,10 +9,15 @@ class BusinessesController < ApplicationController
 
   def create
     @business = Business.new(business_params)
+
     if @business.save
-      flash.notice = "You're in! Welcome."
+      if params[:images]
+        params[:images].each do |image|
+          @business.photos.create(image: image)
+        end
+      end
       session[:business_id] = @business.id
-      redirect_to root_path
+      redirect_to business_path(@business)
     else
       render :new
     end
@@ -47,6 +52,6 @@ class BusinessesController < ApplicationController
 
 
     def business_params
-      params.require(:business).permit(:name, :description, :location, :category)
+      params.require(:business).permit(:name, :description, :location, :category).merge(owner_id: current_user.id)
     end
 end

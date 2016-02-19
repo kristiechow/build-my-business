@@ -6,7 +6,6 @@ class CreateUsers < ActiveRecord::Migration
       t.string :email, null: false
       t.string :password_digest, null: false
       t.string :description
-      t.string :skills
       t.string :location
       t.string :type
 
