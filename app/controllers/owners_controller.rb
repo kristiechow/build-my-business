@@ -19,7 +19,7 @@ class OwnersController < ApplicationController
     @owner = Owner.new(owner_params)
     if @owner.save
       flash.notice = "You're in! Welcome."
-      session[:owner_id] = @owner.id
+      session[:user_id] = @owner.id
       redirect_to root_path
     else
       render :new
