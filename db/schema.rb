@@ -48,19 +48,6 @@ ActiveRecord::Schema.define(version: 20160219010750) do
     t.datetime "updated_at",   null: false
   end
 
-  create_table "developers", force: :cascade do |t|
-    t.string   "first_name",      null: false
-    t.string   "last_name",       null: false
-    t.string   "email",           null: false
-    t.string   "password_digest", null: false
-    t.string   "description"
-    t.string   "avatar"
-    t.string   "location"
-    t.string   "contact_info"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-  end
-
   create_table "messages", force: :cascade do |t|
     t.text     "body"
     t.integer  "conversation_id"
@@ -71,20 +58,6 @@ ActiveRecord::Schema.define(version: 20160219010750) do
 
   add_index "messages", ["conversation_id"], name: "index_messages_on_conversation_id", using: :btree
   add_index "messages", ["user_id"], name: "index_messages_on_user_id", using: :btree
-
-  create_table "owners", force: :cascade do |t|
-    t.string   "first_name",      null: false
-    t.string   "last_name",       null: false
-    t.string   "email",           null: false
-    t.string   "password_digest", null: false
-    t.string   "description"
-    t.string   "skills"
-    t.string   "avatar"
-    t.string   "location"
-    t.string   "contact_info"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-  end
 
   create_table "photos", force: :cascade do |t|
     t.string   "name"
