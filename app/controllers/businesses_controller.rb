@@ -43,12 +43,10 @@ class BusinessesController < ApplicationController
     redirect_to root_path
   end
 
-
   private
 
-  def business_params
-    params.require(:business).permit(:name, :description, :location, :category)
-  end
-
+    def business_params
+      params.require(:business).permit(:name, :description, :location, :category)
+    end
 end
 
