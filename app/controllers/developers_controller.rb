@@ -31,6 +31,7 @@ class DevelopersController < ApplicationController
   end
 
   def update
+    @developer = Developer.find_by(id: params[:id])
     if @developer.update(developer_params)
       flash.notice = "Update successful."
       redirect_to developer_path(@developer)

@@ -31,6 +31,7 @@ class OwnersController < ApplicationController
   end
 
   def update
+    @owner = Owner.find_by(id: params[:id])
     if @owner.update(owner_params)
       flash.notice = "Update successful."
       redirect_to owner_path(@owner)
