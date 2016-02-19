@@ -1,11 +1,7 @@
 <h1><%= @developer.id %></h1>
 
- <%= link_to "Send Message", "#", class: "btn btn-success btn-xs start-conversation",
-                    "data-sid" => current_user.id, "data-rip" => @developer.id %>
-
 <h1> <%=@developer.first_name%></h1>
 <h3><%=@developer.location%></h3>
 <h4>Bio: <%= @developer.description %></h4>
-<h3>skills: <%= @developer.skills %></h3>
-<h3>Contact info: <%=@developer.contact_info%></h3>
+
 
