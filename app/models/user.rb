@@ -20,6 +20,7 @@ class User < ActiveRecord::Base
 
    validates :email, presence: true, uniqueness: true
    validates :password, presence: true, length: { in: 6..20 }
+   validates :first_name, presence: true
    validates :uid, presence: true, uniqueness: true
    validates :uid, uniqueness: { scope: :provider }
 
@@ -31,8 +32,10 @@ class User < ActiveRecord::Base
     create(
         provider: auth['provider'],
         uid: auth['uid'],
-        name: auth['info']['name'],
-        password: "1234"
+        email: auth['info']['email'],
+        first_name: auth['info']['name'][0],
+        last_name: auth['info']['name'][1],
+        password: "123456"
       )
   end
 end
