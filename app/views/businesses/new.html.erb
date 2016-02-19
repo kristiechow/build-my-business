@@ -1,6 +1,6 @@
-<%= form_for @business do |f| %>
+<%= form_for @business, html: { multipart: true } do |f| %>
 
-<ul>
+  <ul>
     <li>
       <%= f.label :name %>
       <%= f.text_field :name %>
@@ -17,10 +17,14 @@
       <%= f.label :location %>
       <%= f.text_field :location %>
     </li>
-    
     <li>
-    <%= f.submit %>
+      <%= f.label :photo %>
+      <%= file_field_tag "images[]", type: :file, multiple: true %>
+    </li>
+
+    <li>
+      <%= f.submit %>
     </li>
   </ul>
-  
+
 <% end %>
