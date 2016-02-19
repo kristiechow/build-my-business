@@ -58,9 +58,7 @@ ActiveRecord::Schema.define(version: 20160219193800) do
   add_index "messages", ["user_id"], name: "index_messages_on_user_id", using: :btree
 
   create_table "photos", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "photoable_id"
-    t.string   "photoable_type"
+    t.integer  "business_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.string   "image_file_name"
@@ -69,7 +67,7 @@ ActiveRecord::Schema.define(version: 20160219193800) do
     t.datetime "image_updated_at"
   end
 
-  add_index "photos", ["photoable_type", "photoable_id"], name: "index_photos_on_photoable_type_and_photoable_id", using: :btree
+  add_index "photos", ["business_id"], name: "index_photos_on_business_id", using: :btree
 
   create_table "reviews", force: :cascade do |t|
     t.string   "comment",              null: false
