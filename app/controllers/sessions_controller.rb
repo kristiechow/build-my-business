@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to root_path
     else
-    user = User.find_by(email: params[:email])
+    user = User.where("uid = ? AND provider = ?", params[:uid], "buildmybusiness")[0]
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
       flash.notice = "Welcome back to Build my Business #{user.first_name}"
