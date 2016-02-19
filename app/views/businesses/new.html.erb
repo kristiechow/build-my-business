@@ -17,6 +17,8 @@
       <%= f.label :location %>
       <%= f.text_field :location %>
     </li>
+    <%= f.hidden_field :provider, value: "buildmybusiness" %>
+    <%= f.hidden_field :uid%>
     <li>
       <%= f.label :photo %>
       <%= file_field_tag "images[]", type: :file, multiple: true %>
