@@ -15,8 +15,8 @@
       <%= f.text_field :last_name %>
     </li>
     <li>
-      <%= f.label :email %>
-      <%= f.text_field :email %>
+      <%= f.label :uid, value="Email" %>
+      <%= f.text_field :uid %>
     </li>
     <li>
       <%= f.label :password %>
@@ -27,11 +27,14 @@
       <%= f.password_field :password_confirmation %>
     </li>
     <li>
+      <%= label_tag :skills, 'Add Your Skills (comma separated)' %>
+      <%= text_area_tag :skills, nil %>
+    </li>
+    <li>
       <%= f.label :avatar %>
       <%= f.file_field :avatar %>
     </li>
     <%= f.hidden_field :provider, value: "buildmybusiness" %>
-    <%= f.hidden_field :uid%>
     <li>
     <%= f.submit %>
     </li>

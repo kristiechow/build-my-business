@@ -5,7 +5,6 @@ class CreateBusinesses < ActiveRecord::Migration
       t.string :description, null: false
       t.string :images
       t.string :location, null: false
-      t.string :category, null: false
       t.string :status_update
       t.references :owner, index: true
 
