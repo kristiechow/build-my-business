@@ -1,7 +1,7 @@
 class Owner < User
 
   def editable_by? user
-    owner == user
+    self.id == user.id
   end
 end
 
