@@ -17,7 +17,11 @@ class DevelopersController < ApplicationController
 
   def create
     @developer = Developer.new(developer_params)
+    @skills = params[:skills].split(",").map {|skill| skill.strip}
     if @developer.save
+      @skills.each do |skill|
+        @developer.skills << Skill.find_or_create_by(name: skill)
+      end
       flash.notice = "You're in! Welcome."
       session[:user_id] = @developer.id
       redirect_to root_path
@@ -51,7 +55,7 @@ class DevelopersController < ApplicationController
   private
 
   def developer_params
-    params.require(:developer).permit(:password, :password_confirmation, :first_name, :last_name, :email, :avatar, :provider)
+    params.require(:developer).permit(:password, :password_confirmation, :first_name, :last_name, :uid, :avatar, :provider)
   end
 
 end

@@ -1,14 +1,19 @@
-<h1><%= @developer.id %></h1>
+<section>
+  <h1> <%=@developer.first_name%></h1>
+  <h3><%=@developer.location%></h3>
+  <h4>Bio: <%= @developer.description %></h4>
+  <% if has_avatar? @developer %>
+    <%= link_to image_tag(@developer.avatar.url(:thumb)), @developer.avatar.url %>
+  <% end %>
+  <ul>
+  <% @developer.skills.each do |skill| %>
+    <li><%= skill.name %></li>
+  <% end %>
+  </ul>
 
-<h1> <%=@developer.first_name%></h1>
-<h3><%=@developer.location%></h3>
-<h4>Bio: <%= @developer.description %></h4>
-<% if has_avatar? @developer %>
-  <%= link_to image_tag(@developer.avatar.url(:thumb)), @developer.avatar.url %>
-<% end %>
+  <% if @developer.editable_by?(current_user) %>
+    <%= link_to 'edit', edit_developer_path(@developer) %>
+  <% end %>
 
-<% if @developer.editable_by?(current_user) %>
-  <%= link_to 'edit', edit_developer_path(@developer) %>
-<% end %>
-
-<%= link_to "leave reivew", new_developer_review_path(@developer) %>
+  <%= link_to "leave reivew", new_developer_review_path(@developer) %>
+</section>
