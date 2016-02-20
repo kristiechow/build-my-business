@@ -3,6 +3,7 @@
 <h1> <%=@developer.first_name%></h1>
 <h3><%=@developer.location%></h3>
 <h4>Bio: <%= @developer.description %></h4>
-<%= link_to image_tag(@developer.avatar.url(:thumb)), @developer.avatar.url %>
-
+<% if has_avatar? @developer %>
+  <%= link_to image_tag(@developer.avatar.url(:thumb)), @developer.avatar.url %>
+<% end %>
 <%= link_to "leave reivew", new_developer_review_path(@developer) %>

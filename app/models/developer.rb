@@ -1,4 +1,4 @@
 class Developer < User
- 
+
 
 end
