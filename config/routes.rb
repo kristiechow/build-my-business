@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   end
 
   resource :session, only: [:new, :create, :destroy]
-  
+
     get '/about' => 'pages#about'
     get '/login' => 'sessions#new'
     get '/registerd' => 'developers#new'
@@ -21,7 +21,8 @@ Rails.application.routes.draw do
 resources :businesses
 
 root to: "businesses#index"
-    
+
+  resources :skills, only: [:create]
 
   resources :photos, only: [:new, :create, :destroy]
 

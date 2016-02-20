@@ -18,16 +18,10 @@ class User < ActiveRecord::Base
   validates_attachment_size :avatar, :less_than => 5.megabytes
 
 
-   validates :email, presence: true, uniqueness: true
    validates :password, presence: true, length: { in: 6..20 }
    validates :first_name, presence: true
-   validate :uid_uniqueness
-
-  def uid_uniqueness
-    if uid.present?
-      validates :uid, uniqueness: { scope: :provider }
-    end
-  end
+   validates :uid, uniqueness: { scope: :provider }
+   validates :uid, presence: true
 
 
   def self.sign_in_from_omniauth(auth)
@@ -35,13 +29,25 @@ class User < ActiveRecord::Base
   end
 
   def self.create_user_from_omniauth(auth)
-    create(
+    if params[:owners]
+    @owner = create!(
         provider: auth['provider'],
         uid: auth['uid'],
-        email: auth['info']['email'],
-        first_name: auth['info']['name'][0],
-        last_name: auth['info']['name'][1],
-        password: "123456"
+        first_name: auth['info']['name'].split.first,
+        last_name: auth['info']['name'].split[1],
+        password: "123456",
+        type: "Owner"
       )
+    elsif params[:developers]
+    @developer = create!(
+        provider: auth['provider'],
+        uid: auth['uid'],
+        first_name: auth['info']['name'].split.first,
+        last_name: auth['info']['name'].split[1],
+        password: "123456",
+        type: "Developer"
+      )
+    end
   end
 end
+
