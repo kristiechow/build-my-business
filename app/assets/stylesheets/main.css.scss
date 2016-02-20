@@ -30,6 +30,8 @@ ul {
     white-space: nowrap;
     margin: 5px;
   }
+
+
   .button:hover, .button:focus,
   button:hover,
   button:focus,
@@ -45,3 +47,7 @@ ul {
     outline: 0;
   }
 
+.profile-pic {
+  width: 100px;
+  height: 100px;
+}

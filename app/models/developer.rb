@@ -6,4 +6,13 @@ class Developer < User
   def editable_by? user
     self.id == user.id
   end
+
+  def self.search(skill)
+    if Skill.find_by(name: skill)
+      Skill.find_by(name: skill).developers
+    else
+      []
+    end
+  end
+
 end

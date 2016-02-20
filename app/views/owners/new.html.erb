@@ -13,8 +13,8 @@
       <%= f.text_field :last_name %>
     </li>
     <li>
-      <%= f.label :email %>
-      <%= f.text_field :email %>
+      <%= f.label :uid, value="Email" %>
+      <%= f.text_field :uid %>
     </li>
     <li>
       <%= f.label :password %>
@@ -28,6 +28,7 @@
       <%= f.label :avatar %>
       <%= f.file_field :avatar %>
     </li>
+    <%= f.hidden_field :provider, value: "buildmybusiness" %>
     <li>
     <%= f.submit %>
     </li>
