@@ -10,7 +10,7 @@ class BusinessesController < ApplicationController
   def create
     @business = Business.new(business_params)
     @categories = params[:categories].split(",").map {|category| category.strip}
-    binding.pry
+
     if @business.save
       @categories.each do |category|
         @business.categories << Category.find_or_create_by(name: category)
