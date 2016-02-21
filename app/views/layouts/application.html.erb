@@ -21,27 +21,31 @@
 
 </head>
 <body>
-  <div id='container'>
+  <div id='wrap'>
     <header id="header">
-      <h1 id="header-title"><%= link_to 'BuildMyBusiness', root_path%></a></h1>
-      <nav id = "navbar">
-          <% if current_user %>
-            <%= link_to "Developers", developers_path %>
-            <%= link_to current_user.first_name, user_path(current_user) %>
-            <%= link_to 'inbox', conversations_path %>
-            <%= link_to 'Logout', session_path, method: :delete %>
-          <% else %>
-          Sign up as a
-            <%= link_to 'Business', new_owner_path%>
-            <%= link_to 'Developer', new_developer_path%>
-            <%= link_to 'Login', new_session_path%>
-          <% end %>
-      </nav>
+      <div class='container'>
+        <h1 id="header-title"><%= link_to 'BuildMyBusiness', root_path%></a></h1>
+        <nav id = "navbar">
+            <% if current_user %>
+              <%= link_to "Developers", developers_path %>
+              <%= link_to current_user.first_name, user_path(current_user) %>
+              <%= link_to 'inbox', conversations_path %>
+              <%= link_to 'Logout', session_path, method: :delete %>
+            <% else %>
+            Sign up as a
+              <%= link_to 'Business', new_owner_path%>
+              <%= link_to 'Developer', new_developer_path%>
+              <%= link_to 'Login', new_session_path%>
+            <% end %>
+        </nav>
+      </div>
     </header>
 
+    <div class='container'>
     <%= yield %>
-
+    </div>
   </div>
+
   <footer id = "footer">
     <div id = "footer-bar">
        <%= link_to "About", about_path %>
