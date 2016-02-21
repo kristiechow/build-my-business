@@ -1,51 +1,50 @@
-<%= link_to "Register with Facebook", "/auth/facebook" %>
-<%= link_to "Register with Github", "/auth/github" %>
+<section id='form'>
+  <%= link_to "Register with Github", "/auth/github" %>
+  <%= link_to "Register with Facebook", "/auth/facebook" %>
+  <%= form_for @developer, html: { multipart: true } do |f| %>
 
-<%= form_for @developer, html: { multipart: true } do |f| %>
+    <h4>Sign Up</h4>
+    <ul>
+      <li>
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name %>
+      </li>
+      <li>
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name %>
+      </li>
+      <li>
+        <%= f.label :uid, value="Email" %>
+        <%= f.text_field :uid %>
+      </li>
+      <li>
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+      </li>
+      <li>
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation %>
+      </li>
+      <li>
+        <%= label_tag :skills, 'Add Your Skills (comma separated)' %>
+        <%= text_area_tag :skills, nil %>
+      </li>
+      <li>
+        <%= f.label :avatar %>
+        <%= f.file_field :avatar %>
+      </li>
+      <%= f.hidden_field :provider, value: "buildmybusiness" %>
+      <li>
+      <%= f.submit %>
+      </li>
+    </ul>
+  <% end %>
 
-<fieldset>
-  <legend>Sign Up</legend>
-  <ul>
-    <li>
-      <%= f.label :first_name %>
-      <%= f.text_field :first_name %>
-    </li>
-    <li>
-      <%= f.label :last_name %>
-      <%= f.text_field :last_name %>
-    </li>
-    <li>
-      <%= f.label :uid, value="Email" %>
-      <%= f.text_field :uid %>
-    </li>
-    <li>
-      <%= f.label :password %>
-      <%= f.password_field :password %>
-    </li>
-    <li>
-      <%= f.label :password_confirmation %>
-      <%= f.password_field :password_confirmation %>
-    </li>
-    <li>
-      <%= label_tag :skills, 'Add Your Skills (comma separated)' %>
-      <%= text_area_tag :skills, nil %>
-    </li>
-    <li>
-      <%= f.label :avatar %>
-      <%= f.file_field :avatar %>
-    </li>
-    <%= f.hidden_field :provider, value: "buildmybusiness" %>
-    <li>
-    <%= f.submit %>
-    </li>
-  </ul>
-</fieldset>
-<% end %>
-
-<% if @developer.errors.any? %>
-  <div class="error_report">
-    <% @developer.errors.full_messages.each do |msg| %>
-      <%= msg %>
-    <% end %>
-  </div>
-<% end %>
+  <% if @developer.errors.any? %>
+    <div class="error_report">
+      <% @developer.errors.full_messages.each do |msg| %>
+        <%= msg %>
+      <% end %>
+    </div>
+  <% end %>
+</section>
