@@ -31,8 +31,8 @@ ActiveRecord::Schema.define(version: 20160220225621) do
     t.integer  "owner_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-    t.float    "latitude"
-    t.float    "longitude"
+    t.float    "lat"
+    t.float    "lng"
   end
 
   add_index "businesses", ["owner_id"], name: "index_businesses_on_owner_id", using: :btree
