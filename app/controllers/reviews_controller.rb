@@ -6,9 +6,8 @@ class ReviewsController < ApplicationController
 
   def create
     @reviewee = User.find(params[:developer_id])
-     @review = @reviewee.reviews.build(review_params)
+     @review = @reviewee.received_reviews.build(review_params)
      if @review.save
-    binding.pry
 
       redirect_to developer_path(@reviewee)
     end
@@ -21,7 +20,7 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-      params.require(:review).permit(:content, :communication_rating, :quality_rating, :timeliness_rating, :reviewee_id).merge(reviewer_id: current_user.id)
+      params.require(:review).permit(:comment, :communication_rating, :quality_rating, :timeliness_rating, :reviewee_id).merge(reviewer_id: current_user.id, review_type: current_user.type)
   end
 
 end
