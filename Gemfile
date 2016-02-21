@@ -29,7 +29,7 @@ gem 'aws-sdk', '< 2.0'
 gem 'normalize-rails'
 gem 'private_pub'
 gem 'thin'
-gem 'geocoder'
+gem 'gmaps4rails'
 gem 'omniauth-facebook'
 gem 'omniauth-github'
 
