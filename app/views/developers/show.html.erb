@@ -15,5 +15,38 @@
     <%= link_to 'edit', edit_developer_path(@developer) %>
   <% end %>
 
-  <%= link_to "leave reivew", new_developer_review_path(@developer) %>
+  <%= link_to "leave review", new_developer_review_path(@developer) %>
+  <div id="review-box">
+  <% if @developer.received_reviews %>
+  <% @developer.received_reviews.each do |review| %>
+
+  <p><%= review.comment %> | by: <%= review.reviewer.first_name%> - <%=review.reviewer.type%></p>
+
+<h5>Timeliness
+  <div class="star-ratings-css">
+    <div class="star-ratings-css-top" style="width: <%=review.timeliness_rating * 20%>%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+    <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+  </div>
+</h5>
+
+<h5>Work Quality
+  <div class="star-ratings-css">
+    <div class="star-ratings-css-top" style="width: <%=review.quality_rating * 20%>%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+    <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+  </div>
+</h5>
+
+<h5>Communication
+  <div class="star-ratings-css">
+    <div class="star-ratings-css-top" style="width: <%=review.communication_rating * 20%>%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+    <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+  </div>
+</h5>
+  <% end %>
+  <% end %>
+
+</div>
+
+
+<br/><br/>
 </section>
