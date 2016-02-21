@@ -24,12 +24,12 @@ class User < ActiveRecord::Base
    validates :uid, presence: true
 
 
-  def self.sign_in_from_omniauth(auth)
-    find_by(provider: auth['provider'], uid: auth['uid']) || create_user_from_omniauth(auth)
+  def self.sign_in_from_omniauth(auth, user_type=nil)
+    find_by(provider: auth['provider'], uid: auth['uid']) || create_user_from_omniauth(auth, user_type)
   end
 
-  def self.create_user_from_omniauth(auth)
-    if params[:owners]
+  def self.create_user_from_omniauth(auth, user_type)
+    if user_type == "Owner"
     @owner = create!(
         provider: auth['provider'],
         uid: auth['uid'],
@@ -38,7 +38,7 @@ class User < ActiveRecord::Base
         password: "123456",
         type: "Owner"
       )
-    elsif params[:developers]
+    elsif user_type == "Developer"
     @developer = create!(
         provider: auth['provider'],
         uid: auth['uid'],
@@ -47,6 +47,9 @@ class User < ActiveRecord::Base
         password: "123456",
         type: "Developer"
       )
+    else
+      raise 'We do not know what the user type'
+
     end
   end
 end

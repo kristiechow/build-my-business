@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160220225621) do
+ActiveRecord::Schema.define(version: 20160221223349) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,10 +31,12 @@ ActiveRecord::Schema.define(version: 20160220225621) do
     t.integer  "owner_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-    t.float    "lat"
-    t.float    "lng"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.integer  "developer_id"
   end
 
+  add_index "businesses", ["developer_id"], name: "index_businesses_on_developer_id", using: :btree
   add_index "businesses", ["owner_id"], name: "index_businesses_on_owner_id", using: :btree
 
   create_table "categories", force: :cascade do |t|
@@ -108,6 +110,14 @@ ActiveRecord::Schema.define(version: 20160220225621) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "status_updates", force: :cascade do |t|
+    t.string   "description",                 null: false
+    t.integer  "business_id",                 null: false
+    t.string   "percentage_revenue_increase"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   create_table "users", force: :cascade do |t|
