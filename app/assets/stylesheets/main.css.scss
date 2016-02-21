@@ -1,26 +1,9 @@
-* {
-  margin: 0;
-}
 
-html, body {
-  height: 100%;
-}
 body{
   font-family: 'Open Sans', sans-serif;
   background-color: #f7f7f7
 }
 
-#container {
-  min-height: 100%;
-  max-width: 1100px;
-  margin: 0 auto;
-  margin-bottom: -80px;
-}
-
-#container:after {
-  content: "";
-  display: block;
-}
 
 ul {
     list-style-type: none;
@@ -35,19 +18,42 @@ ul {
   font-weight: bold;
 }
 
-#footer, #containter:after {
-  height: 80px;
-}
+
 
 #footer {
   text-align: center;
   background: #606c76;
+  padding: 2em 0;
 }
 
 #footer-bar a {
   display: inline-block;
   margin-top: 10px;
 }
+
+
+
+
+@media (min-width: 769px) {
+
+  .wrap {
+    min-height: calc(100vh - 96px);
+  }
+
+  .container {
+    width: 70%;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+}
+
+
+
+
+
+
+
+
 
   .button,
   button {
