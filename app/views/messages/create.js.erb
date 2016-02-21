@@ -1,3 +1,5 @@
 <% publish_to conversation_messages_path(@conversation) do %>
   $("#chat").append("<%= j render(@message) %>");
+  $('.form-control').val('');
 <% end %>
+
