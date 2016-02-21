@@ -1,5 +1,12 @@
+
 <section id='form'>
   <%= form_tag session_path do %>
+
+  <%= link_to image_tag("FB-logo.png"), "/auth/facebook", class: "logo-button"%>
+  <%= link_to "Sign Up with Facebook", "/auth/facebook", class: "facebook-button" %>
+  <br>
+  <%= link_to image_tag("GH-logo.png"), "/auth/facebook", class: "logo-button"%>
+  <%= link_to "Sign Up with Github", "/auth/github", class: "github-button" %>
 
   <h4>Log in</h4>
   <ul>
