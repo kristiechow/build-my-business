@@ -18,9 +18,9 @@
         <h4>Location: <%=business.location%></h4>
       </div>
       <div class='business-images'>
-        <% business.photos.each do |image| %>
+        <% business.photos.each do |photo| %>
          <div>
-           <img src="#" alt=''/>
+           <%=image_tag photo.image.url(:square) %>
          </div>
         <% end %>
       </div>
