@@ -12,6 +12,7 @@ class OwnersController < ApplicationController
   end
 
   def new
+    session[:registration_type] = 'Owner'
     @owner = Owner.new
   end
 

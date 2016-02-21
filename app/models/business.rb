@@ -1,5 +1,6 @@
 class Business < ActiveRecord::Base
   belongs_to :owner, class_name: 'User', foreign_key: :owner_id
+  has_many :status_updates
   has_many :photos
   has_many :business_categories
   has_many :categories, through: :business_categories
