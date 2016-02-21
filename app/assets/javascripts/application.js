@@ -13,4 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require private_pub
+//= require underscore
+//= require gmaps/google
 //= require_tree .
