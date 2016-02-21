@@ -1,7 +1,8 @@
 body{
   font-family: 'Open Sans', sans-serif;
   margin: 20px;
-  margin-top: 0px
+  margin-top: 0px;
+  background-color: #f7f7f7
 }
 
 ul {
@@ -10,25 +11,30 @@ ul {
     padding: 0;
 }
 
+#navbar {
+  margin-top: -4.6em;
+  float: right;
+  margin-right: 1px;
+  font-weight: bold;
+}
+
 
   .button,
   button {
-    background-color: #eeeeee;
-    border: 0.1rem solid #ffffff;
-    border-radius: 0.3rem;
-    color: #333333;
+    background-color: #ff4448;
+    border: 0.01rem solid #ffffff;
+    color: #ffffff;
     cursor: pointer;
     display: inline-block;
-    font-size: 0.6rem;
-    font-weight: 400;
-    height: 2rem;
+    font-size: 0.7rem;
+    font-weight: bold;
+    height: 2.2rem;
     letter-spacing: 0.1rem;
-    line-height: 2rem;
+    line-height: 2.2rem;
     padding: 0 1rem;
     text-align: center;
     text-transform: uppercase;
     white-space: nowrap;
-    margin: 5px;
   }
 
 
@@ -46,6 +52,24 @@ ul {
     color: #ffffff;
     outline: 0;
   }
+
+.search-field{
+  height: 1.85rem;
+  line-height: 1.85rem;
+  margin-top: -10px;
+  margin-right: -0.5em;
+  padding: 0.1rem 0.5rem
+}
+
+a {
+  color: #ff4448;
+  text-decoration: none;
+}
+
+#footer-bar{
+  margin: 1rem;
+  float:right
+}
 
 .profile-pic {
   width: 100px;

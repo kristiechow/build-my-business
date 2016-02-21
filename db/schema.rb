@@ -19,13 +19,13 @@ ActiveRecord::Schema.define(version: 20160220225621) do
   create_table "businesses", force: :cascade do |t|
     t.string   "name",          null: false
     t.string   "description",   null: false
-    t.string   "images"
     t.string   "location",      null: false
-    t.string   "category",      null: false
     t.string   "status_update"
     t.integer  "owner_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.float    "lat"
+    t.float    "lng"
   end
 
   add_index "businesses", ["owner_id"], name: "index_businesses_on_owner_id", using: :btree

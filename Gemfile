@@ -24,13 +24,14 @@ gem 'pry-nav'
 gem 'pry-rails'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
-
 gem "paperclip", "~> 4.3"
 gem 'aws-sdk', '< 2.0'
-
 gem 'normalize-rails'
-gem "private_pub"
-gem "thin"
+gem 'private_pub'
+gem 'thin'
+gem 'gmaps4rails'
+gem 'omniauth-facebook'
+gem 'omniauth-github'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
@@ -61,6 +62,3 @@ group :test do
   gem 'shoulda-matchers'
   gem 'database_cleaner'
 end
-
-gem 'omniauth-facebook'
-gem 'omniauth-github'
