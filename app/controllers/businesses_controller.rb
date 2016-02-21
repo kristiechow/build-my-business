@@ -9,8 +9,12 @@ class BusinessesController < ApplicationController
 
   def create
     @business = Business.new(business_params)
+    @categories = params[:categories].split(",").map {|category| category.strip}
 
     if @business.save
+      @categories.each do |skill|
+        @business.categories << Category.find_or_create_by(name: category)
+      end
       if params[:images]
         params[:images].each do |image|
           @business.photos.create(image: image)
