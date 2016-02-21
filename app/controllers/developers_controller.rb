@@ -12,6 +12,7 @@ class DevelopersController < ApplicationController
   end
 
   def new
+    session[:registration_type] = 'Developer'
     @developer = Developer.new
   end
 
