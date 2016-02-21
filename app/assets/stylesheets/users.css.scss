@@ -13,16 +13,28 @@
 	text-align: center;
 	text-transform: uppercase;
 	white-space: nowrap;
-	margin-bottom: 1em;
-	margin-top: -1em;
+	float:left;
   }
 
+ #facebook-link{
+   width: 90%;
+   height:2.2rem;
+ }
+
+ #github-link{
+   width: 78%;
+   height:2.2rem;
+   background: #000000;
+ }
+
  .logo-button{
+    float:left;
     height: 2.2rem;
     width: 2.2rem;
  }
 
  .github-button {
+    float:left;
     background: #000000;
     border: 0.01rem solid #ffffff;
 	color: #ffffff;
@@ -33,10 +45,8 @@
 	height: 2.2rem;
 	letter-spacing: 0.1rem;
 	line-height: 2.2rem;
-	padding: 0 1rem;
+	padding: 0 1em;
 	text-align: center;
 	text-transform: uppercase;
 	white-space: nowrap;
-	margin-bottom: 1em;
-	margin-top: -1em;
   }
