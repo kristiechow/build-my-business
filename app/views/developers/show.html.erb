@@ -5,7 +5,7 @@
   <% if has_avatar? @developer %>
     <%= link_to image_tag(@developer.avatar.url(:thumb)), @developer.avatar.url %>
   <% elsif @auth %>
-    <%= image_tag(@auth['info']['image'], size:"100x100>") %>
+    <%= image_tag(@auth['info']['image'], class: 'profile-pic') %>
   <% else %>
     <%= image_tag "blank-profile-pic.png", class: 'profile-pic' %>
   <% end %>
