@@ -1,3 +1,10 @@
+<div id="search-bar">
+  <%= form_tag developers_path, method: :get do %>
+    <%= text_field_tag :search, nil, placeholder: "Search by Skill" %>
+    <%= submit_tag "Go" %>
+  <% end %>
+</div>
+
 <% @developers.each do |developer| %>
 <div>
 <%= link_to developer.first_name, developer_path(developer) %>
