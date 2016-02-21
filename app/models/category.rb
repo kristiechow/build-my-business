@@ -1,4 +1,5 @@
 class Category < ActiveRecord::Base
-  has_many :category_businesses
-  has_many :businesses, through: :category_businesses
+  has_many :business_categories
+
+  has_many :businesses, through: :business_categories
 end
