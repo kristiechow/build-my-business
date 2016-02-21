@@ -1,15 +1,18 @@
 <section id='form'>
-  
   <%= form_for @developer, html: { multipart: true } do |f| %>
 
-  <%= link_to image_tag("FB-logo.png"), "/auth/facebook", class: "logo-button"%>
-  <%= link_to "Sign Up with Facebook", "/auth/facebook", class: "facebook-button" %>
+  <h1>Sign Up</h1>
+
+  <div id="facebook-link">
+    <%= link_to image_tag("FB-logo.png", class: "logo-button"), "/auth/facebook"%>
+    <%= link_to "Sign Up with Facebook", "/auth/facebook", class: "facebook-button" %>
+  </div>
   <br>
-  <%= link_to image_tag("GH-logo.png"), "/auth/facebook", class: "logo-button"%>
-  <%= link_to "Sign Up with Github", "/auth/github", class: "github-button" %>
+  <div id="github-link">
+    <%= link_to image_tag("GH-logo.png", class: "logo-button"), "/auth/facebook"%>
+    <%= link_to "Sign Up with Github", "/auth/github", class: "github-button" %>
+  </div>
 
-
-    <h4>Sign Up</h4>
     <ul>
       <li>
         <%= f.label :first_name %>

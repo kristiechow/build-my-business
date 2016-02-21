@@ -4,7 +4,6 @@ body{
   background-color: #f7f7f7
 }
 
-
 ul {
     list-style-type: none;
     margin: 0;
@@ -18,8 +17,6 @@ ul {
   font-weight: bold;
 }
 
-
-
 #footer {
   text-align: center;
   background: #606c76;
@@ -30,9 +27,6 @@ ul {
   display: inline-block;
   margin-top: 10px;
 }
-
-
-
 
 @media (min-width: 769px) {
 
@@ -46,8 +40,6 @@ ul {
     margin: 0 auto;
   }
 }
-
-
 
 .button,
 button {
@@ -66,8 +58,6 @@ button {
   text-transform: uppercase;
   white-space: nowrap;
 }
-
-
 
   .button:hover, .button:focus,
   button:hover,
@@ -110,7 +100,6 @@ a {
   padding: 10px 20px;
   border-radius: 8px;
 }
-
 
 input[type="text"],
 input[type="password"],
