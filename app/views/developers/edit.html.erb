@@ -1,41 +1,42 @@
-<% if @developer.errors.any? %>
-  <ul>
-    <% @developer.errors.full_messages.each do |message| %>
-       <li><%= message %></li>
-    <% end %>
-  </ul>
-<% end %>
+<section id='form'>
+  <% if @developer.errors.any? %>
+    <ul>
+      <% @developer.errors.full_messages.each do |message| %>
+         <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  <%= form_for @developer do |f| %>
 
-<%= form_for @developer do |f| %>
+    <ul>
+      <li>
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name %>
+      </li>
+      <li>
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name %>
+      </li>
+      <li>
+        <%= f.label :email %>
+        <%= f.text_field :email %>
+      </li>
+      <li>
+        <%= f.label :where_you_live %>
+        <%= f.text_field :location %>
+      </li>
+      <li>
+        <%= f.label :describe_yourself %>
+        <%= f.text_area :description %>
+      </li>
+       <li>
+        <%= f.label :list_your_skills %>
+        <%= f.text_area :description %>
+      </li>
+      <li>
+      <%= f.submit %>
+      </li>
+    </ul>
 
-<ul>
-    <li>
-      <%= f.label :first_name %>
-      <%= f.text_field :first_name %>
-    </li>
-    <li>
-      <%= f.label :last_name %>
-      <%= f.text_field :last_name %>
-    </li>
-    <li>
-      <%= f.label :email %>
-      <%= f.text_field :email %>
-    </li>
-    <li>
-      <%= f.label :where_you_live %>
-      <%= f.text_field :location %>
-    </li>
-    <li>
-      <%= f.label :describe_yourself %>
-      <%= f.text_area :description %>
-    </li>
-     <li>
-      <%= f.label :list_your_skills %>
-      <%= f.text_area :description %>
-    </li>
-    <li>
-    <%= f.submit %>
-    </li>
-  </ul>
-  
-<% end %>
+  <% end %>
+</section>
