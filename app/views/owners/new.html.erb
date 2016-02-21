@@ -3,8 +3,10 @@
 
   <h1>Sign Up</h1>
 
-  <%= link_to image_tag("FB-logo.png"), "/auth/facebook", class: "logo-button"%>
-  <%= link_to "Sign Up with Facebook", "/auth/facebook", class: "facebook-button" %>
+  <div id="facebook-link">
+    <%= link_to image_tag("FB-logo.png", class: "logo-button"), "/auth/facebook"%>
+    <%= link_to "Sign Up with Facebook", "/auth/facebook", class: "facebook-button" %>
+  </div>
 
 
   <ul>
