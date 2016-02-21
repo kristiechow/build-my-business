@@ -1,7 +1,13 @@
 <section id='form'>
-  <%= link_to "Register with Github", "/auth/github" %>
-  <%= link_to "Register with Facebook", "/auth/facebook" %>
+  
   <%= form_for @developer, html: { multipart: true } do |f| %>
+
+  <%= link_to image_tag("FB-logo.png"), "/auth/facebook", class: "logo-button"%>
+  <%= link_to "Sign Up with Facebook", "/auth/facebook", class: "facebook-button" %>
+  <br>
+  <%= link_to image_tag("GH-logo.png"), "/auth/facebook", class: "logo-button"%>
+  <%= link_to "Sign Up with Github", "/auth/github", class: "github-button" %>
+
 
     <h4>Sign Up</h4>
     <ul>
