@@ -15,3 +15,7 @@ end
 end
 
 Business.create!(name: "Bob's Business", description: "Just a little bit of business with Bob!", location: "48 Wall Street, New York, NY", owner_id: kriste.id)
+
+
+skills = ['JavaScript', 'jQuery', 'HTML5', 'SQL', 'Ruby', 'Python', 'AJAX', 'CSS3', 'Rails']
+skills.each {|skill| Skill.create(name: skill)}
