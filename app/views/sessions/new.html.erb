@@ -1,17 +1,20 @@
-<%= form_tag session_path do %>
-<fieldset>
-  <legend>Log in</legend>
-  <ls>
-    <%= label_tag :email %>
-    <%= text_field_tag :email %>
-  </ls>
-  <ls>
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
-  </ls>
-  <ls>
-    <%= submit_tag 'Log in', class: 'button' %>
-  </ls>
-</fieldset>
+<section id='form'>
+  <%= form_tag session_path do %>
 
-<% end %>
+  <h4>Log in</h4>
+  <ul>
+    <li>
+      <%= label_tag :email %>
+      <%= text_field_tag :email %>
+    </li>
+    <li>
+      <%= label_tag :password %>
+      <%= password_field_tag :password %>
+    </li>
+    <li>
+      <%= submit_tag 'Log in', class: 'button' %>
+    </li>
+  </ul>
+
+  <% end %>
+</section>
