@@ -1,6 +1,6 @@
 class AddLatitudeAndLongitudeToBusiness < ActiveRecord::Migration
   def change
-    add_column :businesses, :lat, :float
-    add_column :businesses, :lng, :float
+    add_column :businesses, :latitude, :float
+    add_column :businesses, :longitude, :float
   end
 end
