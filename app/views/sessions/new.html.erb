@@ -1,15 +1,21 @@
-
 <section id='form'>
-  <%= form_tag session_path do %>
 
-  <%= link_to image_tag("FB-logo.png"), "/auth/facebook", class: "logo-button"%>
-  <%= link_to "Sign Up with Facebook", "/auth/facebook", class: "facebook-button" %>
+  <h1>Log in</h1>
+
+  <div id="facebook-link">
+    <%= link_to image_tag("FB-logo.png", class: "logo-button"), "/auth/facebook"%>
+    <%= link_to "Sign Up with Facebook", "/auth/facebook", class: "facebook-button" %>
+  </div>
   <br>
-  <%= link_to image_tag("GH-logo.png"), "/auth/facebook", class: "logo-button"%>
-  <%= link_to "Sign Up with Github", "/auth/github", class: "github-button" %>
+  <div id="github-link">
+    <%= link_to image_tag("GH-logo.png", class: "logo-button"), "/auth/facebook"%>
+    <%= link_to "Sign Up with Github", "/auth/github", class: "github-button" %>
+  </div>
 
-  <h4>Log in</h4>
-  <ul>
+  <br>
+
+  <%= form_tag session_path do %>
+    <ul>
     <li>
       <%= label_tag :email %>
       <%= text_field_tag :email %>
