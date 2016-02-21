@@ -1,7 +1,7 @@
 <div>
   <div id='search-bar'>
     <%= form_tag businesses_path, method: :get do %>
-      <%= text_field_tag :search, nil, placeholder: 'search by category'%>
+      <%= text_field_tag :search, nil, placeholder: 'search by category', class: 'search-field'%>
       <%= submit_tag 'go', class: 'button'%>
     <% end %>
   </div>
@@ -16,10 +16,9 @@
       </div>
       <div class='business-info'>
         <h4>Location: <%=business.location%></h4>
-        <h4>Category: <%=business.category%></h4>
       </div>
       <div class='business-images'>
-        <% business.images.each do |image| %>
+        <% business.photos.each do |image| %>
          <div>
            <img src="#" alt=''/>
          </div>
