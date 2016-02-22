@@ -11,7 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160222154335) do
+
+ActiveRecord::Schema.define(version: 20160222153606) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,6 +69,19 @@ ActiveRecord::Schema.define(version: 20160222154335) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
+
+  create_table "matches", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "matched_user_id"
+    t.string   "accepted",        default: "false"
+    t.string   "status",          default: "Pending"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+  end
+
+  add_index "matches", ["matched_user_id"], name: "index_matches_on_matched_user_id", using: :btree
+  add_index "matches", ["user_id", "matched_user_id"], name: "index_matches_on_user_id_and_matched_user_id", unique: true, using: :btree
+  add_index "matches", ["user_id"], name: "index_matches_on_user_id", using: :btree
 
   create_table "messages", force: :cascade do |t|
     t.text     "body"
@@ -138,4 +153,6 @@ ActiveRecord::Schema.define(version: 20160222154335) do
     t.string   "uid"
   end
 
+  add_foreign_key "matches", "users"
+  add_foreign_key "matches", "users", column: "matched_user_id"
 end
