@@ -15,11 +15,11 @@
   <% end %>
   </ul>
 
-  <% if @developer.editable_by?(current_user) %>
+  <% if current_user && @developer.editable_by?(current_user) %>
     <%= link_to 'edit', edit_developer_path(@developer) %>
   <% end %>
 
-<% if ! @developer.reviewed?(current_user) %>
+<% if current_user && ! @developer.reviewed?(current_user) %>
   <%= link_to "leave review", new_developer_review_path(@developer) %>
   <% end %>
 
