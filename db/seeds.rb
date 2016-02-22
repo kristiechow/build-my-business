@@ -77,6 +77,15 @@ dev_skills.each do |skill|
   kb.skills <<  Skill.find_or_create_by(name: skill)
 end
 
+nums = [3, 4, 5]
+
+devs = Developer.all
+devs.each do |dev|
+  3.times do
+    dev.received_reviews << Review.create!(comment: Faker::Lorem.sentence, communication_rating: nums.sample, quality_rating: nums.sample, timeliness_rating: nums.sample, review_type: 'Owner', reviewee_id: dev.id, reviewer_id: owners.sample.id)
+  end
+end
+
 
 
 
