@@ -19,7 +19,10 @@
     <%= link_to 'edit', edit_developer_path(@developer) %>
   <% end %>
 
+<% if ! @developer.reviewed?(current_user) %>
   <%= link_to "leave review", new_developer_review_path(@developer) %>
+  <% end %>
+
   <% if @developer.received_reviews %>
   <% @developer.received_reviews.each do |review| %>
   <div id="review-box">
