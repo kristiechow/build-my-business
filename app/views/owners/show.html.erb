@@ -1,6 +1,6 @@
 <h1><%= @owner.first_name %></h1>
 
-<h4>Bio: <%= @owner.description %></h4>
+<h4>About Me <%= @owner.description %></h4>
 <% if has_avatar? @owner %>
   <%= link_to image_tag(@owner.avatar.url(:thumb)), @owner.avatar.url %>
 <% elsif @auth %>
