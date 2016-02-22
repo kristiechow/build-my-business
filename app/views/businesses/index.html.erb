@@ -15,7 +15,7 @@
         <h3><%= link_to business.name, business_path(business)%></h3>
       </div>
       <div class='business-info'>
-        <h4>Location: <%=business.location%></h4>
+        <h4><%=business.location%></h4>
       </div>
       <div class='business-images'>
         <% business.photos.each do |photo| %>

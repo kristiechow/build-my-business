@@ -1,7 +1,7 @@
 <section>
-  <h1> <%=@developer.first_name%></h1>
+  <h1> <%=@developer.first_name%> <%=@developer.last_name%></h1>
   <h3><%=@developer.location%></h3>
-  <h4>Bio: <%= @developer.description %></h4>
+  <h4>About Me <%= @developer.description %></h4>
   <% if has_avatar? @developer %>
     <%= link_to image_tag(@developer.avatar.url(:thumb)), @developer.avatar.url %>
   <% elsif @auth %>

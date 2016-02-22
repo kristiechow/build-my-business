@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
-  resources :owners
+  resources :owners do
+    resources :status_updates, only: [:new, :create, :edit, :update, :destroy]
+  end
+
   resources :developers do
     resources :reviews, only: [:new, :create, :edit, :update, :destroy]
   end

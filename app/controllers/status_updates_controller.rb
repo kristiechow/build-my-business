@@ -1,7 +1,8 @@
-class ReviewsController < ApplicationController
+class StatusUpdatesController < ApplicationController
+
   def new
-    @review = Review.new
-    @reviewee = User.find(params[:developer_id])
+    @status_update = StatusUpdate.new
+    @updater = User.find(params[:owner_id])
   end
 
   def create
@@ -11,6 +12,7 @@ class ReviewsController < ApplicationController
 
       redirect_to developer_path(@reviewee)
     end
+
   end
 
   private
