@@ -11,7 +11,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-
+gem 'coffee-rails'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -24,8 +24,15 @@ gem 'pry-nav'
 gem 'pry-rails'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
-
+gem "paperclip", "~> 4.3"
+gem 'aws-sdk', '< 2.0'
 gem 'normalize-rails'
+gem 'private_pub'
+gem 'thin'
+gem 'gmaps4rails'
+gem 'geocoder'
+gem 'omniauth-facebook'
+gem 'omniauth-github'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
@@ -42,6 +49,7 @@ group :development, :test do
   gem "rspec-rails"
   gem "factory_girl_rails"
   gem "faker"
+  gem 'awesome_print'
 end
 
 group :development do
@@ -56,7 +64,3 @@ group :test do
   gem 'shoulda-matchers'
   gem 'database_cleaner'
 end
-
-gem 'omniauth-facebook'
-gem 'omniauth-twitter'
-gem 'omniauth-github'

@@ -1,0 +1,39 @@
+<% unless current_user == user %>
+ <% if ! user.matched?(current_user) && user.cross_type?(current_user) %>
+    <h4>Interested?</h4>
+        <%= link_to "Send Request", matches_path(id: user), :method => :post %>
+        <% end %>
+    <% end %>
+
+    <h4>Developers in charge:</h4>
+    <ul>
+        <% user.received_matches.each do |match| %>
+        <li>
+          <%= match.user.first_name %>
+        </li>
+      <% end %>
+    </ul>
+
+    <ul>
+      <% user.sent_matches.each do |match| %>
+        <li>
+          <%= match.matched_user.first_name %>
+          <%= match.status %>
+        </li>
+      <% end %>
+    </ul>
+
+    <% if current_user == user %>
+        <h4> Requests</h4>
+        <ul>
+            <% user.received_matches.each do |match| %>
+            <% if match.accepted == "f" %>
+            <li>
+              <%= match.user.first_name %>
+              <%= link_to "Accept",  request_accept_match_path(:id => match), :method => "put" %>
+              <%= link_to "Decline",  request_reject_match_path(:id => match), :method => :delete %>
+            </li>
+          <% end %>
+      <% end %>
+  </ul>
+<% end %>

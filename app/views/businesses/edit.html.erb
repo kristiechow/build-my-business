@@ -1,0 +1,32 @@
+<section id='form'>
+  <%= form_for @business, html: { multipart: true } do |f| %>
+
+  <ul>
+      <li>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+      </li>
+      <li>
+        <%= f.label :description %>
+        <%= f.text_area :description %>
+      </li>
+      <li>
+        <%= f.label :location %>
+        <%= f.text_field :location %>
+      </li>
+      <li>
+        <%= label_tag :categories, "Your Business' Categories (comma separated)" %>
+        <%= text_area_tag :categories, nil %>
+      </li>
+      <li>
+        <%= f.label :photo %>
+        <%= file_field_tag "images[]", type: :file, multiple: true %>
+      </li>
+
+      <li>
+        <%= f.submit %>
+      </li>
+    </ul>
+
+  <% end %>
+</section>

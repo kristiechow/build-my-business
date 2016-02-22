@@ -1,0 +1,18 @@
+<div class="search-bar">
+  <%= form_tag developers_path, method: :get do %>
+    <%= text_field_tag :search, nil, placeholder: "Search by Skill", class: 'search-field'%>
+    <%= submit_tag "Go", class: "button" %>
+  <% end %>
+</div>
+
+<% @developers.each do |developer| %>
+<div>
+<%= link_to developer.first_name, developer_path(developer) %>
+<% if current_user %>
+  <% if developer.id != current_user.id %>
+<%= link_to "Send Message", conversations_path(sender_id: current_user.id, recipient_id: developer.id), method: "post", class: "btn btn-success btn-xs start-conversation",
+                    "data-sid" => current_user.id, "data-rip" => developer.id %>
+  <% end %>
+<% end %>
+</div>
+<% end %>

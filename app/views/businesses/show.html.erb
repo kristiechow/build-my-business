@@ -1,0 +1,40 @@
+<section>
+  <div class='business-images'>
+    <% @business.photos.each do |photo| %>
+     <div>
+       <%=image_tag photo.image.url(:square) %>
+     </div>
+    <% end %>
+  </div>
+
+  <div class='info'>
+     <h3><%=@business.name%></h3>
+     <h4>Location: <%=@business.location%></h4>
+     <p><%=@business.description%></p>
+  </div>
+  <div>
+    <% if @business.editable_by? current_user %>
+      <%= link_to 'edit', edit_business_path(@business)%>
+    <% end %>
+  </div>
+
+
+<%= render partial: 'partials/matching', locals: {user: @owner }%>
+
+  <div>
+    <h4>Status: @business.status</h4>
+  </div>
+
+  <div style='width: 800px;'>
+    <div id="map" style='width: 800px; height: 400px;'></div>
+  </div>
+
+  <script type="text/javascript">
+    handler = Gmaps.build('Google');
+    handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+     markers = handler.addMarkers(<%=raw @hash.to_json %>);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+    });
+  </script>
+</section>

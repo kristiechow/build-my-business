@@ -1,0 +1,23 @@
+<h1><%= @owner.first_name %></h1>
+
+<h4>About Me <%= @owner.description %></h4>
+<% if has_avatar? @owner %>
+  <%= link_to image_tag(@owner.avatar.url(:thumb)), @owner.avatar.url %>
+<% elsif @auth &&  @owner.id == current_user.id %>
+      <%= image_tag(@auth['info']['image'], class: 'profile-pic') %>
+<% else %>
+  <%= image_tag "blank-profile-pic.png", class: 'profile-pic' %>
+<% end %>
+
+<% if @owner.editable_by?(current_user) %>
+  <%= link_to 'edit', edit_owner_path(@owner) %>
+<% end %>
+
+<%=link_to 'Create your Business Page', new_business_path %>
+
+<% if @owner.id != current_user.id %>
+  <div class=”item”>
+    <%= @owner.first_name %> <%= link_to "Message me!", conversations_path(sender_id: current_user.id, recipient_id: @owner.id), method: "post"%>
+  </div>
+<% end %>
+

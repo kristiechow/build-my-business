@@ -1,0 +1,36 @@
+<section id='form'>
+  <% if @owner.errors.any? %>
+    <ul>
+      <% @owner.errors.full_messages.each do |message| %>
+         <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  <h1>Update Your Profile</h1>
+  <%= form_for @owner do |f| %>
+
+    <ul>
+      <li>
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name %>
+      </li>
+      <li>
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name %>
+      </li>
+      <li>
+        <%= f.label :where_you_live %>
+        <%= f.text_field :location %>
+      </li>
+      <li>
+        <%= f.label :describe_yourself %>
+        <%= f.text_area :description %>
+      </li>
+      <li>
+      <%= f.submit 'Update' %>
+      </li>
+    </ul>
+
+  <% end %>
+    <%= link_to 'Delete User', owner_path(@owner), method: :delete, data: { confirm: 'Your user and all associated data will be deleted. Are you sure?'} %>
+</section>
