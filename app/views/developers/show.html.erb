@@ -4,9 +4,9 @@
   <h4>About Me <%= @developer.description %></h4>
   <% if has_avatar? @developer %>
     <%= link_to image_tag(@developer.avatar.url(:thumb)), @developer.avatar.url %>
-  <% elsif @auth %>
+  <% elsif @auth &&  @developer.id == current_user.id%>
     <%= image_tag(@auth['info']['image'], class: 'profile-pic') %>
-  <% elsif !has_avatar? @developer%>
+  <% else %>
     <%= image_tag "blank-profile-pic.png", class: 'profile-pic' %>
   <% end %>
   <ul>

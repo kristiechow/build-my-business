@@ -36,7 +36,7 @@ braza_biz = Business.create!(name: 'Brazas Chicken Inc', description: 'Peruvian 
 braza_pic = File.new("#{Rails.root}/app/assets/images/peruvian.jpg")
 Photo.create!(image: braza_pic, business_id: braza_biz.id)
 
-kriste = Owner.create!(first_name: "Kriste", last_name: 'Chou', uid: 'kriste@email.com', password: '123123', provider: 'facebook')
+kristie = Owner.create!(first_name: "Kristie", last_name: 'Chou', uid: 'kriste@email.com', password: '123123', provider: 'facebook')
 
 
 # 10.times do
