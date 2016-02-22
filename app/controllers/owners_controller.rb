@@ -21,7 +21,7 @@ class OwnersController < ApplicationController
     if @owner.save
       flash.notice = "You're in! Welcome."
       session[:user_id] = @owner.id
-      redirect_to edit_developer_path
+      redirect_to edit_owner_path(@owner)
     else
       render :new
     end

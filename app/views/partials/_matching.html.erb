@@ -1,5 +1,5 @@
-<% unless current_user == user %>
- <% if ! user.matched?(current_user) && user.cross_type?(current_user) %>
+<% unless current_user == user  %>
+ <% if ! user.matched?(current_user) && user.cross_type?(current_user) && ! @owner.closed_match? %>
     <h4>Interested?</h4>
         <%= link_to "Send Request", matches_path(id: user), :method => :post %>
         <% end %>
@@ -8,9 +8,11 @@
     <h4>Developers in charge:</h4>
     <ul>
         <% user.received_matches.each do |match| %>
+        <% if match.accepted == "true" %>
         <li>
           <%= match.user.first_name %>
         </li>
+        <% end %>
       <% end %>
     </ul>
 

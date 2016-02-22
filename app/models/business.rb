@@ -13,6 +13,7 @@ class Business < ActiveRecord::Base
   end
 
 
+
   def self.search(category)
     if Category.find_by(name: category)
       Category.find_by(name: category).businesses
@@ -20,4 +21,5 @@ class Business < ActiveRecord::Base
       []
     end
   end
+
 end
