@@ -28,4 +28,13 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def accept_match_path(user)
+    if user.type == "Owner"
+      shop = user.business
+      return business_path(shop)
+    else
+      return developer_path(user)
+    end
+  end
+
 end
