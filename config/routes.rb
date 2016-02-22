@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :owners do
-    resources :status_updates, only: [:new, :create, :edit, :update, :destroy]
-  end
+  resources :owners 
 
   resources :developers do
     resources :reviews, only: [:new, :create, :edit, :update, :destroy]
@@ -20,10 +18,11 @@ Rails.application.routes.draw do
   resources :messages
   end
 
+  resources :businesses do
+    resources :status_updates, only: [:new, :create, :edit, :update, :destroy]
+  end
 
-resources :businesses
-
-root to: "businesses#index"
+  root to: "businesses#index"
 
   resources :skills, only: [:create]
 

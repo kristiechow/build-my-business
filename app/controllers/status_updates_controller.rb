@@ -2,23 +2,43 @@ class StatusUpdatesController < ApplicationController
 
   def new
     @status_update = StatusUpdate.new
-    @updater = User.find(params[:owner_id])
+    @business = Business.find(params[:business_id])
   end
 
   def create
-    @reviewee = User.find(params[:developer_id])
-     @review = @reviewee.received_reviews.build(review_params)
-     if @review.save
+    @business = Business.find(params[:business_id])
+     @status_update = StatusUpdate.new(status_update_params)
+     if @status_update.save
 
-      redirect_to developer_path(@reviewee)
+      redirect_to business_path(@business)
     end
-
   end
 
+  def edit
+    @status_update = StatusUpdate.find_by(id: params[:id])
+  end
+
+  def update
+    @status_update = StatusUpdate.find_by(id: params[:id])
+    if @status_update.update(status_update_params)
+      flash.notice = "Update successful."
+      redirect_to business_path(@business)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @status_update = StatusUpdate.find_by(id: params[:id])
+    @status_update.destroy
+    flash.notice = "Update successfully deleted."
+    redirect_to business_path(@business)
+  end
+  
   private
 
-  def review_params
-      params.require(:review).permit(:comment, :communication_rating, :quality_rating, :timeliness_rating, :reviewee_id).merge(reviewer_id: current_user.id, review_type: current_user.type)
+  def status_update_params
+      params.require(:status_update).permit(:description, :percentage_revenue_increase, :business_id)
   end
 
 end

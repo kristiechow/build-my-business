@@ -1,7 +1,7 @@
 class Photo < ActiveRecord::Base
   has_attached_file :image
   belongs_to :business
-  belongs_to :status_updates
+  belongs_to :status_update
 
   has_attached_file :image, styles: {
                                         thumb: '100x100>',
