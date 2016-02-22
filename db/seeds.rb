@@ -12,14 +12,16 @@ dev_skills = ['JavaScript', 'jQuery', 'HTML', 'SQL', 'Ruby', 'AJAX', 'CSS', 'Rai
 end
 cats = Category.all
 
-6.times = Owner.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, uid: Faker::Internet.safe_email, password: '123456', avatar: Faker::Avatar.image)
+6.times do
+  Owner.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, uid: Faker::Internet.safe_email, password: '123456', avatar: Faker::Avatar.image, location: Faker::Address.city, description: Faker::Lorem.paragraph)
 end
 owners = Owner.all
 
 
 6.times do
-  biz = Business.create!(name: Faker::Company.name, description: Faker::Lorem.paragraph, location: Faker::Address.street_address, owner_id: owners.sample)
+  biz = Business.create!(name: Faker::Company.name, description: Faker::Lorem.paragraph, location: Faker::Address.street_address, owner_id: owners.sample.id)
   biz.categories << cats.sample
+  biz.photos << Photo.create!( business_id: biz.id, image: Faker::Placeholdit.image)
 end
 
 
@@ -31,14 +33,14 @@ end
 
 
 gary_pic = File.new("#{Rails.root}/app/assets/images/gary.jpg")
-gary = Developer.create!(first_name: 'Gary', last_name: 'Tso', uid: 'garytso@gmail.com', password: '123456', )
+gary = Developer.create!(first_name: 'Gary', last_name: 'Tso', uid: 'garytso@gmail.com', password: '123456', location: Faker::Address.city, description: Faker::Lorem.paragraph)
 dev_skills.each do |skill|
   gary.skills <<  Skill.find_or_create_by(name: skill)
 end
 
 
 dan_pic = File.new("#{Rails.root}/app/assets/images/dan.jpg")
-dan = Developer.create!(first_name: 'Dan', last_name: 'Andersen', uid: 'danandersen2@gmail.com', password: '123456', avatar: dan_pic)
+dan = Developer.create!(first_name: 'Dan', last_name: 'Andersen', uid: 'danandersen2@gmail.com', password: '123456', avatar: dan_pic, location: Faker::Address.city, description: Faker::Lorem.paragraph)
 dev_skills.each do |skill|
   dan.skills <<  Skill.find_or_create_by(name: skill)
 end
@@ -47,13 +49,13 @@ end
 
 
 mira_pic = File.new("#{Rails.root}/app/assets/images/mira.jpg")
-mira = Developer.create!(first_name: 'Mira', last_name: 'Scarvalone', uid: 'mirascarvalone@gmail.com', password: '123456', avatar: mira_pic)
+mira = Developer.create!(first_name: 'Mira', last_name: 'Scarvalone', uid: 'mirascarvalone@gmail.com', password: '123456', avatar: mira_pic, location: Faker::Address.city, description: Faker::Lorem.paragraph)
 dev_skills.each do |skill|
   mira.skills <<  Skill.find_or_create_by(name: skill)
 end
 
 
-ed = Developer.create!(first_name: 'Edward', last_name: 'Gemson', uid: 'edwardgemson@gmail.com', password: '123456')
+ed = Developer.create!(first_name: 'Edward', last_name: 'Gemson', uid: 'edwardgemson@gmail.com', password: '123456', location: Faker::Address.city, description: Faker::Lorem.paragraph)
 dev_skills.each do |skill|
   ed.skills <<  Skill.find_or_create_by(name: skill)
 end
@@ -61,7 +63,7 @@ end
 
 
 
-scott = Developer.create!(first_name: 'Scott', last_name: 'Tso', uid: 'scottychou@gmail.com', password: '123456')
+scott = Developer.create!(first_name: 'Scott', last_name: 'Tso', uid: 'scottychou@gmail.com', password: '123456', location: Faker::Address.city, description: Faker::Lorem.paragraph)
 dev_skills.each do |skill|
   scott.skills <<  Skill.find_or_create_by(name: skill)
 end
@@ -70,7 +72,7 @@ end
 
 
 kb_pic = File.new("#{Rails.root}/app/assets/images/kb.jpg")
-kb = Developer.create!(first_name: 'K.B.', last_name: 'DiAngelo', uid: 'kb-diangleo@gmail.com', password: '123456', avatar: kb_pic)
+kb = Developer.create!(first_name: 'K.B.', last_name: 'DiAngelo', uid: 'kb-diangleo@gmail.com', password: '123456', avatar: kb_pic, location: Faker::Address.city, description: Faker::Lorem.paragraph)
 dev_skills.each do |skill|
   kb.skills <<  Skill.find_or_create_by(name: skill)
 end
