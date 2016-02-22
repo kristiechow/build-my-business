@@ -15,7 +15,7 @@ end
   # thus the current user is identified by to_id.
     matchable = Match.where(id: params[:id]).first
     matchable.update_attributes(accepted: "true", status: "Matched!")
-    redirect_to user_path(current_user)
+    redirect_to accept_match_path(current_user)
   end
 
   def request_reject

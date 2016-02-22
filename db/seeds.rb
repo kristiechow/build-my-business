@@ -97,15 +97,15 @@ Photo.create!(image: braza_pic, business_id: braza_biz.id)
 
 
 kristie = Owner.create!(first_name: "Kristie", last_name: 'Chou', uid: 'kriste@email.com', password: '123123', provider: 'facebook')
-song = Owner.create!(first_name: 'Song', last_name: 'Sampson', uid: 'songsampson@gmail.com', password: '123456')
-
+song = Owner.create!(first_name: 'Song', last_name: 'Sampson', uid: 'songsampson@gmail.com', password: '123456',  provider: 'buildmybusiness')
+kerry = Owner.create!(first_name: 'Kerry', last_name: "Imai", uid: "kccom", password: "111111", provider: 'buildmybusiness')
 
 Business.create!(name: "Song's Hair Studio
 ", description: 'Beauty Salon', location: '4022 S Conway Rd, Orlando, FL', owner_id: song.id)
 
 Business.create!(name: "Bob's Business", description: "Just a little bit of business with Bob!", location: "48 Wall Street, New York, NY", owner_id: kristie.id)
 
-Business.create!(name: "Kerry's Little Diner", description: "Just a cool diner in the middle of Kerryville.", location: "300 West 19th Street, New York, NY", owner_id: kristie.id)
+Business.create!(name: "Kerry's Little Diner", description: "Just a cool diner in the middle of Kerryville.", location: "300 West 19th Street, New York, NY", owner_id: kerry.id)
 
 Business.create!(name: "Kejmukda Restaurant Phuket", description: "Cool Malaysian cuisine in Phuket, Thailand", location: "100/404 หมู่ 5, ต.รัษฏา, อ.เมือง, ภูเก็ต, Phuket 83120, Thailand", owner_id: kristie.id)
 

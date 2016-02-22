@@ -5,6 +5,7 @@ class SessionsController < ApplicationController
   end
 
   def create
+    # binding.pry
     ap session
     if request.env["omniauth.auth"]
       auth = request.env["omniauth.auth"]
