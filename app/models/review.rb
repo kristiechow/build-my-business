@@ -8,4 +8,6 @@ class Review < ActiveRecord::Base
   validates :quality_rating, presence: true
   validates :timeliness_rating, presence: true
   validates :comment, presence: true
+
+
 end
