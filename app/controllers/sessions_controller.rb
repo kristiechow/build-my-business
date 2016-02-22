@@ -5,13 +5,11 @@ class SessionsController < ApplicationController
   end
 
   def create
-    ap session
     if request.env["omniauth.auth"]
       auth = request.env["omniauth.auth"]
       session[:omniauth] = auth.except('extra')
       user = User.sign_in_from_omniauth(auth, session[:registration_type])
       session[:user_id] = user.id
-      redirect_to root_path
     else
     user = User.where("uid = ? AND provider = ?", params[:uid], "buildmybusiness")[0]
     if user && user.authenticate(params[:password])
