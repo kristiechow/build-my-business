@@ -1,6 +1,10 @@
 class BusinessesController < ApplicationController
   def index
-    @businesses = Business.all
+    if params[:search]
+      @businesses = Business.search(params[:search])
+    else
+      @businesses = Business.all
+    end
   end
 
   def new
