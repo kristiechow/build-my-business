@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_secure_password
+
   has_many :sent_matches, class_name: "Match"
   has_many :received_matches, class_name: "Match", foreign_key: :matched_user_id
   has_many :matched_users, through: :matches
@@ -25,7 +26,6 @@ class User < ActiveRecord::Base
 
    def matched?(user)
       r_matches = self.received_matches.where(user: user)
-      # binding.pry
       s_matches = self.sent_matches.where(matched_user: user)
       if r_matches != [] || s_matches != []
         return true
@@ -54,7 +54,6 @@ class User < ActiveRecord::Base
         password: "123456",
         type: "Owner"
       )
-    
     elsif user_type == "Developer"
     @developer = create!(
         provider: auth['provider'],
