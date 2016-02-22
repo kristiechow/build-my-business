@@ -32,4 +32,14 @@ root to: "businesses#index"
   get 'auth/:provider/callback' => "sessions#create"
   delete 'sign_out' => "sessions#destroy", as: 'sign_out'
 
+
+
+
+  resources :matches do
+   member do
+    put 'request_accept'
+    delete 'request_reject'
+   end
+  end
+
 end
