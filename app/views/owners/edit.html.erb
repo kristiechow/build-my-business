@@ -1,13 +1,13 @@
 <section id='form'>
-  <% if @developer.errors.any? %>
+  <% if @owner.errors.any? %>
     <ul>
-      <% @developer.errors.full_messages.each do |message| %>
+      <% @owner.errors.full_messages.each do |message| %>
          <li><%= message %></li>
       <% end %>
     </ul>
   <% end %>
   <h1>Update Your Profile</h1>
-  <%= form_for @developer do |f| %>
+  <%= form_for @owner do |f| %>
 
     <ul>
       <li>
@@ -26,15 +26,11 @@
         <%= f.label :describe_yourself %>
         <%= f.text_area :description %>
       </li>
-       <li>
-        <%= label_tag :skills, 'Your Skills (comma separated)' %>
-        <%= text_area_tag :skills, nil %>
-      </li>
       <li>
       <%= f.submit 'Update' %>
       </li>
     </ul>
 
   <% end %>
-    <%= link_to 'Delete User', developer_path(@developer), method: :delete, data: { confirm: 'Your user and all associated data will be deleted. Are you sure?'} %>
+    <%= link_to 'Delete User', owner_path(@owner), method: :delete, data: { confirm: 'Your user and all associated data will be deleted. Are you sure?'} %>
 </section>

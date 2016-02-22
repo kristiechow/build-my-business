@@ -18,14 +18,10 @@ class DevelopersController < ApplicationController
 
   def create
     @developer = Developer.new(developer_params)
-    @skills = params[:skills].split(",").map {|skill| skill.strip}
     if @developer.save
-      @skills.each do |skill|
-        @developer.skills << Skill.find_or_create_by(name: skill)
-      end
       flash.notice = "You're in! Welcome."
       session[:user_id] = @developer.id
-      redirect_to root_path
+      redirect_to edit_developer_path(@developer)
     else
       render :new
     end
@@ -37,7 +33,11 @@ class DevelopersController < ApplicationController
 
   def update
     @developer = Developer.find_by(id: params[:id])
-    if @developer.update(developer_params)
+    @skills = params[:skills].split(",").map {|skill| skill.strip}
+    if @developer.update(developer_edit_params)
+        @skills.each do |skill|
+        @developer.skills << Skill.find_or_create_by(name: skill)
+      end
       flash.notice = "Update successful."
       redirect_to developer_path(@developer)
     else
@@ -57,6 +57,10 @@ class DevelopersController < ApplicationController
 
   def developer_params
     params.require(:developer).permit(:password, :password_confirmation, :first_name, :last_name, :uid, :avatar, :provider)
+  end
+
+  def developer_edit_params
+    params.require(:developer).permit(:first_name, :last_name, :uid, :avatar, :provider, :description, :location)
   end
 
 end
