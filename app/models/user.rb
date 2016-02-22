@@ -34,6 +34,10 @@ class User < ActiveRecord::Base
       end
    end
 
+   def cross_type?(user)
+    user.type != self.type
+   end
+
 
   def reviewed?(user)
    reviews = self.received_reviews
