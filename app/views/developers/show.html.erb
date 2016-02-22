@@ -51,7 +51,48 @@
 </h5>
 </div>
   <% end %>
-  <% end %>
+<% end %>
+
+
+ <% unless current_user == @developer %>
+ <% if ! @developer.matched?(current_user) %>
+        <%= link_to "Send Request", matches_path(id: @developer), :method => :post %>
+        <% end %>
+    <% end %>
+
+    <h4>Matches</h4>
+    <ul>
+        <% @developer.received_matches.each do |match| %>
+        <li>
+          <%= match.user.first_name %>
+          <%= match.status %>
+        </li>
+      <% end %>
+    </ul>
+
+    <ul>
+      <% @developer.sent_matches.each do |match| %>
+        <li>
+          <%= match.matched_user.first_name %>
+          <%= match.status %>
+        </li>
+      <% end %>
+    </ul>
+
+    <% if current_user == @developer %>
+        <h4> Requests</h4>
+        <ul>
+            <% @developer.received_matches.each do |match| %>
+            <% if match.accepted == "f" %>
+            <li>
+              <%= match.user.first_name %>
+              <%= link_to "Accept",  request_accept_match_path(:id => match), :method => "put" %>
+              <%= link_to "Decline",  request_reject_match_path(:id => match), :method => :delete %>
+            </li>
+            <% end %>
+          <% end %>
+        </ul>
+    <% end %>
 
 
 
