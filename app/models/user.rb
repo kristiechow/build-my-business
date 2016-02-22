@@ -24,6 +24,12 @@ class User < ActiveRecord::Base
    validates :uid, presence: true
 
 
+
+  def reviewed?(user)
+   reviews = self.received_reviews
+   reviews.find_by(reviewer_id: user.id)
+  end
+
   def self.sign_in_from_omniauth(auth, user_type=nil)
     find_by(provider: auth['provider'], uid: auth['uid']) || create_user_from_omniauth(auth, user_type)
   end
