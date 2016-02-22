@@ -1,6 +1,9 @@
 /*
  *= require normalize-rails
  *= require main
+ *= require users
+ *= require businesses
+ *= require developers
  *= require conversations
  *= require_tree .
  *= require_self

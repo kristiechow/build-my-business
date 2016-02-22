@@ -35,7 +35,7 @@ ul {
   }
 
   .container {
-    width: 70%;
+    width: 85%;
     max-width: 1000px;
     margin: 0 auto;
   }
@@ -101,39 +101,57 @@ a {
   border-radius: 8px;
 }
 
+
+
+
+input,
+textarea {
+  font-size: 1em;
+  color: black;
+  font-weight: 300;
+  width: 100%;
+  border: none;
+  height: auto;
+  padding: 15px;
+  outline: 0;
+  margin-bottom: 1.2em;
+  border-radius: .3em;
+  border-bottom: 3px solid rgba(0,0,0, 0.05);
+  background-color: #e8eeef;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+}
+
 input[type="text"],
 input[type="password"],
 input[type="email"],
 input[type="search"],
 input[type="submit"],
+input[type="file"],
+textarea,
 select {
+  color: black;
+  font-weight: 300;
   background: rgba(255,255,255,0.1);
   border: none;
-  font-size: 16px;
+  font-size: 1em;
   height: auto;
   margin: 0;
   outline: 0;
   padding: 15px;
   width: 100%;
+  margin-bottom: 1.2em;
+  border-radius: .3em;
+  border-bottom: 3px solid rgba(0,0,0, 0.05);
   background-color: #e8eeef;
-  color: #8a97a0;
   box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
-  margin-bottom: 30px;
 }
 
-input[type="file"] {
-  border: none;
-  font-size: 16px;
-  height: auto;
-  margin: 0;
-  outline: 0;
-  padding: 15px;
-  width: 100%;
-  color: #8a97a0;
-  margin-bottom: 30px;
-}
+
 
 input[type="submit"] {
   background: #ff4448;
   color: #fff;
 }
+
+
+
