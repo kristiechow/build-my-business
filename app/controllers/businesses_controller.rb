@@ -12,7 +12,7 @@ class BusinessesController < ApplicationController
     @categories = params[:categories].split(",").map {|category| category.strip}
 
     if @business.save
-      @categories.each do |category|
+      @categories.each do |skill|
         @business.categories << Category.find_or_create_by(name: category)
       end
       if params[:images]
@@ -62,6 +62,6 @@ class BusinessesController < ApplicationController
 
 
     def business_params
-      params.require(:business).permit(:name, :description, :location).merge(owner: current_user)
+      params.require(:business).permit(:name, :description, :location).merge(owner_id: current_user.id)
     end
 end
