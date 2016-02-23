@@ -30,7 +30,7 @@
             <% if current_user %>
               <%= link_to "Developers", developers_path %>
               <%= link_to current_user.first_name, user_path(current_user) %>
-              <%= link_to 'inbox', conversations_path %>
+              <%= link_to 'Inbox', conversations_path %>
               <%= link_to 'Logout', session_path, method: :delete %>
             <% else %>
             Sign up as a

@@ -2,26 +2,27 @@
 
   <p><%= review.comment %> | by: <%= review.reviewer.first_name%> - <%=review.reviewer.type%></p>
 
-  <h5>Timeliness
+  <h5>Communication
     <div class="star-ratings-css">
-      <div class="star-ratings-css-top" style="width: <%=review.timeliness_rating * 20%>%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+      <div class="star-ratings-css-top" style="width: <%=review.communication_rating * 25%>%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
       <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
     </div>
   </h5>
 
   <h5>Work Quality
     <div class="star-ratings-css">
-      <div class="star-ratings-css-top" style="width: <%=review.quality_rating * 20%>%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+      <div class="star-ratings-css-top" style="width: <%=review.quality_rating * 25%>%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
       <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
     </div>
   </h5>
 
-  <h5>Communication
+  <h5>Timeliness
     <div class="star-ratings-css">
-      <div class="star-ratings-css-top" style="width: <%=review.communication_rating * 20%>%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+      <div class="star-ratings-css-top" style="width: <%=review.timeliness_rating * 25%>%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
       <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
     </div>
   </h5>
+  
 </div>
 
 

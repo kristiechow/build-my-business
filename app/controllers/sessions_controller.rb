@@ -11,6 +11,7 @@ class SessionsController < ApplicationController
       user = User.sign_in_from_omniauth(auth, session[:registration_type])
       if user == nil
         new_user = User.create_user_from_omniauth(auth, session[:registration_type])
+        session[:user_id] = new_user.id
         redirect_to redirect_edit_path(new_user)
       else 
         session[:user_id] = user.id
