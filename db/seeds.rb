@@ -10,15 +10,11 @@ dev_skill_ids = Skill.pluck(:id)
 
 categories_list = ['Automotive', 'Business Support & Supplies', 'Computers & Electronics', 'Education', 'Food, Dining, & Entertainment', 'Home & Garden', 'Merchants(Retail)', 'Miscellaneous/Other', 'Personal Care & Services', 'Travel & Transportation']
 
-
 categories_list.each do |cat|
   Category.create!(name: cat)
 end
 
 cat_list = Category.all
-
-
-
 
 6.times do
   Owner.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, uid: Faker::Internet.safe_email, provider: "buildmybusiness", password: '123456', avatar: Faker::Avatar.image, location: Faker::Address.city, description: Faker::Lorem.paragraph)
@@ -56,7 +52,7 @@ ed = Developer.create!(first_name: 'Edward', last_name: 'Gemson', uid: 'edwardge
 
 
 
-scott = Developer.create!(first_name: 'Scott', last_name: 'Tso', uid: 'scottychou@gmail.com', password: '123456', location: Faker::Address.city, description: Faker::Lorem.paragraph, provider: "buildmybusiness", skill_ids: dev_skill_ids)
+scott = Developer.create!(first_name: 'Scott', last_name: 'Chou', uid: 'scottychou@gmail.com', password: '123456', location: Faker::Address.city, description: Faker::Lorem.paragraph, provider: "buildmybusiness", skill_ids: dev_skill_ids)
 
 
 
@@ -74,8 +70,6 @@ devs.each do |dev|
 end
 
 
-
-
 william = Owner.create!(first_name: "Williams", last_name: 'Pinto', uid: 'williamspinto@email.com', password: '123456', provider: "buildmybusiness")
 braza_biz = Business.create!(name: 'Brazas Chicken Inc', description: 'Peruvian & other Latin American chicken & ceviche dishes.', location: '4797 S Orange Ave, Orlando, FL', owner_id: william.id)
 braza_pic = File.new("#{Rails.root}/app/assets/images/peruvian.jpg")
@@ -84,9 +78,31 @@ Photo.create!(image: braza_pic, business_id: braza_biz.id)
 
 
 kerry = Owner.create!(first_name: 'Kerry', last_name: "Imai", uid: "kccom", password: "111111", provider: 'buildmybusiness')
-kristie = Owner.create!(first_name: "Kristie", last_name: 'Chou', uid: 'kristie@email.com', password: '123123', provider: "buildmybusiness")
+kristie = Owner.create!(first_name: "Kristie", last_name: 'Chow', uid: 'kristie@email.com', password: '123123', provider: "buildmybusiness")
 song = Owner.create!(first_name: 'Song', last_name: 'Sampson', uid: 'songsampson@gmail.com', password: '123456')
+kung = Owner.create!(first_name: 'Khun', last_name: 'Kung', uid: 'goong@gmail.com', password: '123456', avatar: File.new("#{Rails.root}/app/assets/images/IMG_6601.jpg"), location: "Chaloem Phrakiat Ratchakan Thi 9 Soi 59 Khwaeng Dok Mai, Khet Prawet Krung Thep Maha Nakhon 10250 Thailand", description: "Lifetime hair enthusiast, born and raised in Bangkok", provider: "buildmybusiness")
 
+
+salon = Business.create!(name: "Kung Hair & Beauty", description: "Family salon specializing in women's hair, nails and styling.", location: "Chaloem Phrakiat Ratchakan Thi 9 Soi 59 Khwaeng Dok Mai, Khet Prawet Krung Thep Maha Nakhon 10250 Thailand", owner_id: kung.id)
+salon.photos << Photo.create!( business_id: salon.id, image: File.new("#{Rails.root}/app/assets/images/salon1.png") )
+salon.photos << Photo.create!( business_id: salon.id, image: File.new("#{Rails.root}/app/assets/images/salon2.png") )
+salon.photos << Photo.create!( business_id: salon.id, image: File.new("#{Rails.root}/app/assets/images/salon3.png") )
+salon.photos << Photo.create!( business_id: salon.id, image: File.new("#{Rails.root}/app/assets/images/salon4.png") )
+salon.photos << Photo.create!( business_id: salon.id, image: File.new("#{Rails.root}/app/assets/images/IMG_6602.jpg") )
+
+mary = Owner.create!(first_name: 'Mary', last_name: 'Joe', uid: 'mary@gmail.com', password: '123456', location: "40 Exchange Place, Exchange Place, New York, NY", description: "Latina mother and proprietor.", provider: "buildmybusiness")
+
+shoe = Business.create!(name: "Mary's Shine and Repair", description: "Effective and well stocked shoe repair and shine.", location: "40 Exchange Place, Exchange Place, New York, NY", owner_id: mary.id)
+shoe.photos << Photo.create!( business_id: shoe.id, image: File.new("#{Rails.root}/app/assets/images/shoe1.jpg") )
+shoe.photos << Photo.create!( business_id: shoe.id, image: File.new("#{Rails.root}/app/assets/images/shoe2.jpg") )
+shoe.photos << Photo.create!( business_id: shoe.id, image: File.new("#{Rails.root}/app/assets/images/shoe3.jpg") )
+
+ian = Owner.create!(first_name: 'Ian', last_name: 'Garcia', uid: 'ian@gmail.com', password: '123456', location: "44 New St, New York, NY", description: "Full time barber and proprietor.", provider: "buildmybusiness")
+
+barber = Business.create!(name: "Blue Chip Barber Shop", description: "Family owned barber shop in the Financial District of New York City.", location: "44 New St, New York, NY", owner_id: ian.id)
+barber.photos << Photo.create!( business_id: barber.id, image: File.new("#{Rails.root}/app/assets/images/barber1.jpg") )
+barber.photos << Photo.create!( business_id: barber.id, image: File.new("#{Rails.root}/app/assets/images/barber2.jpg") )
+barber.photos << Photo.create!( business_id: barber.id, image: File.new("#{Rails.root}/app/assets/images/barber3.jpg") )
 
 Business.create!(name: "Song's Hair Studio
 ", description: 'Beauty Salon', location: '4022 S Conway Rd, Orlando, FL', owner_id: song.id)
