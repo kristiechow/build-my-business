@@ -18,4 +18,5 @@
 //= require gmaps/google
 //= require animsition/animsition.min.js
 //= require main.js
+//= require jquery-ui/autocomplete
 //= require_tree .
