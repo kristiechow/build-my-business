@@ -1,4 +1,5 @@
 class Owner < User
+  has_one :business
 
   def editable_by? user
     self.id == user.id
@@ -8,11 +9,8 @@ class Owner < User
     a = self.received_matches.where(status: "Matched!")
     b = self.sent_matches.where(status: "Matched!")
     a.concat(b)
-    # binding.pry
     return true if a.length >= 3
   end
-
-
 
 end
 

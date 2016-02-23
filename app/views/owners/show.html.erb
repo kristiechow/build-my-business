@@ -13,7 +13,8 @@
   <%= link_to 'edit', edit_owner_path(@owner) %>
 <% end %>
 
-<%=link_to 'Create your Business Page', new_business_path %>
+  <%=link_to 'Create your Business Page', new_business_path %>
+
 
 <% if @owner.id != current_user.id %>
   <div class=”item”>

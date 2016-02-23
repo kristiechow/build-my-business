@@ -4,7 +4,6 @@ class OwnersController < ApplicationController
 
   def index
     @owners = Owner.all
-    # NEXT STEP - order by rating
   end
 
   def show
@@ -52,12 +51,12 @@ class OwnersController < ApplicationController
 
   private
 
-  def owner_params
-    params.require(:owner).permit(:password, :password_confirmation, :first_name, :last_name, :avatar, :uid, :provider)
-  end
+    def owner_params
+      params.require(:owner).permit(:password, :password_confirmation, :first_name, :last_name, :avatar, :uid, :provider)
+    end
 
-  def owner_edit_params
-    params.require(:owner).permit(:first_name, :last_name, :avatar, :uid, :provider, :location, :description)
-  end
+    def owner_edit_params
+      params.require(:owner).permit(:first_name, :last_name, :avatar, :uid, :provider, :location, :description)
+    end
 
 end
