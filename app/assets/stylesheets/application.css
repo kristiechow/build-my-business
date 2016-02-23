@@ -6,6 +6,12 @@
  *= require businesses
  *= require developers
  *= require conversations
+[...]
+*= require slick
+[...]
+[...]
+*= require slick-theme
+[...]
  *= require_tree .
  *= require_self
  */
