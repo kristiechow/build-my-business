@@ -6,7 +6,7 @@
      </div>
     <% end %>
   </div>
-
+  <h3>Owner: <%= link_to @business.owner.first_name, owner_path(@business.owner) %></h3>
   <div class='info'>
      <h3><%=@business.name%></h3>
      <h4>Location: <%=@business.location%></h4>
