@@ -1,5 +1,8 @@
 <div class=”ui segment”>
-  <h3>Mailbox</h3>
+  <h2>Mailbox</h2>
+  <% if @conversations.length == 0 %>
+    <h4>You have an empty mailbox. Start a conversation with a <%= link_to "developer", developers_path %>!</h4>
+  <% else %>
   <div class=”ui list”>
     <div class=”item”>
       <% @conversations.each do |conversation| %>
@@ -14,7 +17,7 @@
           </div>
         <% end %>
       <% end %>
+     </div>
     </div>
   </div>
-</div>
-
+  <% end %>
