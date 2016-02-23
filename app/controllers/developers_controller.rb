@@ -56,7 +56,7 @@ class DevelopersController < ApplicationController
   private
 
   def developer_params
-    params.require(:developer).permit(:password, :password_confirmation, :first_name, :last_name, :uid, :avatar, :provider)
+    params.require(:developer).permit(:password, :password_confirmation, :first_name, :last_name, :uid, :avatar, :provider, skill_ids:[])
   end
 
   def developer_edit_params
