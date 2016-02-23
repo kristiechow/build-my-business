@@ -7,6 +7,11 @@
 
 <% @developers.each do |developer| %>
 <div>
+  <% if has_avatar? developer %>
+<%= link_to image_tag(developer.avatar.url(:thumb)), developer.avatar.url %>
+<% else %>
+    <%= image_tag "blank-profile-pic.png", class: 'profile-pic' %>
+  <% end %>
   <%= link_to developer.first_name, developer_path(developer) %>
   <% if current_user %>
     <% if developer.id != current_user.id %>
