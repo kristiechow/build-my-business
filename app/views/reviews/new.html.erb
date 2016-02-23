@@ -1,24 +1,27 @@
 <h1>Leave a review for <%= @reviewee.first_name %></h1>
 
 <%= form_for [@reviewee, @review]  do |f| %>
-  <p>
-    <%= f.label :comment %>
-    <%= f.text_field :comment %>
-  </p>
-  <p>
-    <%= f.label :communication %>
-   <%= f.select :communication_rating, 1..5 %>
-  </p>
-  <p>
-    <%= f.label :quality %>
-   <%= f.select :quality_rating, 1..5 %>
-  </p>
-  <p>
-    <%= f.label :timeliness %>
-    <%= f.select :timeliness_rating, 1..5 %>
-  </p>
-    <%= f.hidden_field :reviewee, value: @reviewee %>
-  <%= f.hidden_field :review_type, value: current_user.type %>
-
-  <%= f.submit "Create", class: 'button' %>
+  <ul>
+    <li>
+      <%= f.label :comment %>
+      <%= f.text_area :comment %>
+    </li>
+    <li>
+      <%= f.label :communication %>
+      <%= f.select :communication_rating, 1..5 %>
+    </li>
+    <li>
+      <%= f.label :quality %>
+      <%= f.select :quality_rating, 1..5 %>
+    </li>
+    <li>
+      <%= f.label :timeliness %>
+      <%= f.select :timeliness_rating, 1..5 %>
+    </li>
+      <%= f.hidden_field :reviewee, value: @reviewee %>
+      <%= f.hidden_field :review_type, value: current_user.type %>
+    <li>
+      <%= f.submit "Create", class: 'button' %>
+    </li>
+  </ul>
 <% end %>

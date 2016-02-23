@@ -7,8 +7,8 @@
     </ul>
   <% end %>
   <h1>Update Your Profile</h1>
-  <%= form_for @developer do |f| %>
 
+  <%= form_for @developer do |f| %>
     <ul>
       <li>
         <%= f.label :first_name %>
@@ -34,7 +34,6 @@
       <%= f.submit 'Update' %>
       </li>
     </ul>
-
   <% end %>
     <%= link_to 'Delete User', developer_path(@developer), method: :delete, data: { confirm: 'Your user and all associated data will be deleted. Are you sure?'} %>
 </section>
