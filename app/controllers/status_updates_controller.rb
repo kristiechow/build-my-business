@@ -7,9 +7,8 @@ class StatusUpdatesController < ApplicationController
 
   def create
     @business = Business.find(params[:business_id])
-     @status_update = StatusUpdate.new(status_update_params)
-     if @status_update.save
-
+    @status_update = StatusUpdate.new(status_update_params)
+    if @status_update.save
       redirect_to business_path(@business)
     end
   end
@@ -34,11 +33,11 @@ class StatusUpdatesController < ApplicationController
     flash.notice = "Update successfully deleted."
     redirect_to business_path(@business)
   end
-  
+
   private
 
   def status_update_params
-      params.require(:status_update).permit(:description, :percentage_revenue_increase, :business_id)
+    params.require(:status_update).permit(:description, :percentage_revenue_increase, :business_id)
   end
 
 end
