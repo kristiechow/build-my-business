@@ -4,7 +4,6 @@ class DevelopersController < ApplicationController
 
   def index
     @developers = Developer.all
-    # TODO: order by rating
   end
 
   def show
