@@ -1,7 +1,9 @@
 <section>
+
   <h1> <%= @developer.first_name%> <%= @developer.last_name%></h1>
-  <h3><%= @developer.location%></h3>
+  <h3><%= @developer.location %></h3>
   <h4>About Me <%= @developer.description %></h4>
+
   <% if has_avatar? @developer %>
     <%= link_to image_tag(@developer.avatar.url(:thumb)), @developer.avatar.url %>
   <% elsif @auth &&  @developer.id == current_user.id%>
@@ -9,6 +11,7 @@
   <% else %>
     <%= image_tag "blank-profile-pic.png", class: 'profile-pic' %>
   <% end %>
+  
   <ul>
   <% @developer.skills.each do |skill| %>
     <li><%= skill.name %></li>
@@ -16,12 +19,14 @@
   </ul>
 
   <% if current_user && @developer.editable_by?(current_user) %>
-    <%= link_to 'edit', edit_developer_path(@developer) %>
+    <%= link_to 'Edit Profile', edit_developer_path(@developer) %>
   <% end %>
 
   <% if current_user && ! @developer.reviewed?(current_user) %>
-    <%= link_to "leave review", new_developer_review_path(@developer) %>
+    <%= link_to "Leave Review", new_developer_review_path(@developer) %>
   <% end %>
+
+  <h2><%= @developer.first_name%>'s Reviews</h2>
 
   <% if @developer.received_reviews %>
     <% @developer.received_reviews.each do |review| %>
