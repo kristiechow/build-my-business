@@ -34,6 +34,13 @@ class User < ActiveRecord::Base
       end
    end
 
+    def closed_match?
+    a = self.received_matches.where(status: "Matched!")
+    b = self.sent_matches.where(status: "Matched!")
+    a.concat(b)
+    return true if a.length >= 3
+  end
+
    def cross_type?(user)
     user.type != self.type
    end
