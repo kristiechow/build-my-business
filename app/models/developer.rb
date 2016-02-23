@@ -6,12 +6,4 @@ class Developer < User
     self.id == user.id
   end
 
-  def self.search(skill)
-    if Skill.find_by(name: skill)
-      Skill.find_by(name: skill).developers
-    else
-      []
-    end
-  end
-
 end

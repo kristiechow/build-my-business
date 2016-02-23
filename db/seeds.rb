@@ -16,6 +16,8 @@ end
 
 cat_list = Category.all
 
+cat_list_ids = Category.pluck(:id)
+
 6.times do
   Owner.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, uid: Faker::Internet.safe_email, provider: "buildmybusiness", password: '123456', avatar: Faker::Avatar.image, location: Faker::Address.city, description: Faker::Lorem.paragraph)
 end
@@ -71,7 +73,7 @@ end
 
 
 william = Owner.create!(first_name: "Williams", last_name: 'Pinto', uid: 'williamspinto@email.com', password: '123456', provider: "buildmybusiness")
-braza_biz = Business.create!(name: 'Brazas Chicken Inc', description: 'Peruvian & other Latin American chicken & ceviche dishes.', location: '4797 S Orange Ave, Orlando, FL', owner_id: william.id)
+braza_biz = Business.create!(name: 'Brazas Chicken Inc', description: 'Peruvian & other Latin American chicken & ceviche dishes.', location: '4797 S Orange Ave, Orlando, FL', owner_id: william.id, category_ids: [5])
 braza_pic = File.new("#{Rails.root}/app/assets/images/peruvian.jpg")
 Photo.create!(image: braza_pic, business_id: braza_biz.id)
 
@@ -83,7 +85,7 @@ song = Owner.create!(first_name: 'Song', last_name: 'Sampson', uid: 'songsampson
 kung = Owner.create!(first_name: 'Khun', last_name: 'Kung', uid: 'goong@gmail.com', password: '123456', avatar: File.new("#{Rails.root}/app/assets/images/IMG_6601.jpg"), location: "Chaloem Phrakiat Ratchakan Thi 9 Soi 59 Khwaeng Dok Mai, Khet Prawet Krung Thep Maha Nakhon 10250 Thailand", description: "Lifetime hair enthusiast, born and raised in Bangkok", provider: "buildmybusiness")
 
 
-salon = Business.create!(name: "Kung Hair & Beauty", description: "Family salon specializing in women's hair, nails and styling.", location: "Chaloem Phrakiat Ratchakan Thi 9 Soi 59 Khwaeng Dok Mai, Khet Prawet Krung Thep Maha Nakhon 10250 Thailand", owner_id: kung.id)
+salon = Business.create!(name: "Kung Hair & Beauty", description: "Family salon specializing in women's hair, nails and styling.", location: "Chaloem Phrakiat Ratchakan Thi 9 Soi 59 Khwaeng Dok Mai, Khet Prawet Krung Thep Maha Nakhon 10250 Thailand", owner_id: kung.id, category_ids: [9])
 salon.photos << Photo.create!( business_id: salon.id, image: File.new("#{Rails.root}/app/assets/images/salon1.png") )
 salon.photos << Photo.create!( business_id: salon.id, image: File.new("#{Rails.root}/app/assets/images/salon2.png") )
 salon.photos << Photo.create!( business_id: salon.id, image: File.new("#{Rails.root}/app/assets/images/salon3.png") )
@@ -92,24 +94,24 @@ salon.photos << Photo.create!( business_id: salon.id, image: File.new("#{Rails.r
 
 mary = Owner.create!(first_name: 'Mary', last_name: 'Joe', uid: 'mary@gmail.com', password: '123456', location: "40 Exchange Place, Exchange Place, New York, NY", description: "Latina mother and proprietor.", provider: "buildmybusiness")
 
-shoe = Business.create!(name: "Mary's Shine and Repair", description: "Effective and well stocked shoe repair and shine.", location: "40 Exchange Place, Exchange Place, New York, NY", owner_id: mary.id)
+shoe = Business.create!(name: "Mary's Shine and Repair", description: "Effective and well stocked shoe repair and shine.", location: "40 Exchange Place, Exchange Place, New York, NY", owner_id: mary.id, category_ids: [7,9])
 shoe.photos << Photo.create!( business_id: shoe.id, image: File.new("#{Rails.root}/app/assets/images/shoe1.jpg") )
 shoe.photos << Photo.create!( business_id: shoe.id, image: File.new("#{Rails.root}/app/assets/images/shoe2.jpg") )
 shoe.photos << Photo.create!( business_id: shoe.id, image: File.new("#{Rails.root}/app/assets/images/shoe3.jpg") )
 
 ian = Owner.create!(first_name: 'Ian', last_name: 'Garcia', uid: 'ian@gmail.com', password: '123456', location: "44 New St, New York, NY", description: "Full time barber and proprietor.", provider: "buildmybusiness")
 
-barber = Business.create!(name: "Blue Chip Barber Shop", description: "Family owned barber shop in the Financial District of New York City.", location: "44 New St, New York, NY", owner_id: ian.id)
+barber = Business.create!(name: "Blue Chip Barber Shop", description: "Family owned barber shop in the Financial District of New York City.", location: "44 New St, New York, NY", owner_id: ian.id, category_ids: [9])
 barber.photos << Photo.create!( business_id: barber.id, image: File.new("#{Rails.root}/app/assets/images/barber1.jpg") )
 barber.photos << Photo.create!( business_id: barber.id, image: File.new("#{Rails.root}/app/assets/images/barber2.jpg") )
 barber.photos << Photo.create!( business_id: barber.id, image: File.new("#{Rails.root}/app/assets/images/barber3.jpg") )
 
 Business.create!(name: "Song's Hair Studio
-", description: 'Beauty Salon', location: '4022 S Conway Rd, Orlando, FL', owner_id: song.id)
+", description: 'Beauty Salon', location: '4022 S Conway Rd, Orlando, FL', owner_id: song.id, category_ids: [9])
 
-Business.create!(name: "Bob's Business", description: "Just a little bit of business with Bob!", location: "48 Wall Street, New York, NY", owner_id: kristie.id)
+Business.create!(name: "Bob's Business", description: "Just a little bit of business with Bob!", location: "48 Wall Street, New York, NY", owner_id: kristie.id, category_ids: [2,8])
 
-Business.create!(name: "Kerry's Little Diner", description: "Just a cool diner in the middle of Kerryville.", location: "300 West 19th Street, New York, NY", owner_id: kerry.id)
+Business.create!(name: "Kerry's Little Diner", description: "Just a cool diner in the middle of Kerryville.", location: "300 West 19th Street, New York, NY", owner_id: kerry.id, category_ids: [5])
 
-Business.create!(name: "Kejmukda Restaurant Phuket", description: "Cool Malaysian cuisine in Phuket, Thailand", location: "100/404 หมู่ 5, ต.รัษฏา, อ.เมือง, ภูเก็ต, Phuket 83120, Thailand", owner_id: kristie.id)
+Business.create!(name: "Kejmukda Restaurant Phuket", description: "Cool Malaysian cuisine in Phuket, Thailand", location: "100/404 หมู่ 5, ต.รัษฏา, อ.เมือง, ภูเก็ต, Phuket 83120, Thailand", owner_id: kristie.id, category_ids: [5])
 
