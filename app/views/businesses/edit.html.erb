@@ -1,7 +1,6 @@
 <section id='form'>
   <%= form_for @business, html: { multipart: true } do |f| %>
-
-  <ul>
+    <ul>
       <li>
         <%= f.label :name %>
         <%= f.text_field :name %>
@@ -27,6 +26,5 @@
         <%= f.submit %>
       </li>
     </ul>
-
   <% end %>
 </section>

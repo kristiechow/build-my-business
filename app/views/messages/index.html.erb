@@ -7,13 +7,17 @@
 
 
 <%= form_for [@conversation, @message], remote: true, html: {class: 'ui reply form'} do |f| %>
- <div class=”field”>
-   <%= f.text_area :body, class: 'form-control' %>
- </div>
- <%= f.text_field :user_id, value: current_user.id, type: 'hidden' %>
- <div>
+<ul>
+  <li>
+    <%= f.text_area :body, class: 'form-control' %>
+  </li>
+  <li>
+    <%= f.text_field :user_id, value: current_user.id, type: 'hidden' %>
+  </li>
+  <li>
    <%= f.submit 'Add Reply', class: 'button' %>
- </div>
+  </li>
+</ul>
 <% end %>
 
 
