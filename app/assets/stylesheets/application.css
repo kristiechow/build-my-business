@@ -1,5 +1,6 @@
 /*
  *= require normalize-rails
+ *= require animsition/animsition.min.css
  *= require main
  *= require users
  *= require businesses
