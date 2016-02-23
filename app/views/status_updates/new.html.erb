@@ -1,0 +1,29 @@
+<h1>Submit an Update</h1>
+
+<section id='form'>
+  <%= form_for @status_update, html: { multipart: true } do |f| %>
+
+  <ul>
+      <li>
+        <%= f.label :description %>
+        <%= f.text_area :description %>
+      </li>
+      <li>
+        <%= f.label :percentage_increase, "Percent Increase in Revenue Since Site Launch (optional)" %>
+        <%= f.text_field :percentage_revenue_increase %>
+      </li>
+      
+      <li>
+        <%= f.label :photo %>
+        <%= file_field_tag "images[]", type: :file, multiple: true %>
+      </li>
+
+      <li>
+        <%= f.submit %>
+      </li>
+    </ul>
+
+  <% end %>
+</section>
+
+

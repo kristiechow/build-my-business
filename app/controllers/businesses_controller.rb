@@ -30,7 +30,7 @@ class BusinessesController < ApplicationController
   def show
     @business = Business.find(params[:id])
     @owner = @business.owner
-    @hash = Gmaps4rails.build_markers(@business) do |business, marker|
+    @map_data = Gmaps4rails.build_markers(@business) do |business, marker|
      marker.lat business.latitude
      marker.lng business.longitude
      marker.infowindow business.name
