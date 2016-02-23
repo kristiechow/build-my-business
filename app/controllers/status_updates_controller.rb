@@ -37,7 +37,7 @@ class StatusUpdatesController < ApplicationController
   private
 
   def status_update_params
-    params.require(:status_update).permit(:description, :percentage_revenue_increase, :business_id)
+      params.require(:status_update).permit(:description, :percentage_revenue_increase).merge(business_id: current_user.business.id)
   end
 
 end

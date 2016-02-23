@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
     @auth = session[:omniauth] if session[:omniauth]
   end
 
-   def redirect_path(user)
+  def redirect_path(user)
     if user.type == "Owner"
       return owner_path(user)
     else
@@ -37,4 +37,11 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def redirect_edit_path(user)
+    if user.type == "Owner"
+      return edit_owner_path(user)
+    else
+      return edit_developer_path(user)
+    end
+  end
 end
