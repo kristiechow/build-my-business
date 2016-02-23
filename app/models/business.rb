@@ -3,8 +3,6 @@ class Business < ActiveRecord::Base
   has_many :status_updates
   has_many :photos
   has_and_belongs_to_many :categories
-  # has_many :business_categories
-  # has_many :categories, through: :business_categories
 
   geocoded_by :location
   after_validation :geocode
@@ -22,15 +20,6 @@ class Business < ActiveRecord::Base
   def create_photos(photographs)
     photographs.each do |image|
       self.photos.create(image: image)
-    end
-  end
-
-
-  def self.search(category)
-    if Category.find_by(name: category)
-      Category.find_by(name: category).businesses
-    else
-      []
     end
   end
 

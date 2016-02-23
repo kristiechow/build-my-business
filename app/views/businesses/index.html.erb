@@ -1,4 +1,3 @@
-
 <div class="your-class">
   <div><img class="covers" src="http://www.fbcoverdesign.com/wp-content/uploads/2014/08/best_destination_in_the_world-fbcoverdesign.jpg" /></div>
   <div><img class="covers" src="http://i160.photobucket.com/albums/t162/hotlyts24/fb-covers/sept13/classy/tumblr_ma3g9riU8R1r1z3kyo1_500_large.jpg" /></div>
@@ -7,12 +6,13 @@
 
 
 <div>
-  <div id='search-bar'>
-    <%= form_tag businesses_path, method: :get do %>
-      <%= text_field_tag :search, nil, placeholder: 'search by category', class: 'search-field'%>
-      <%= submit_tag 'go', class: 'button'%>
+  <legend>Search Our Businesses</legend>
+    <%= search_form_for @search do |f| %>
+      <%= f.label :name_cont %>
+      <%= f.text_field :name_cont %>
+
+      <%= f.submit "Search" %>
     <% end %>
-  </div>
 </div>
 
 

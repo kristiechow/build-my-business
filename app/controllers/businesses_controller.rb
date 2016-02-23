@@ -1,10 +1,7 @@
 class BusinessesController < ApplicationController
   def index
-    if params[:search]
-      @businesses = Business.search(params[:search])
-    else
-      @businesses = Business.all
-    end
+    @search = Business.search(params[:q])
+    @businesses = @search.result(distinct: true)
   end
 
   def new
@@ -58,8 +55,6 @@ class BusinessesController < ApplicationController
   end
 
   private
-
-
     def business_params
       params.require(:business).permit(:name, :description, :location, category_ids:[]).merge(owner_id: current_user.id)
     end
