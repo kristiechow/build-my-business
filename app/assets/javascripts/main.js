@@ -7,6 +7,13 @@ $(document).ready(function(){
     outDuration: 500
   });
 
+    $('.your-class').slick({
+  autoplay: true,
+  autoplaySpeed: 2000,
+  centerMode: true,
+  variableWidth: true
+  });
+
 
 
 })
