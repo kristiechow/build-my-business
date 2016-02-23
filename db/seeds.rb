@@ -96,9 +96,10 @@ Photo.create!(image: braza_pic, business_id: braza_biz.id)
 
 
 
-kristie = Owner.create!(first_name: "Kristie", last_name: 'Chou', uid: 'kriste@email.com', password: '123123', provider: 'facebook')
-song = Owner.create!(first_name: 'Song', last_name: 'Sampson', uid: 'songsampson@gmail.com', password: '123456',  provider: 'buildmybusiness')
 kerry = Owner.create!(first_name: 'Kerry', last_name: "Imai", uid: "kccom", password: "111111", provider: 'buildmybusiness')
+kristie = Owner.create!(first_name: "Kristie", last_name: 'Chou', uid: 'kristie@email.com', password: '123123', provider: "buildmybusiness")
+song = Owner.create!(first_name: 'Song', last_name: 'Sampson', uid: 'songsampson@gmail.com', password: '123456')
+
 
 Business.create!(name: "Song's Hair Studio
 ", description: 'Beauty Salon', location: '4022 S Conway Rd, Orlando, FL', owner_id: song.id)
