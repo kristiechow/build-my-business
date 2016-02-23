@@ -1,6 +1,6 @@
-<% unless current_user == user  %>
+<% unless current_user == user %>
 
- <% if ! user.matched?(current_user) && user.cross_type?(current_user) && ! user.closed_match? %>
+ <% if current_user && ! user.matched?(current_user) && user.cross_type?(current_user) && ! user.closed_match? %>
 
     <h4>Interested?</h4>
     <%= link_to "Send Request", matches_path(id: user), :method => :post %>

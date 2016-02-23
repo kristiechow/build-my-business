@@ -4,6 +4,12 @@
   <h3><%= @owner.location %></h3>
   <h4>About Me <%= @owner.description %></h4>
 
+  <div class= "show-biz" >
+	<h3> <%= @owner.first_name %>'s business: </h3>
+	<%= link_to @owner.business.name, business_path(@owner.business) %>
+	<p><%= @owner.business.description %></p>
+  </div>
+
 	<% if has_avatar? @owner %>
 	  <%= link_to image_tag(@owner.avatar.url(:thumb)), @owner.avatar.url %>
 	<% elsif @auth &&  @owner.id == current_user.id %>
@@ -13,12 +19,8 @@
 	<% end %>
 	<hr>
 
+    <% if current_user %>
 	<% if @owner.business && @owner.editable_by?(current_user) %>
-	<div class= "show-biz" >
-	<h3> <%= @owner.first_name %>'s business: </h3>
-	<%= link_to @owner.business.name, business_path(@owner.business) %>
-	<p><%= @owner.business.description %></p>
-	</div>
 	  <%= link_to 'Edit Profile', edit_owner_path(@owner) %>
 	  <%= link_to 'Edit Business', edit_business_path(@owner.business) %>
 	<% elsif @owner.editable_by?(current_user) %>
@@ -31,5 +33,6 @@
 	  <div class=”item”>
 	    <%= @owner.first_name %> <%= link_to "Contact Me", conversations_path(sender_id: current_user.id, recipient_id: @owner.id), method: "post"%>
 	  </div>
+	<% end %>
 	<% end %>
 </section>
