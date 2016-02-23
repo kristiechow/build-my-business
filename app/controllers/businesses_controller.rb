@@ -1,6 +1,6 @@
 class BusinessesController < ApplicationController
   def index
-    @search = Business.search(params[:q])
+    @search = Business.ransack(params[:q])
     @businesses = @search.result(distinct: true)
   end
 
