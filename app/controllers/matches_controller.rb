@@ -16,8 +16,10 @@ class MatchesController < ApplicationController
   end
 
   def request_reject
+    # binding.pry
     matchable = Match.where(id: params[:id]).first
     matchable.destroy
+    redirect_to accept_match_path(current_user)
   end
 
 end
