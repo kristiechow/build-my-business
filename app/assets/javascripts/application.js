@@ -15,4 +15,6 @@
 //= require private_pub
 //= require underscore
 //= require gmaps/google
+//= require animsition/animsition.min.js
+//= require main.js
 //= require_tree .
