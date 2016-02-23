@@ -15,6 +15,7 @@
   <div>
     <% if @business.editable_by? current_user %>
       <%= link_to 'edit', edit_business_path(@business)%>
+      <%= link_to 'submit an update', new_business_status_update_path(@business) %>
     <% end %>
   </div>
 
@@ -32,7 +33,7 @@
   <script type="text/javascript">
     handler = Gmaps.build('Google');
     handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-     markers = handler.addMarkers(<%=raw @hash.to_json %>);
+     markers = handler.addMarkers(<%=raw @map_data.to_json %>);
     handler.bounds.extendWith(markers);
     handler.fitMapToBounds();
     });
