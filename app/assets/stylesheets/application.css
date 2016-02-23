@@ -13,6 +13,7 @@
 *= require slick-theme
 [...]
  *= require flexbox
+ *= require jquery-ui/datepicker
  *= require_tree .
  *= require_self
  */
