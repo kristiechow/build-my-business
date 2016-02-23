@@ -7,7 +7,7 @@ class OwnersController < ApplicationController
   end
 
   def show
-    @owner = Owner.find_by(id: params[:id])
+    @owner = Owner.find(params[:id])
   end
 
   def new
@@ -28,11 +28,11 @@ class OwnersController < ApplicationController
 
   def edit
     session[:registration_type] = 'Owner'
-    @owner = Owner.find_by(id: params[:id])
+    @owner = Owner.find(params[:id])
   end
 
   def update
-    @owner = Owner.find_by(id: params[:id])
+    @owner = Owner.find(params[:id])
     if @owner.update(owner_edit_params)
       flash.notice = "Update successful."
       redirect_to owner_path(@owner)
@@ -42,7 +42,7 @@ class OwnersController < ApplicationController
   end
 
   def destroy
-    owner = Owner.find_by(id: params[:id])
+    owner = Owner.find(params[:id])
     owner.destroy
     flash.notice = "Owner successfully deleted."
     redirect_to root_path

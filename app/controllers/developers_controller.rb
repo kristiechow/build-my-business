@@ -4,11 +4,11 @@ class DevelopersController < ApplicationController
 
   def index
     @developers = Developer.all
-    # NEXT STEP - order by rating
+    # TODO: order by rating
   end
 
   def show
-    @developer = Developer.find_by(id: params[:id])
+    @developer = Developer.find(params[:id])
   end
 
   def new
@@ -28,11 +28,11 @@ class DevelopersController < ApplicationController
   end
 
   def edit
-    @developer = Developer.find_by(id: params[:id])
+    @developer = Developer.find(params[:id])
   end
 
   def update
-    @developer = Developer.find_by(id: params[:id])
+    @developer = Developer.find(params[:id])
     @skills = params[:skills].split(",").map {|skill| skill.strip}
     if @developer.update(developer_edit_params)
         @skills.each do |skill|
@@ -46,7 +46,7 @@ class DevelopersController < ApplicationController
   end
 
   def destroy
-    developer = Developer.find_by(id: params[:id])
+    developer = Developer.find(params[:id])
     developer.destroy
     flash.notice = "User successfully deleted."
     redirect_to root_path
