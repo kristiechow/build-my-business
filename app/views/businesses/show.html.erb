@@ -1,11 +1,5 @@
 <section>
-  <div class='business-images'>
-    <% @business.photos.each do |photo| %>
-     <div>
-       <%=image_tag photo.image.url(:square) %>
-     </div>
-    <% end %>
-  </div>
+  
   <h3>Owner: <%= link_to @business.owner.first_name, owner_path(@business.owner) %></h3>
   <div class='info'>
     <h3>Company Name: <%=@business.name%></h3>
@@ -18,6 +12,15 @@
     <% end %>
     </ul>
   </div>
+
+  <div class='business-images'>
+    <% @business.photos.each do |photo| %>
+     <div>
+       <%=image_tag photo.image.url(:square) %>
+     </div>
+    <% end %>
+  </div>
+  
   <div>
     <% if @business.editable_by? current_user %>
       <%= link_to 'edit', edit_business_path(@business)%>
@@ -26,7 +29,7 @@
   </div>
 
 
-  <%= render partial: 'partials/matching', locals: {user: @owner }%>
+  <%= render partial: 'partials/matching', locals: { user: @owner }%>
 
   <div>
     <h4>Status: @business.status</h4>
@@ -44,4 +47,10 @@
     handler.fitMapToBounds();
     });
   </script>
+
+  <% if @business.status_updates %>
+    <% @business.status_updates.each do |update| %>
+    <%= render partial: 'partials/status_update', locals: { business: @business }%>
+    <% end %> 
+  <% end %>
 </section>
