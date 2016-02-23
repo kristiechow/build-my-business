@@ -16,8 +16,8 @@
       <%= f.text_field :location %>
     </li>
     <li>
-      <%= f.label 'Catgories'%>
-      <%= f.collection_check_boxes :catgory_ids, Category.all, :id, :name do %>
+      <%= f.label 'Categories'%>
+      <%= f.collection_check_boxes :category_ids, Category.all, :id, :name do |b| %>
         <ul>
           <li class='collection-check-box'>
              <%= b.check_box %>

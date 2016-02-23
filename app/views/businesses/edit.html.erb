@@ -15,7 +15,7 @@
       </li>
       <li>
         <%= f.label 'Catgories'%>
-        <%= f.collection_check_boxes :catgory_ids, Category.all, :id, :name do %>
+        <%= f.collection_check_boxes :catgory_ids, Category.all, :id, :name do |b| %>
           <ul>
             <li class='collection-check-box'>
                <%= b.check_box %>
