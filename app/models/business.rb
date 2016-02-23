@@ -11,12 +11,6 @@ class Business < ActiveRecord::Base
     owner == user
   end
 
-  def create_categories(categories)
-    categories.each do |category|
-        self.categories << Category.find_or_create_by(name: category)
-    end
-  end
-
   def create_photos(photographs)
     photographs.each do |image|
       self.photos.create(image: image)
