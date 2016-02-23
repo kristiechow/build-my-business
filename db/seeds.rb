@@ -64,7 +64,7 @@ scott = Developer.create!(first_name: 'Scott', last_name: 'Tso', uid: 'scottycho
 kb_pic = File.new("#{Rails.root}/app/assets/images/kb.jpg")
 kb = Developer.create!(first_name: 'K.B.', last_name: 'DiAngelo', uid: 'kb-diangleo@gmail.com', password: '123456', avatar: kb_pic, location: Faker::Address.city, description: Faker::Lorem.paragraph, provider: "buildmybusiness", skill_ids: dev_skill_ids)
 
-# nums = [3, 4, 5]
+nums = [3, 4, 5]
 
 devs = Developer.all
 devs.each do |dev|
