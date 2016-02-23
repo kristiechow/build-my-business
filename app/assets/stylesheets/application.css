@@ -12,6 +12,7 @@
 [...]
 *= require slick-theme
 [...]
+ *= require flexbox
  *= require_tree .
  *= require_self
  */

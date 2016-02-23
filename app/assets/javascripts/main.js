@@ -9,11 +9,17 @@ $(document).ready(function(){
 
     $('.your-class').slick({
   autoplay: true,
-  autoplaySpeed: 2000,
+  autoplaySpeed: 3500,
   centerMode: true,
   variableWidth: true
   });
 
-
-
+    $('.developer-showcase').slick({
+    dots: true,
+     autoplay: true,
+  autoplaySpeed: 2000,
+   infinite: true,
+  slidesToShow: 3,
+  slidesToScroll: 1
 })
+  })
