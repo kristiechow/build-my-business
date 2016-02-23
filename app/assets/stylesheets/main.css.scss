@@ -35,7 +35,6 @@ ul {
 
   .container {
     width: 85%;
-    max-width: 1000px;
     margin: 0 auto;
   }
 }
@@ -88,8 +87,8 @@ a {
 
 
 .profile-pic {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
 }
 
 
@@ -149,5 +148,13 @@ input[type="submit"] {
   color: #fff;
 }
 
+.developer-showcase {
+  padding: 10px;
+  background: #fff;
+  border-radius: 5px;
+}
+
+.developer-item {
+}
 
 

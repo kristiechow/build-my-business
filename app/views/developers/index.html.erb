@@ -5,19 +5,24 @@
   <% end %>
 </div>
 
+<div class= "developer-showcase">
 <% @developers.each do |developer| %>
-<div>
+<div class= "developer-item">
   <% if has_avatar? developer %>
-<%= link_to image_tag(developer.avatar.url(:thumb)), developer.avatar.url %>
+<%= image_tag (developer.avatar.url(:square)), class: "inner-items" %>
 <% else %>
-    <%= image_tag "blank-profile-pic.png", class: 'profile-pic' %>
+    <%= image_tag "blank-profile-pic.png", class: 'profile-pic inner-items' %>
   <% end %>
+  <div class = "name-item">
   <%= link_to developer.first_name, developer_path(developer) %>
+  <br>
   <% if current_user %>
     <% if developer.id != current_user.id %>
   <%= link_to "Send Message", conversations_path(sender_id: current_user.id, recipient_id: developer.id), method: "post", class: "btn btn-success btn-xs start-conversation",
                     "data-sid" => current_user.id, "data-rip" => developer.id %>
     <% end %>
   <% end %>
+</div>
   </div>
 <% end %>
+</div>
