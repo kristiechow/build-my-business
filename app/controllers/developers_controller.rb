@@ -33,11 +33,7 @@ class DevelopersController < ApplicationController
 
   def update
     @developer = Developer.find(params[:id])
-    @skills = params[:skills].split(",").map {|skill| skill.strip}
     if @developer.update(developer_edit_params)
-        @skills.each do |skill|
-        @developer.skills << Skill.find_or_create_by(name: skill)
-      end
       flash.notice = "Update successful."
       redirect_to developer_path(@developer)
     else
@@ -60,7 +56,7 @@ class DevelopersController < ApplicationController
   end
 
   def developer_edit_params
-    params.require(:developer).permit(:first_name, :last_name, :uid, :avatar, :provider, :description, :location)
+    params.require(:developer).permit(:first_name, :last_name, :uid, :avatar, :provider, :description, :location, skill_ids:[])
   end
 
 end

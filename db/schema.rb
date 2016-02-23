@@ -16,13 +16,6 @@ ActiveRecord::Schema.define(version: 20160222154335) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "business_categories", force: :cascade do |t|
-    t.integer  "category_id"
-    t.integer  "business_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
   create_table "businesses", force: :cascade do |t|
     t.string   "name",          null: false
     t.string   "description",   null: false
@@ -39,6 +32,13 @@ ActiveRecord::Schema.define(version: 20160222154335) do
 
   add_index "businesses", ["developer_id"], name: "index_businesses_on_developer_id", using: :btree
   add_index "businesses", ["owner_id"], name: "index_businesses_on_owner_id", using: :btree
+
+  create_table "businesses_categories", force: :cascade do |t|
+    t.integer  "category_id"
+    t.integer  "business_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 20160222154335) do
     t.datetime "updated_at",   null: false
   end
 
-  create_table "developer_skills", force: :cascade do |t|
+  create_table "developers_skills", force: :cascade do |t|
     t.integer  "developer_id"
     t.integer  "skill_id"
     t.datetime "created_at",   null: false
