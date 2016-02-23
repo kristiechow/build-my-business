@@ -27,8 +27,15 @@
         <%= f.text_area :description %>
       </li>
        <li>
-        <%= label_tag :skills, 'Your Skills (comma separated)' %>
-        <%= text_area_tag :skills, nil %>
+        <%= f.label 'Skills'%>
+        <%= f.collection_check_boxes :skill_ids, Skill.all, :id, :name do |b| %>
+          <ul>
+            <li class='collection-check-box'>
+               <%= b.check_box %>
+               <%= b.label %>
+            </li>
+          </ul>
+        <% end %>
       </li>
       <li>
       <%= f.submit 'Update' %>

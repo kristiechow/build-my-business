@@ -1,6 +1,6 @@
-class CreateDeveloperSkills < ActiveRecord::Migration
+class CreateDevelopersSkills < ActiveRecord::Migration
   def change
-    create_table :developer_skills do |t|
+    create_table :developers_skills do |t|
       t.integer :developer_id
       t.integer :skill_id
 

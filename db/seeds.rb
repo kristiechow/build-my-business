@@ -1,16 +1,24 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+skills_list = ['Ruby', 'Rails', 'CSS', 'JavaScript', 'HTML', 'AJAX', 'Responsive Web Design', 'Version control(Git/GitHub)', 'SQL, Database Querying, and Schema Design ', 'Test Driven Development', 'Agile Methodologies']
 
-dev_skills = ['JavaScript', 'jQuery', 'HTML', 'SQL', 'Ruby', 'AJAX', 'CSS', 'Rails']
-12.times do
-  cat = Category.create!(name: Faker::Commerce.department)
+skills_list.each do |skill|
+  Skill.create!(name: skill)
 end
-cats = Category.all
+
+dev_skills = Skill.all
+
+dev_skill_ids = Skill.pluck(:id)
+
+categories_list = ['Automotive', 'Business Support & Supplies', 'Computers & Electronics', 'Education', 'Food, Dining, & Entertainment', 'Home & Garden', 'Merchants(Retail)', 'Miscellaneous/Other', 'Personal Care & Services', 'Travel & Transportation']
+
+
+categories_list.each do |cat|
+  Category.create!(name: cat)
+end
+
+cat_list = Category.all
+
+
+
 
 6.times do
   Owner.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, uid: Faker::Internet.safe_email, provider: "buildmybusiness", password: '123456', avatar: Faker::Avatar.image, location: Faker::Address.city, description: Faker::Lorem.paragraph)
@@ -19,63 +27,42 @@ owners = Owner.all
 
 
 6.times do
-  biz = Business.create!(name: Faker::Company.name, description: Faker::Lorem.paragraph, location: Faker::Address.street_address, owner_id: owners.sample.id)
-  biz.categories << cats.sample
+  biz = Business.create!(name: Faker::Company.name, description: Faker::Lorem.paragraph, location: Faker::Address.street_address, owner_id: owners.sample.id, category_ids: [cat_list.sample.id])
   biz.photos << Photo.create!( business_id: biz.id, image: Faker::Placeholdit.image)
 end
 
 
-yi = Developer.create!(first_name: 'Yi', last_name: 'Lu', uid: 'yilu@gmail.com', password: '123456', provider: "buildmybusiness", location: Faker::Address.city, description: Faker::Lorem.paragraph)
-dev_skills.each do |skill|
-  yi.skills <<  Skill.find_or_create_by(name: skill)
-end
+yi = Developer.create!(first_name: 'Yi', last_name: 'Lu', uid: 'yilu@gmail.com', password: '123456', provider: "buildmybusiness", location: Faker::Address.city, description: Faker::Lorem.paragraph, skill_ids: dev_skill_ids)
+
 
 
 
 gary_pic = File.new("#{Rails.root}/app/assets/images/gary.jpg")
-gary = Developer.create!(first_name: 'Gary', last_name: 'Tso', uid: 'garytso@gmail.com', password: '123456', location: Faker::Address.city, description: Faker::Lorem.paragraph, provider: "buildmybusiness")
-dev_skills.each do |skill|
-  gary.skills <<  Skill.find_or_create_by(name: skill)
-end
+gary = Developer.create!(first_name: 'Gary', last_name: 'Tso', uid: 'garytso@gmail.com', password: '123456', location: Faker::Address.city, description: Faker::Lorem.paragraph, provider: "buildmybusiness", skill_ids: dev_skill_ids)
+
 
 
 dan_pic = File.new("#{Rails.root}/app/assets/images/dan.jpg")
-dan = Developer.create!(first_name: 'Dan', last_name: 'Andersen', uid: 'danandersen2@gmail.com', password: '123456', avatar: dan_pic, location: Faker::Address.city, description: Faker::Lorem.paragraph, provider: "buildmybusiness")
-dev_skills.each do |skill|
-  dan.skills <<  Skill.find_or_create_by(name: skill)
-end
-
+dan = Developer.create!(first_name: 'Dan', last_name: 'Andersen', uid: 'danandersen2@gmail.com', password: '123456', avatar: dan_pic, location: Faker::Address.city, description: Faker::Lorem.paragraph, provider: "buildmybusiness", skill_ids: dev_skill_ids)
 
 
 
 mira_pic = File.new("#{Rails.root}/app/assets/images/mira.jpg")
-mira = Developer.create!(first_name: 'Mira', last_name: 'Scarvalone', uid: 'mirascarvalone@gmail.com', password: '123456', avatar: mira_pic, location: Faker::Address.city, description: Faker::Lorem.paragraph, provider: "buildmybusiness")
-dev_skills.each do |skill|
-  mira.skills <<  Skill.find_or_create_by(name: skill)
-end
+mira = Developer.create!(first_name: 'Mira', last_name: 'Scarvalone', uid: 'mirascarvalone@gmail.com', password: '123456', avatar: mira_pic, location: Faker::Address.city, description: Faker::Lorem.paragraph, provider: "buildmybusiness", skill_ids: dev_skill_ids)
 
 
-ed = Developer.create!(first_name: 'Edward', last_name: 'Gemson', uid: 'edwardgemson@gmail.com', password: '123456', location: Faker::Address.city, description: Faker::Lorem.paragraph, provider: "buildmybusiness")
-dev_skills.each do |skill|
-  ed.skills <<  Skill.find_or_create_by(name: skill)
-end
+ed = Developer.create!(first_name: 'Edward', last_name: 'Gemson', uid: 'edwardgemson@gmail.com', password: '123456', location: Faker::Address.city, description: Faker::Lorem.paragraph, provider: "buildmybusiness", skill_ids: dev_skill_ids)
 
 
 
 
-scott = Developer.create!(first_name: 'Scott', last_name: 'Tso', uid: 'scottychou@gmail.com', password: '123456', location: Faker::Address.city, description: Faker::Lorem.paragraph, provider: "buildmybusiness")
-dev_skills.each do |skill|
-  scott.skills <<  Skill.find_or_create_by(name: skill)
-end
+scott = Developer.create!(first_name: 'Scott', last_name: 'Tso', uid: 'scottychou@gmail.com', password: '123456', location: Faker::Address.city, description: Faker::Lorem.paragraph, provider: "buildmybusiness", skill_ids: dev_skill_ids)
 
 
 
 
 kb_pic = File.new("#{Rails.root}/app/assets/images/kb.jpg")
-kb = Developer.create!(first_name: 'K.B.', last_name: 'DiAngelo', uid: 'kb-diangleo@gmail.com', password: '123456', avatar: kb_pic, location: Faker::Address.city, description: Faker::Lorem.paragraph, provider: "buildmybusiness")
-dev_skills.each do |skill|
-  kb.skills <<  Skill.find_or_create_by(name: skill)
-end
+kb = Developer.create!(first_name: 'K.B.', last_name: 'DiAngelo', uid: 'kb-diangleo@gmail.com', password: '123456', avatar: kb_pic, location: Faker::Address.city, description: Faker::Lorem.paragraph, provider: "buildmybusiness", skill_ids: dev_skill_ids)
 
 nums = [3, 4, 5]
 

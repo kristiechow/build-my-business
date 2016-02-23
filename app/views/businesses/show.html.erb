@@ -8,9 +8,15 @@
   </div>
   <h3>Owner: <%= link_to @business.owner.first_name, owner_path(@business.owner) %></h3>
   <div class='info'>
-     <h3><%=@business.name%></h3>
-     <h4>Location: <%=@business.location%></h4>
-     <p><%=@business.description%></p>
+    <h3>Company Name: <%=@business.name%></h3>
+    <h4>Location: <%=@business.location%></h4>
+    <h4>Description</h4>
+    <p><%=@business.description%></p>
+    <ul>Categories
+    <% @business.categories.each do |cat| %>
+      <li><%= cat.name %></li>
+    <% end %>
+    </ul>
   </div>
   <div>
     <% if @business.editable_by? current_user %>

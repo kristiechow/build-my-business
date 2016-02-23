@@ -16,8 +16,15 @@
       <%= f.text_field :location %>
     </li>
     <li>
-      <%= label_tag :categories, "Your Business' Categories (comma separated)" %>
-      <%= text_area_tag :categories, nil %>
+      <%= f.label 'Categories'%>
+      <%= f.collection_check_boxes :category_ids, Category.all, :id, :name do |b| %>
+        <ul>
+          <li class='collection-check-box'>
+             <%= b.check_box %>
+             <%= b.label %>
+          </li>
+        </ul>
+      <% end %>
     </li>
     <li>
       <%= f.label :photo %>

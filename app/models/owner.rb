@@ -5,7 +5,5 @@ class Owner < User
     self.id == user.id
   end
 
-
-
 end
 

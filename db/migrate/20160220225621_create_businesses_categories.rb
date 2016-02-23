@@ -1,6 +1,6 @@
-class CreateBusinessCategories < ActiveRecord::Migration
+class CreateBusinessesCategories < ActiveRecord::Migration
   def change
-    create_table :business_categories do |t|
+    create_table :businesses_categories do |t|
       t.integer :category_id
       t.integer :business_id
 
