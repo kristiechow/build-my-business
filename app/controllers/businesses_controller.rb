@@ -13,10 +13,8 @@ class BusinessesController < ApplicationController
 
   def create
     @business = Business.new(business_params)
-    @categories = params[:categories].split(",").map {|category| category.strip}
 
     if @business.save
-      @business.create_categories(@categories)
       if params[:images]
         @business.create_photos(params[:images])
       end
