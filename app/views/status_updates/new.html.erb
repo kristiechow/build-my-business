@@ -1,7 +1,7 @@
-<h1>Submit an Update</h1>
-
 <section id='form'>
-  <%= form_for @status_update, html: { multipart: true } do |f| %>
+  <%= form_for [@business, @status_update], html: { multipart: true } do |f| %>
+
+  <h1>Submit an Update</h1>
 
   <ul>
       <li>

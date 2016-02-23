@@ -1,17 +1,13 @@
 <div id="status-update">
-    <h3>Updates on @business.name from @business.owner.name</h3>
-    <% @status_update.description %>
-     <% @status_update.percentage_revenue_increase %>
-
-    <div class='status-update-images'>
-    <% @status_update.photos.each do |photo| %>
-     <div>
-       <%=image_tag photo.image.url(:square) %>
-     </div>
+    <h3>Updates on <%=business.name%></h3>
+    <% business.status_updates.each do |update| %>
+     <h4><%= update.description %></h4>
+     <h4><%= update.percentage_revenue_increase %></h4>
+      <% update.photos.each do |photo| %>
+        <div>
+          <%=image_tag photo.image.url(:square) %>
+        </div>
+    <% end %>
     <% end %>
   </div>
-
-  <% if current_user == user %>
-    <%= link_to 'new_business_status_update_path %>
-
 </div>

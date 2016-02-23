@@ -95,6 +95,7 @@ ActiveRecord::Schema.define(version: 20160222154335) do
 
   create_table "photos", force: :cascade do |t|
     t.integer  "business_id"
+    t.integer  "status_update_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.string   "image_file_name"
@@ -104,6 +105,7 @@ ActiveRecord::Schema.define(version: 20160222154335) do
   end
 
   add_index "photos", ["business_id"], name: "index_photos_on_business_id", using: :btree
+  add_index "photos", ["status_update_id"], name: "index_photos_on_status_update_id", using: :btree
 
   create_table "reviews", force: :cascade do |t|
     t.string   "comment",              null: false

@@ -4,6 +4,7 @@
   <h3><%= @owner.location %></h3>
   <h4>About Me <%= @owner.description %></h4>
 
+
   <% if has_avatar? @owner %>
     <%= link_to image_tag(@owner.avatar.url(:thumb)), @owner.avatar.url %>
   <% elsif @auth &&  @owner.id == current_user.id %>
