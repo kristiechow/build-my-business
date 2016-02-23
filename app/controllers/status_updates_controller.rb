@@ -9,6 +9,9 @@ class StatusUpdatesController < ApplicationController
     @business = Business.find(params[:business_id])
     @status_update = StatusUpdate.new(status_update_params)
     if @status_update.save
+      if params[:images]
+        @status_update.create_photos(params[:images])
+      end
       redirect_to business_path(@business)
     end
   end
