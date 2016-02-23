@@ -1,0 +1,27 @@
+.developer-showcase {
+  /*display: flex;*/
+  min-height: 50vh;
+/*  flex-wrap: wrap;
+  justify-content: space-between;
+  height: 500px;*/
+  background-color: rgba(0, 0, 0, 0.81);
+}
+
+.developer-item {
+  display: flex;
+  margin-right: 10em;
+  margin-left: 5em;
+}
+
+.inner-items {
+  align-self: center;
+   border-radius: 50%;
+     flex: 0;
+}
+
+.name-item {
+  align-self: baseline;
+  text-align: center;
+}
+
+
