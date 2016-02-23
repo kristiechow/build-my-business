@@ -35,6 +35,7 @@ gem 'omniauth-facebook'
 gem 'omniauth-github'
 gem "jquery-slick-rails"
 gem 'ransack'
+gem 'jquery-ui-rails'
 
 
 # Use Unicorn as the app server
