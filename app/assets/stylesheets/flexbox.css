@@ -25,3 +25,22 @@
 }
 
 
+.all-businesses {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.business {
+/*  display: flex;
+  flex-wrap: wrap;*/
+  width: 25%;
+  margin: 3%;
+  border-style: ridge;
+  flex: auto;
+   border-radius: 10%;
+}
+
+.business-images {
+  border-radius: 10%;
+}
