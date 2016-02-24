@@ -14,27 +14,27 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-02-24T11:49:16-05:00">2016-02-24T11:49:16-05:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-02-24T12:04:26-05:00">2016-02-24T12:04:26-05:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">38.34%</span></span>
+    (<span class="covered_percent"><span class="red">40.63%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.44
+         0.47
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>31</b> files in total.
-    <b>459</b> relevant lines. 
-    <span class="green"><b>176</b> lines covered</span> and
-    <span class="red"><b>283</b> lines missed </span>
+    <b>448</b> relevant lines. 
+    <span class="green"><b>182</b> lines covered</span> and
+    <span class="red"><b>266</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -132,12 +132,12 @@
 
       <tr>
         <td class="strong"><a href="#4b6b7511f868824838f2f173c59d97da5380c725" class="src_link" title="app/controllers/photos_controller.rb">app/controllers/photos_controller.rb</a></td>
-        <td class="red strong">0.0 %</td>
+        <td class="red strong">35.29 %</td>
         <td>28</td>
-        <td>28</td>
-        <td>0</td>
-        <td>28</td>
-        <td>0.0</td>
+        <td>17</td>
+        <td>6</td>
+        <td>11</td>
+        <td>0.4</td>
       </tr>
 
       <tr>
@@ -369,20 +369,20 @@
           <div class="file_list_container" id="Controllers">
   <h2>
     <span class="group_name">Controllers</span>
-    (<span class="covered_percent"><span class="red">26.28%</span></span>
+    (<span class="covered_percent"><span class="red">29.06%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.34
+         0.37
        </span>
     </span> hits/line)
   </h2>
   <a name="Controllers"></a>
   <div>
     <b>12</b> files in total.
-    <b>331</b> relevant lines. 
-    <span class="green"><b>87</b> lines covered</span> and
-    <span class="red"><b>244</b> lines missed </span>
+    <b>320</b> relevant lines. 
+    <span class="green"><b>93</b> lines covered</span> and
+    <span class="red"><b>227</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -480,12 +480,12 @@
 
       <tr>
         <td class="strong"><a href="#4b6b7511f868824838f2f173c59d97da5380c725" class="src_link" title="app/controllers/photos_controller.rb">app/controllers/photos_controller.rb</a></td>
-        <td class="red strong">0.0 %</td>
+        <td class="red strong">35.29 %</td>
         <td>28</td>
-        <td>28</td>
-        <td>0</td>
-        <td>28</td>
-        <td>0.0</td>
+        <td>17</td>
+        <td>6</td>
+        <td>11</td>
+        <td>0.4</td>
       </tr>
 
       <tr>
@@ -2994,26 +2994,28 @@
         <div class="source_table" id="4b6b7511f868824838f2f173c59d97da5380c725">
   <div class="header">
     <h3>app/controllers/photos_controller.rb</h3>
-    <h4><span class="red">0.0 %</span> covered</h4>
+    <h4><span class="red">35.29 %</span> covered</h4>
     <div>
-      <b>28</b> relevant lines.
-      <span class="green"><b>0</b> lines covered</span> and
-      <span class="red"><b>28</b> lines missed.</span>
+
+      <b>17</b> relevant lines. 
+      <span class="green"><b>6</b> lines covered</span> and
+      <span class="red"><b>11</b> lines missed.</span>
+
     </div>
   </div>
 
   <pre>
     <ol>
-
-        <li class="missed" data-hits="0" data-linenumber="1">
-
-
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
           <code class="ruby">class PhotosController &lt; ApplicationController</code>
         </li>
-
-        <li class="missed" data-hits="0" data-linenumber="2">
-
-
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
           <code class="ruby">  def new</code>
         </li>
 
@@ -3023,20 +3025,20 @@
           <code class="ruby">    @photo = Photo.new</code>
         </li>
 
-        <li class="missed" data-hits="0" data-linenumber="4">
-
-
+        <li class="never" data-hits="" data-linenumber="4">
+          
+          
           <code class="ruby">  end</code>
         </li>
-
-        <li class="missed" data-hits="0" data-linenumber="5">
-
-
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
           <code class="ruby"></code>
         </li>
-
-        <li class="missed" data-hits="0" data-linenumber="6">
-
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
 
           <code class="ruby">  def create</code>
         </li>
@@ -3064,9 +3066,8 @@
 
           <code class="ruby">      redirect_to root_path</code>
         </li>
-
-        <li class="missed" data-hits="0" data-linenumber="11">
-
+      
+        <li class="never" data-hits="" data-linenumber="11">
 
           <code class="ruby">    else</code>
         </li>
@@ -3077,26 +3078,26 @@
           <code class="ruby">      render &#39;new&#39;</code>
         </li>
 
-        <li class="missed" data-hits="0" data-linenumber="13">
-
-
+        <li class="never" data-hits="" data-linenumber="13">
+          
+          
           <code class="ruby">    end</code>
         </li>
-
-        <li class="missed" data-hits="0" data-linenumber="14">
-
-
+      
+        <li class="never" data-hits="" data-linenumber="14">
+          
+          
           <code class="ruby">  end</code>
         </li>
-
-        <li class="missed" data-hits="0" data-linenumber="15">
-
-
+      
+        <li class="never" data-hits="" data-linenumber="15">
+          
+          
           <code class="ruby"></code>
         </li>
-
-        <li class="missed" data-hits="0" data-linenumber="16">
-
+      
+        <li class="covered" data-hits="1" data-linenumber="16">
+          <span class="hits">1</span>
 
           <code class="ruby">  def destroy</code>
         </li>
@@ -3125,32 +3126,32 @@
           <code class="ruby">    redirect_to root_path</code>
         </li>
 
-        <li class="missed" data-hits="0" data-linenumber="21">
-
-
+        <li class="never" data-hits="" data-linenumber="21">
+          
+          
           <code class="ruby">  end</code>
         </li>
-
-        <li class="missed" data-hits="0" data-linenumber="22">
-
-
+      
+        <li class="never" data-hits="" data-linenumber="22">
+          
+          
           <code class="ruby"></code>
         </li>
-
-        <li class="missed" data-hits="0" data-linenumber="23">
-
-
+      
+        <li class="covered" data-hits="1" data-linenumber="23">
+          <span class="hits">1</span>
+          
           <code class="ruby">  private</code>
         </li>
-
-        <li class="missed" data-hits="0" data-linenumber="24">
-
-
+      
+        <li class="never" data-hits="" data-linenumber="24">
+          
+          
           <code class="ruby"></code>
         </li>
-
-        <li class="missed" data-hits="0" data-linenumber="25">
-
+      
+        <li class="covered" data-hits="1" data-linenumber="25">
+          <span class="hits">1</span>
 
           <code class="ruby">    def photo_params</code>
         </li>
@@ -3161,14 +3162,13 @@
           <code class="ruby">      params.require(:photo).permit(:image, :name)</code>
         </li>
 
-        <li class="missed" data-hits="0" data-linenumber="27">
-
-
+        <li class="never" data-hits="" data-linenumber="27">
+          
+          
           <code class="ruby">    end</code>
         </li>
-
-        <li class="missed" data-hits="0" data-linenumber="28">
-
+      
+        <li class="never" data-hits="" data-linenumber="28">
 
           <code class="ruby">end</code>
         </li>
