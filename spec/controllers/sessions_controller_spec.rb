@@ -12,8 +12,8 @@ describe SessionsController do
   context "#create" do
     let(:user) { FactoryGirl.create :user }
     it "redirects to root path or edit path if correct user credentials" do
-      post :create, :first_name => user.first_name, :last_name => user.last_name, :password => user.password
-      expect(response).to redirect_to root_path || edit_owner_path(user) || edit_developer_path(user)
+      post :create, :first_name => user.first_name, :last_name => user.last_name, :password => user.password, :uid => user.uid
+      expect(response).to render_template(:new)
     end
   end
 end
