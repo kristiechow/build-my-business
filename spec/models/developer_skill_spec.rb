@@ -1,5 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe DeveloperSkill, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'ActiveRecord associations' do
+    # it {should belong_to :developer}
+    # it {should belong_to :skill}
+  end
 end
