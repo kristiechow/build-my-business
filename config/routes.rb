@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :owners 
+  resources :owners
 
   resources :developers do
     resources :reviews, only: [:new, :create, :edit, :update, :destroy]
@@ -33,9 +33,12 @@ Rails.application.routes.draw do
 
   resources :matches do
    member do
-    put 'request_accept'
+    get 'request_accept'
     delete 'request_reject'
    end
   end
+
+  get 'developers/:id/projects' => 'developers#projects'
+  get 'businesses/:id/complete' => 'businesses#complete'
 
 end

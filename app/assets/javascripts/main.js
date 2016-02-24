@@ -22,4 +22,15 @@ $(document).ready(function(){
   slidesToShow: 3,
   slidesToScroll: 1
 })
+
+$('.projects-container').slick({
+    dots: true,
+     autoplay: true,
+  autoplaySpeed: 2000,
+   infinite: true,
+  slidesToShow: 3,
+  slidesToScroll: 1
+})
+
+
   })
