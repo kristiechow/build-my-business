@@ -47,6 +47,13 @@ class DevelopersController < ApplicationController
     redirect_to root_path
   end
 
+  def projects
+    @developer = Developer.find(params[:id])
+    @projects1 = @developer.sent_matches.where(accepted: "true")
+    @projects2 = @developer.received_matches.where(accepted: "true")
+    render :'/developers/projects'
+  end
+
 
   private
 

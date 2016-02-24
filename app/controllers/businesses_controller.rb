@@ -39,12 +39,19 @@ class BusinessesController < ApplicationController
 
   def update
     @business = Business.find_by(id: params[:id])
-    if @business.update(business_params)
+    if @business.update(business_edit_params)
       flash.notice = "Update successful."
       redirect_to business_path(@business)
     else
       render :edit
     end
+  end
+
+  def complete
+     @business = Business.find_by(id: params[:id])
+    @business[:status] = "Completed"
+    @business.save
+      redirect_to "/developers/#{current_user.id}/projects"
   end
 
   def destroy
@@ -57,5 +64,9 @@ class BusinessesController < ApplicationController
   private
     def business_params
       params.require(:business).permit(:name, :description, :location, category_ids:[]).merge(owner_id: current_user.id)
+    end
+
+  def business_edit_params
+      params.require(:business).permit(:name, :description,:status, :location, category_ids:[])
     end
 end
