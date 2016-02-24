@@ -1,6 +1,6 @@
 <section>
 
-  <h3>Owner: <%= link_to @business.owner.first_name, owner_path(@business.owner) %></h3>
+  <h3 class= "titles">Owner: <%= link_to @business.owner.first_name, owner_path(@business.owner) %></h3>
   <div class='info'>
     <h3>Company Name: <%=@business.name%></h3>
     <h4>Location: <%=@business.location%></h4>
@@ -15,8 +15,8 @@
 
   <div class='business-images'>
     <% @business.photos.each do |photo| %>
-     <div>
-       <%=image_tag photo.image.url(:square) %>
+     <div >
+       <%=image_tag photo.image.url(:square), class: "biz-pic" %>
      </div>
     <% end %>
   </div>
