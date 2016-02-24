@@ -9,7 +9,7 @@ RSpec.describe BusinessesController, type: :controller do
   describe "user" do
     it "#index" do
       get :index
-      expect(assigns(:businesses)).to eq Business.all
+      expect(assigns(:businesses).count).to eq Business.all.count
     end
 
     it "#new" do
