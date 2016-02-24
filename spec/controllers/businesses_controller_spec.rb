@@ -9,15 +9,28 @@ RSpec.describe BusinessesController, type: :controller do
   end
 
   describe "user" do
+
+    context "#index" do
     it "#index" do
       get :index
       expect(assigns(:businesses).count).to eq Business.all.count
+      end
     end
 
-    it "#new" do
+    context "#new" do
+    it "is successful" do
       business = Business.new
       get :new
       expect(response).to render_template(:new)
+      end
+    end
+
+    context "#create" do
+     it "creates a new business if successful" do
+      params = Business.new(name: "A Very Cool Business", description: "We like tech", location: "New York", owner_id: @user.id)
+      params.save
+      expect(Business.all.count).to equal(1)
+      end
     end
 
     context "#update" do
