@@ -11,12 +11,14 @@
   <% else %>
     <%= image_tag "blank-profile-pic.png", class: 'profile-pic' %>
   <% end %>
-  
+
   <ul>
   <% @developer.skills.each do |skill| %>
     <li><%= skill.name %></li>
   <% end %>
   </ul>
+
+  <%= link_to "My projects", "/developers/#{@developer.id}/projects" %>
 
   <h3>Contact Me</h3>
   <% if @developer.slack_id %>

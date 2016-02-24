@@ -1,0 +1,62 @@
+
+<h1><%= @developer.first_name %>'s Projects</h1>
+
+
+<div class= "projects-container">
+  <% @projects1.each do |project| %>
+  <div class= "project-box">
+    <ul>
+      <li>
+        <h4>Business: <%= project.matched_user.business.name %></h4>
+      </li>
+      <li>
+        Owner of the business: <%= project.matched_user.first_name %>
+      </li>
+      <li>
+        start day: <%= project.created_at.strftime("%d %b. %Y") %>
+      </li>
+      <li>
+        <%= project.matched_user.business.status %>
+      </li>
+      <li>
+       Delveloper's update: <%= project.status %> |written on:<%= project.updated_at.strftime("%d %b. %Y") %>
+     </li>
+   </ul>
+   <% if @developer == current_user %>
+   <%= link_to "Update progress of this project", edit_match_path(project) %>
+   <% if project.matched_user.business.status != "Completed" %>
+   <%= link_to "Complete", "/businesses/#{project.matched_user.business.id}/complete" %>
+   <% end %>
+   <% end %>
+ </div>
+ <% end %>
+
+
+   <% @projects2.each do |project| %>
+   <div class= "project-box">
+    <ul>
+      <li>
+        Business: <%= project.user.business.name %>
+      </li>
+      <li>
+        Owner of the business: <%= project.user.first_name %>
+      </li>
+      <li>
+        start day: <%= project.created_at.strftime("%d %b. %Y") %>
+      </li>
+      <li>
+        <%= project.user.business.status %>
+      </li>
+      <li>
+       Delveloper's update: <%= project.status %> |written on:<%= project.updated_at.strftime("%d %b. %Y") %>
+     </li>
+   </ul>
+   <% if @developer == current_user %>
+    <%= link_to "Update progress of this project", edit_match_path(project) %>
+      <% if project.user.business.status != "Completed" %>
+        <%= link_to "Complete", "/businesses/#{project.user.business.id}/complete" %>
+    <% end %>
+    <% end %>
+    </div>
+  <% end %>
+</div>

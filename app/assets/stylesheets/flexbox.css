@@ -44,3 +44,14 @@
 .business-images {
   border-radius: 10%;
 }
+
+
+.projects-container{
+  background-color: #fff;
+}
+.project-box {
+  background-color: rgba(51, 46, 46, 0.1);
+  border-radius: 5%;
+  margin: 2em;
+  padding: 2em;
+}
