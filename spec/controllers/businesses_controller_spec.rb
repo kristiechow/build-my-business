@@ -4,6 +4,8 @@ RSpec.describe BusinessesController, type: :controller do
 
   before(:each) do
     stub_authorize_user!
+    @user = User.create!(first_name: "test", last_name: "name", password: '123456', type: 'Owner', uid: "kristie@gmail.com")
+    session[:user_id] = @user.id
   end
 
   describe "user" do
@@ -20,8 +22,8 @@ RSpec.describe BusinessesController, type: :controller do
 
     context "#update" do
       it "updates a business with valid params" do
-        params = FactoryGirl.create(:business, name: "A Cool Business", description: "We like tech", location: "New York")
-        expect{ put :update, id: params.id, business: {name: 'A Cooler Business'}}.to change{params.reload.name}
+        params = FactoryGirl.create(:business, name: "A Very Cool Business", description: "We like tech", location: "New York", owner_id: @user.id)
+        expect{ put :update, id: params.id, business: {name: 'A Much Cooler Business'}}.to change{params.reload.name}
       end
 
       it "doesn't update a post when params are invalid" do
