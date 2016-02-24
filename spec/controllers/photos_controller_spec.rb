@@ -13,11 +13,13 @@ RSpec.describe PhotosController, type: :controller do
     it "#create" do
       params = Photo.create!(image: File.new("#{Rails.root}/app/assets/images/barber1.jpg"))
       expect(Photo.all.count).to equal(1)
+      params.delete
     end
 
     it "#destroy" do
       params = Photo.create!(image: File.new("#{Rails.root}/app/assets/images/barber1.jpg"))
       expect{params.destroy}.to change{Photo.count}.by(-1)
+      params.delete
     end
   end
 end
