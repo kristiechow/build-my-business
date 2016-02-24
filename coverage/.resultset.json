@@ -309,6 +309,36 @@
         null,
         null
       ],
+      "/Users/Kristie/Desktop/build-my-business/app/controllers/photos_controller.rb": [
+        1,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
       "/Users/Kristie/Desktop/build-my-business/app/controllers/sessions_controller.rb": [
         1,
         1,
@@ -647,36 +677,6 @@
         0,
         0
       ],
-      "/Users/Kristie/Desktop/build-my-business/app/controllers/photos_controller.rb": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
       "/Users/Kristie/Desktop/build-my-business/app/controllers/reviews_controller.rb": [
         0,
         0,
@@ -755,6 +755,6 @@
         0
       ]
     },
-    "timestamp": 1456332556
+    "timestamp": 1456333466
   }
 }
