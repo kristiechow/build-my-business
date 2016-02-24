@@ -1,5 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Photo, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'ActiveRecord associations' do
+    it {should belong_to :business}
+    it {should belong_to :status_update}
+  end
 end
