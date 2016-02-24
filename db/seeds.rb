@@ -30,37 +30,23 @@ owners = Owner.all
 end
 
 
-yi = Developer.create!(first_name: 'Yi', last_name: 'Lu', uid: 'yilu@gmail.com', password: '123456', provider: "buildmybusiness", location: Faker::Address.city, description: Faker::Lorem.paragraph, skill_ids: dev_skill_ids)
-
-
-
+yi = Developer.create!(first_name: 'Yi', last_name: 'Lu', uid: 'yilu@gmail.com', password: '123456', provider: "buildmybusiness", location: Faker::Address.city, description: Faker::Lorem.paragraph, skill_ids: dev_skill_ids, slack_id: 'yilu1021')
 
 gary_pic = File.new("#{Rails.root}/app/assets/images/gary.jpg")
 gary = Developer.create!(first_name: 'Gary', last_name: 'Tso', uid: 'garytso@gmail.com', password: '123456', location: Faker::Address.city, description: Faker::Lorem.paragraph, provider: "buildmybusiness", skill_ids: dev_skill_ids)
 
-
-
 dan_pic = File.new("#{Rails.root}/app/assets/images/dan.jpg")
-dan = Developer.create!(first_name: 'Dan', last_name: 'Andersen', uid: 'danandersen2@gmail.com', password: '123456', avatar: dan_pic, location: Faker::Address.city, description: Faker::Lorem.paragraph, provider: "buildmybusiness", skill_ids: dev_skill_ids)
-
-
+dan = Developer.create!(first_name: 'Dan', last_name: 'Andersen', uid: 'danandersen2@gmail.com', password: '123456', avatar: dan_pic, location: Faker::Address.city, description: Faker::Lorem.paragraph, provider: "buildmybusiness", skill_ids: dev_skill_ids, slack_id: 'dandersen2')
 
 mira_pic = File.new("#{Rails.root}/app/assets/images/mira.jpg")
-mira = Developer.create!(first_name: 'Mira', last_name: 'Scarvalone', uid: 'mirascarvalone@gmail.com', password: '123456', avatar: mira_pic, location: Faker::Address.city, description: Faker::Lorem.paragraph, provider: "buildmybusiness", skill_ids: dev_skill_ids)
+mira = Developer.create!(first_name: 'Mira', last_name: 'Scarvalone', uid: 'mirascarvalone@gmail.com', password: '123456', avatar: mira_pic, location: Faker::Address.city, description: Faker::Lorem.paragraph, provider: "buildmybusiness", skill_ids: dev_skill_ids, slack_id: 'mirascarvalone')
 
+ed = Developer.create!(first_name: 'Edward', last_name: 'Gemson', uid: 'edwardgemson@gmail.com', password: '123456', location: Faker::Address.city, description: Faker::Lorem.paragraph, provider: "buildmybusiness", skill_ids: dev_skill_ids, slack_id: 'edwardgemson')
 
-ed = Developer.create!(first_name: 'Edward', last_name: 'Gemson', uid: 'edwardgemson@gmail.com', password: '123456', location: Faker::Address.city, description: Faker::Lorem.paragraph, provider: "buildmybusiness", skill_ids: dev_skill_ids)
-
-
-
-
-scott = Developer.create!(first_name: 'Scott', last_name: 'Chou', uid: 'scottychou@gmail.com', password: '123456', location: Faker::Address.city, description: Faker::Lorem.paragraph, provider: "buildmybusiness", skill_ids: dev_skill_ids)
-
-
-
+scott = Developer.create!(first_name: 'Scott', last_name: 'Chou', uid: 'scottychou@gmail.com', password: '123456', location: Faker::Address.city, description: Faker::Lorem.paragraph, provider: "buildmybusiness", skill_ids: dev_skill_ids, slack_id: 'scottchou')
 
 kb_pic = File.new("#{Rails.root}/app/assets/images/kb.jpg")
-kb = Developer.create!(first_name: 'K.B.', last_name: 'DiAngelo', uid: 'kb-diangleo@gmail.com', password: '123456', avatar: kb_pic, location: Faker::Address.city, description: Faker::Lorem.paragraph, provider: "buildmybusiness", skill_ids: dev_skill_ids)
+kb = Developer.create!(first_name: 'K.B.', last_name: 'DiAngelo', uid: 'kb-diangleo@gmail.com', password: '123456', avatar: kb_pic, location: Faker::Address.city, description: Faker::Lorem.paragraph, provider: "buildmybusiness", skill_ids: dev_skill_ids, slack_id: 'kaybidee')
 
 nums = [3, 4, 5]
 
@@ -80,7 +66,7 @@ Photo.create!(image: braza_pic, business_id: braza_biz.id)
 
 
 kerry = Owner.create!(first_name: 'Kerry', last_name: "Imai", uid: "kccom", password: "111111", provider: 'buildmybusiness')
-kristie = Owner.create!(first_name: "Kristie", last_name: 'Chow', uid: 'kristie@email.com', password: '123123', provider: "buildmybusiness")
+kristie = Owner.create!(first_name: "Kristie", last_name: 'Chow', uid: 'kristie@email.com', password: '123456', provider: "buildmybusiness")
 song = Owner.create!(first_name: 'Song', last_name: 'Sampson', uid: 'songsampson@gmail.com', password: '123456')
 kung = Owner.create!(first_name: 'Khun', last_name: 'Kung', uid: 'goong@gmail.com', password: '123456', avatar: File.new("#{Rails.root}/app/assets/images/IMG_6601.jpg"), location: "Chaloem Phrakiat Ratchakan Thi 9 Soi 59 Khwaeng Dok Mai, Khet Prawet Krung Thep Maha Nakhon 10250 Thailand", description: "Lifetime hair enthusiast, born and raised in Bangkok", provider: "buildmybusiness")
 
