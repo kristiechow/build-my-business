@@ -39,8 +39,25 @@ RSpec.configure do |config|
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and
   # `post` in specs under `spec/controllers`.
+
+
+  Shoulda::Matchers.configure do |config|
+    config.integrate do |with|
+      # Choose a test framework:
+      with.test_framework :rspec
+
+      # Choose one or more libraries:
+      with.library :active_record
+      with.library :active_model
+      with.library :action_controller
+      # Or, choose the following (which implies all of the above):
+      with.library :rails
+    end
+  end
+
   config.include Capybara::DSL
   config.include AuthenticationHelpers
+  config.include FactoryGirl::Syntax::Methods
   config.mock_with :rspec
   config.infer_spec_type_from_file_location!
 

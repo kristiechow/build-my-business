@@ -20,19 +20,19 @@ class User < ActiveRecord::Base
 
   validates_attachment_size :avatar, :less_than => 5.megabytes
 
-   validates :first_name, presence: true
-   validates :uid, uniqueness: { scope: :provider }, on: :create
-   validates :uid, presence: true, on: :create
+  validates :first_name, presence: true
+  validates :uid, uniqueness: { scope: :provider }, on: :create
+  validates :uid, presence: true, on: :create
 
-   def matched?(user)
-      r_matches = self.received_matches.where(user: user)
-      s_matches = self.sent_matches.where(matched_user: user)
-      if r_matches != [] || s_matches != []
-        return true
-      else
-        false
-      end
-   end
+  def matched?(user)
+    r_matches = self.received_matches.where(user: user)
+    s_matches = self.sent_matches.where(matched_user: user)
+    if r_matches != [] || s_matches != []
+      return true
+    else
+      false
+    end
+  end
 
     def closed_match?
     a = self.received_matches.where(status: "Matched!")
