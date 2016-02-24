@@ -350,6 +350,7 @@
         1,
         1,
         1,
+        1,
         null,
         1,
         null,
@@ -433,6 +434,12 @@
         null,
         null,
         null,
+        null
+      ],
+      "/Users/apprentice/Desktop/build-my-business/app/models/match.rb": [
+        1,
+        1,
+        1,
         null
       ],
       "/Users/apprentice/Desktop/build-my-business/app/controllers/developers_controller.rb": [
@@ -747,14 +754,8 @@
         0,
         0,
         0
-      ],
-      "/Users/apprentice/Desktop/build-my-business/app/models/match.rb": [
-        0,
-        0,
-        0,
-        0
       ]
     },
-    "timestamp": 1456332808
+    "timestamp": 1456334008
   }
 }
