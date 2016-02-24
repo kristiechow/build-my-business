@@ -28,6 +28,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
+
   def accept_match_path(user)
     if user.type == "Owner"
       shop = user.business

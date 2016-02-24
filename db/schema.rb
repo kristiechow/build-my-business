@@ -53,14 +53,6 @@ ActiveRecord::Schema.define(version: 20160224143159) do
     t.datetime "updated_at"
   end
 
-  create_table "create_contact_infos", force: :cascade do |t|
-    t.string   "skype_id"
-    t.string   "slack_id"
-    t.string   "phone_number"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-  end
-
   create_table "developers_skills", force: :cascade do |t|
     t.integer  "developer_id"
     t.integer  "skill_id"
