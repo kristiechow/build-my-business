@@ -12,11 +12,11 @@ class MatchesController < ApplicationController
   def request_accept
     matchable = Match.where(id: params[:id]).first
     matchable.update_attributes(accepted: "true", status: "Matched!")
+    matchable.update_status
     redirect_to accept_match_path(current_user)
   end
 
   def request_reject
-    # binding.pry
     matchable = Match.where(id: params[:id]).first
     matchable.destroy
     redirect_to accept_match_path(current_user)
