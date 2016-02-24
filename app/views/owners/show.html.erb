@@ -20,6 +20,19 @@
   <%= link_to @owner.business.name, business_path(@owner.business) %>
   <p><%= @owner.business.description %></p>
   </div>
+
+  <h3>Contact Me</h3>
+  <% if @owner.slack_id %>
+  <h4>Slack @<%= @owner.slack_id %></h4>
+  <% end %>
+  <h4>E-mail <%= @owner.uid %></h4>
+  <% if @owner.skype_id %>
+  <h4>Skype @<%= @owner.skype_id %></h4>
+  <% end %>
+  <% if @owner.phone_number %>
+  <h4>Phone <%= @owner.phone_number %></h4>
+  <% end %>
+
     <%= link_to 'Edit Profile', edit_owner_path(@owner) %>
     <%= link_to 'Edit Business', edit_business_path(@owner.business) %>
   <% elsif @owner.editable_by?(current_user) %>

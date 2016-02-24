@@ -27,6 +27,18 @@
         <%= f.text_area :description %>
       </li>
       <li>
+        <%= f.label 'Skype ID (optional)' %>
+        <%= f.text_field :skype_id %>
+      </li>
+      <li>
+        <%= f.label 'Slack ID (optional)' %>
+        <%= f.text_field :slack_id %>
+      </li>
+      <li>
+        <%= f.label 'Phone Number (optional)' %>
+        <%= f.text_field :phone_number %>
+      </li>
+      <li>
       <%= f.submit 'Update' %>
       </li>
     </ul>
