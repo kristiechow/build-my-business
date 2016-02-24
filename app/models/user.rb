@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
 
   has_many :sent_matches, class_name: "Match"
   has_many :received_matches, class_name: "Match", foreign_key: :matched_user_id
+  has_many :matches
   has_many :matched_users, through: :matches
   has_one :business, foreign_key: :owner_id
   has_many :written_reviews, class_name: "Review", foreign_key: :reviewer_id, dependent: :destroy
