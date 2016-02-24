@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160222154335) do
+ActiveRecord::Schema.define(version: 20160224143159) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -151,6 +151,9 @@ ActiveRecord::Schema.define(version: 20160222154335) do
     t.datetime "avatar_updated_at"
     t.string   "provider"
     t.string   "uid"
+    t.string   "skype_id"
+    t.string   "slack_id"
+    t.string   "phone_number"
   end
 
   add_foreign_key "matches", "users"
