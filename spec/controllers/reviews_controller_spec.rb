@@ -11,17 +11,9 @@ RSpec.describe ReviewsController, type: :controller do
 
   describe "user" do
 
-    context "#new" do
-    it "is successful" do
-      review = Review.new
-      get :new
-      expect(response).to render_template(:new)
-      end
-    end
-
     context "#create" do
      it "creates a new review if successful" do
-      params = Review.new(comment: 'This is a review', communication_rating: 3, quality_rating: 4, timeliness_rating: 4, reviewee_id: @user.id, reviewer_id: @user1.id)
+      params = Review.new(comment: 'This is a review', communication_rating: 3, quality_rating: 4, timeliness_rating: 4, reviewee_id: @user1.id, reviewer_id: @user.id, review_type: "Developer")
       params.save
       expect(Review.all.count).to equal(1)
       end
