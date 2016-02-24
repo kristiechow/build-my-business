@@ -1,0 +1,14 @@
+<section id='form'>
+  <h1> Update Your Project </h1>
+  <%= form_for @matchable do |f| %>
+    <ul>
+      <li>
+        <%= f.label :status_update %>
+        <%= f.text_field :status %>
+      </li>
+      <li>
+        <%= f.submit %>
+      </li>
+    </ul>
+  <% end %>
+</section>
