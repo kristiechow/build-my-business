@@ -118,9 +118,13 @@ a {
 
 #form {
   max-width: 300px;
-  margin: 10px auto;
+  margin: 0 auto;
   padding: 10px 20px;
   border-radius: 8px;
+}
+
+#form h1 {
+  text-align: center;
 }
 
 
@@ -170,6 +174,7 @@ select {
 input[type="submit"] {
   background: #ff4448;
   color: #fff;
+  width: 330px;
 }
 
 .developer-showcase {
