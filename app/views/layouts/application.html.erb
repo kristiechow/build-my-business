@@ -35,8 +35,8 @@
               <li><%= link_to 'Inbox', conversations_path %></li>
               <li><%= link_to 'Logout', session_path, method: :delete %></li>
             <% else %>
-              <li><%= link_to 'Business', new_owner_path%></li>
-              <li><%= link_to 'Developer', new_developer_path%></li>
+              <li><%= link_to 'Business Registration', new_owner_path%></li>
+              <li><%= link_to 'Developer Registration', new_developer_path%></li>
               <li><%= link_to 'Login', new_session_path%></li>
             <% end %>
             </ul>
@@ -57,6 +57,7 @@
       </ul>
     </div>
   </footer>
+
 </body>
 </html>
 

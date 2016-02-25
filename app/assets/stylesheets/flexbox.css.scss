@@ -35,10 +35,20 @@
   flex: auto;
 }
 
-.business-images, .business-name, .business-info {
+.business-images{
+  margin: 0 auto;
   text-align: center;
   width: 80%;
   background-color: #f9f9f9;
+  padding-bottom: 2em;
+}
+
+.business-name, .business-info {
+  margin: 0 auto;
+  text-align: center;
+  width: 80%;
+  background-color: #f9f9f9;
+  padding-bottom: -1em;
 }
 
 .projects-container{

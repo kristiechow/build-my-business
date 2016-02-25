@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
     user = User.where("uid = ? AND provider = ?", params[:uid], "codetribute")[0]
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      flash.notice = "Welcome back to Build my Business #{user.first_name}"
+      flash.notice = "Welcome back to Codetribute #{user.first_name}"
       redirect_to root_path
     else
       flash[:error] = 'Login unsuccessful'
