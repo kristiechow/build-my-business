@@ -23,6 +23,8 @@ Rails.application.routes.draw do
     resources :status_updates, only: [:new, :create, :edit, :update, :destroy]
   end
 
+  put 'done/:id' => "businesses#done"
+
   root to: "businesses#index"
 
   resources :skills, only: [:create]
