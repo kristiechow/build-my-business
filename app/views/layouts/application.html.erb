@@ -14,7 +14,7 @@
   <meta name="author" content="">
   <meta content='<%= user_signed_in? ? current_user.id : "" %>' name='user-id'/>
 
-  <title>BuildMyBusiness</title>
+  <title>codetribute</title>
 
    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
   <%= csrf_meta_tags %>
@@ -24,20 +24,21 @@
 <body>
   <div id='wrap' class='animsition'>
     <header id="header">
-      <div class='container  clearfix'>
-        <h1 id="header-title"><%= link_to 'BuildMyBusiness', root_path%></a></h1>
+      <div class='container clearfix'>
+        <h1 id="header-title"><%= link_to 'codetribute', root_path%></a></h1>
         <nav id ="navbar">
+            <ul>
             <% if current_user %>
-              <%= link_to "Developers", developers_path %>
-              <%= link_to current_user.first_name, user_path(current_user) %>
-              <%= link_to 'Inbox', conversations_path %>
-              <%= link_to 'Logout', session_path, method: :delete %>
+              <li><%= link_to "Developers", developers_path %></li>
+              <li><%= link_to current_user.first_name, user_path(current_user) %></li>
+              <li><%= link_to 'Inbox', conversations_path %></li>
+              <li><%= link_to 'Logout', session_path, method: :delete %></li>
             <% else %>
-            Sign up as a
-              <%= link_to 'Business', new_owner_path%>
-              <%= link_to 'Developer', new_developer_path%>
-              <%= link_to 'Login', new_session_path%>
+              <li>Sign up as a <%= link_to 'Business', new_owner_path%></li>
+              <li><%= link_to 'Developer', new_developer_path%></li>
+              <li><%= link_to 'Login', new_session_path%></li>
             <% end %>
+            </ul>
         </nav>
       </div>
     </header>
