@@ -3,9 +3,24 @@
    border-color: #fff;
    border-style: solid;
    margin-top: 25px;
+   width: 100%;
  }
  
  #map-canvas {
    height: 384px;
    width: 100%;
+ }
+
+ #business-location{
+ 	text-align: center;
+ 	margin-bottom: 30px;
+    padding: 0;
+ }
+
+ #map{
+ 	width: 800px; 
+ 	height: 400px;
+ 	text-align: center;
+ 	margin: 0 auto;
+    padding: 0;
  }
