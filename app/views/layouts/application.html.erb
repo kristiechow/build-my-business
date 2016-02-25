@@ -21,8 +21,8 @@
 
 
 </head>
-<body>
-  <div id='wrap' class='animsition'>
+<body  class='site'>
+  <div id='wrap' class='animsition  site-content'>
     <header id="header">
       <div class='container'>
         <h1 id="header-title"><%= link_to 'codetribute', root_path%></a></h1>
@@ -51,8 +51,10 @@
 
   <footer id = "footer">
     <div id = "footer-bar">
-       <%= link_to "About", about_path %>
-       <%= link_to "Help", help_path %>
+      <ul>
+        <li><%= link_to "About", about_path %></li>
+        <li><%= link_to "Help", help_path %></li>
+      </ul>
     </div>
   </footer>
 </body>
