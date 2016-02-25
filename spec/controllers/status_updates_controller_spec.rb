@@ -14,7 +14,7 @@ RSpec.describe StatusUpdatesController, type: :controller do
     context "#new" do
     it "is successful" do
       update = StatusUpdate.new
-      get :new
+      get :new, business_id: @business.id
       expect(response).to render_template(:new)
       end
     end
@@ -24,19 +24,6 @@ RSpec.describe StatusUpdatesController, type: :controller do
       update = StatusUpdate.new(description: 'This is a status update', percentage_revenue_increase: '5%', business_id: @business.id)
       update.save
       expect(StatusUpdate.all.count).to equal(1)
-      end
-    end
-
-    context "#update" do
-      it "updates a business with valid params" do
-        update = StatusUpdate.create!(description: 'This is a status update', percentage_revenue_increase: '5%', business_id: @business.id)
-        expect{ put :update, id: business.id, status_update: {description: 'A Much Cooler Business'}}.to change{update.reload.description}
-      end
-
-      it "doesn't update a post when params are invalid" do
-        update = StatusUpdate.create!(description: 'This is a status update', percentage_revenue_increase: '5%', business_id: @business.id)
-        post_edit = put :update, id: update.id, status_update: {description: ''}
-        expect( post_edit ).to render_template (:edit)
       end
     end
 
