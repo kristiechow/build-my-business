@@ -4,12 +4,11 @@
 </div>
 
 <div>
-  <legend>Search Our Businesses by Name or Category</legend>
-    <%= search_form_for @search do |f| %>
-      <%= f.text_field :name_or_categories_name_cont %>
+  <%= search_form_for @search do |f| %>
+    <%= f.text_field :name_or_categories_name_cont, placeholder: 'Search Our Businesses by Name or Category' %>
 
-      <%= f.submit "Search" %>
-    <% end %>
+    <%= f.submit "Search" %>
+  <% end %>
 </div>
 
 <section class='all-businesses'>
