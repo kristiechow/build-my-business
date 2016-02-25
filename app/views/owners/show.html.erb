@@ -1,5 +1,7 @@
 <section>
 
+<div class='container'>
+  <div class='info'>
   <h1><%= @owner.first_name %> <%= @owner.last_name %></h1>
   <h3><%= @owner.location %></h3>
   <h4>About Me <%= @owner.description %></h4>
@@ -46,5 +48,6 @@
       <%= @owner.first_name %> <%= link_to "Contact Me", conversations_path(sender_id: current_user.id, recipient_id: @owner.id), method: "post"%>
     </div>
   <% end %>
-
+  </div>
+</div>
 </section>
