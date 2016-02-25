@@ -14,23 +14,21 @@
     <% end %>
 </div>
 
+<section class='all-businesses'>
+  <% @businesses.each do |business| %>
+    <section class='business'>
+      <div>
+        <% if  business.photos.first != nil %>
 
-  <section class='all-businesses'>
-    <% @businesses.each do |business| %>
-      <section class='business'>
-        <div>
-          <% if  business.photos.first != nil %>
-
-          <%=image_tag business.photos.first.image.url(:square), class: "business-images" %>
-          <% end %>
-        </div>
-        <div class='business-name'>
-          <h3><%= link_to business.name, business_path(business), class: "animsition-link" %></h3>
-        </div>
-        <div class='business-info'>
-          <h4><%=business.location%></h4>
-        </div>
-      </section>
-  </section>
-    <% end %>
-
+        <%=image_tag business.photos.first.image.url(:square), class: "business-images" %>
+        <% end %>
+      </div>
+      <div class='business-name'>
+        <h3><%= link_to business.name, business_path(business), class: "animsition-link" %></h3>
+      </div>
+      <div class='business-info'>
+        <h4><%=business.location%></h4>
+      </div>
+    </section>
+  <% end %>
+</section>
