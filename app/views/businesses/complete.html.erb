@@ -1,0 +1,15 @@
+<section id='form'>
+  <h1> Compelte Your Project </h1>
+  <%= form_for @business do |f| %>
+    <ul>
+      <li>
+        <%= f.label :website %>
+        <%= f.text_field :website %>
+      </li>
+
+      <li>
+        <%= f.submit %>
+      </li>
+    </ul>
+  <% end %>
+</section>

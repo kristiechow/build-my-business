@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20160224143159) do
     t.string   "location",                            null: false
     t.string   "status_update"
     t.integer  "owner_id"
+    t.string   "website"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.float    "latitude"

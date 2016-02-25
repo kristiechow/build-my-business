@@ -38,6 +38,8 @@ class BusinessesController < ApplicationController
   end
 
   def update
+    # binding.pry
+    if current_user == "owner"
     @business = Business.find_by(id: params[:id])
     if @business.update(business_edit_params)
       flash.notice = "Update successful."
@@ -45,13 +47,18 @@ class BusinessesController < ApplicationController
     else
       render :edit
     end
+  else
+    @business = Business.find_by(id: params[:id])
+    @business[:status] = "Completed"
+    @business[:website] = params[:business][:website]
+    @business.save
+      redirect_to "/developers/#{current_user.id}/projects"
+    end
   end
 
   def complete
-     @business = Business.find_by(id: params[:id])
-    @business[:status] = "Completed"
-    @business.save
-      redirect_to "/developers/#{current_user.id}/projects"
+    @business = Business.find_by(id: params[:id])
+    render :"complete"
   end
 
   def destroy
@@ -67,6 +74,6 @@ class BusinessesController < ApplicationController
     end
 
   def business_edit_params
-      params.require(:business).permit(:name, :description,:status, :location, category_ids:[])
+      params.require(:business).permit(:name, :description,:status, :location, :website, category_ids:[])
     end
 end
