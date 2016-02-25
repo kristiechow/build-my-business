@@ -19,4 +19,6 @@
 //= require animsition/animsition.min.js
 //= require main.js
 //= require jquery-ui/autocomplete
+//= require sticky/jquery.stick.js
+//= require sticky.js
 //= require_tree .
