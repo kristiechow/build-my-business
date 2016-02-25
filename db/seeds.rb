@@ -24,7 +24,7 @@ end
 owners = Owner.all
 
 kerry = Owner.create!(first_name: 'Kerry', last_name: "Imai", uid: "kccom", password: "111111", provider: 'codetribute')
-kristie = Owner.create!(first_name: "Kristie", last_name: 'Chow', uid: 'kristie@gmail.com', password: '123456', provider: "codetribute")
+kristie = Developer.create!(first_name: "Kristie", last_name: 'Chow', uid: 'kristie@gmail.com', password: '123456', provider: "codetribute")
 song = Owner.create!(first_name: 'Song', last_name: 'Sampson', uid: 'songsampson@gmail.com', password: '123456')
 
 
