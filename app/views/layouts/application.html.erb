@@ -28,6 +28,7 @@
         <h1 id="header-title"><%= link_to 'codetribute', root_path%></a></h1>
         <nav id ="navbar">
             <ul>
+            <li><%= link_to 'Progress', progress_path %></li>
             <% if current_user %>
               <li><%= link_to "Developers", developers_path %></li>
               <li><%= link_to current_user.first_name, user_path(current_user) %></li>

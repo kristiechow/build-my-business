@@ -42,4 +42,6 @@ Rails.application.routes.draw do
   get 'developers/:id/projects' => 'developers#projects'
   get 'businesses/:id/complete' => 'businesses#complete'
 
+  get "progress" => "pages#progress"
+
 end
