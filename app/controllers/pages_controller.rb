@@ -6,4 +6,7 @@ class PagesController < ApplicationController
   def help
   end
 
+  def progress
+  end
+
 end
