@@ -1,3 +1,5 @@
+
+
 <% if @over_ten %>
  <%= link_to "Show Previous", "?m=all" %>
 <% end %>
@@ -5,7 +7,8 @@
   <%= render @messages %>
 </div>
 
-
+<section id='form'>
+  <h3>Send a message</h3>
 <%= form_for [@conversation, @message], remote: true, html: {class: 'ui reply form'} do |f| %>
 <ul>
   <li>
@@ -22,5 +25,5 @@
 
 
 <%= link_to 'Back to Inbox', conversations_path %>
-
+</section>
 <%= subscribe_to conversation_messages_path(@conversation) %>
