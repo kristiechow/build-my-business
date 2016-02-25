@@ -18,7 +18,9 @@
  #facebook-link{
    width: 90%;
    height:2.2rem;
+   margin-left: 15%;
    margin-bottom: 20px;
+   display: flex;
  }
 
 
@@ -26,17 +28,17 @@
    width: 78%;
    height:2.2rem;
    background: #000000;
+   margin-left: 15%;
    margin-bottom: 20px;
+   display: flex;
  }
 
  .logo-button{
-    float:left;
     height: 2.2rem;
     width: 2.2rem;
  }
 
  .github-button {
-  float:left;
   background: #000000;
   color: #ffffff;
   cursor: pointer;
@@ -50,5 +52,4 @@
   text-align: center;
   text-transform: uppercase;
   white-space: nowrap;
-
   }
