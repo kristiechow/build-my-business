@@ -58,7 +58,7 @@ songser.photos << Photo.create!( business_id: songser.id, image: File.new("#{Rai
 kerrys = Business.create!(name: "Kerry's Little Diner", description: "Just a cool diner in the middle of Kerryville.", location: "300 West 19th Street, New York, NY", owner_id: kerry.id, category_ids: [5])
 kerrys.photos << Photo.create!( business_id: kerrys.id, image: File.new("#{Rails.root}/app/assets/images/startup-photos.jpg"))
 
-kejmukda = Business.create!(name: "Kejmukda Restaurant Phuket", description: "Cool Malaysian cuisine in Phuket, Thailand", location: "100/404 หมู่ 5, ต.รัษฏา, อ.เมือง, ภูเก็ต, Phuket 83120, Thailand", owner_id: kung.id, category_ids: [5])
+kejmukda = Business.create!(name: "Kejmukda Restaurant Phuket", description: "Cool Malaysian cuisine in Phuket, Thailand", location: "100/404 หมู่ 5, ต.รัษฏา, อ.เมือง, ภูเก็ต, Phuket 83120, Thailand", owner_id: kerry.id, category_ids: [5])
 kejmukda.photos << Photo.create!( business_id: kejmukda.id, image: File.new("#{Rails.root}/app/assets/images/restaurant-people-alcohol-bar.jpg"))
 
 
