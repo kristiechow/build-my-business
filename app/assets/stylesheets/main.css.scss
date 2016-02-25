@@ -20,11 +20,6 @@ h4 {
   font-weight: bolder;
 }
 
-p {
-  font-weight: bolder;
-  font-size: 20px;
-}
-
 #footer {
   text-align: center;
   background: #606c76;
@@ -42,7 +37,10 @@ p {
     min-height: calc(100vh - 96px);
   }
 
-  
+  .container {
+    width: 85%;
+    margin: 0 auto;
+  }
 }
 
 .button,
