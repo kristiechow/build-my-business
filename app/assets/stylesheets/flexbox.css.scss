@@ -59,6 +59,8 @@
   border-radius: 5%;
   margin: 2em;
   padding: 2em;
+border-width:5px;
+    border-style:outset;
 }
 
 h3  {
@@ -145,8 +147,7 @@ width: 100%;
    width: 85%;
    font-size: 5em;
    color: white;
-
-    background-color: rgba(3, 10, 16, 0.35);
+  background-color: rgba(3, 10, 16, 0.35);
 }
 
 .dev-title2{
