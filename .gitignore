@@ -15,3 +15,4 @@
 coverage
 /coverage/index.html
 public/system
+vendor/bundle
