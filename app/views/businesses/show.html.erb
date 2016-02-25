@@ -1,14 +1,25 @@
 <section>
 
-  <h3 class= "titles">Owner: <%= link_to @business.owner.first_name, owner_path(@business.owner) %></h3>
   <div class='info'>
-    <h3>Company Name: <%=@business.name%></h3>
-    <h4>Location: <%=@business.location%></h4>
-    <h4>Description</h4>
-    <p><%=@business.description%></p>
-    <ul>Categories
+    <ul>
+      <li>
+        <h4> <%=@business.name%> </h4>
+      </li>
+
+      <li>
+        <h3 class= "titles">  Owner: <%= link_to @business.owner.first_name, owner_path(@business.owner) %></h3>
+      </li>
+      <li>
+        <h4 class= >Location: <%=@business.location%></h4>
+      </li>
+      <li>
+        <h4>Description: <%=@business.description%></h4>
+      </li>
+    </ul>
+
+    <ul> Categories:
     <% @business.categories.each do |cat| %>
-      <li><%= cat.name %></li>
+      <li><h5><%= cat.name %></h5></li>
     <% end %>
     </ul>
   </div>
