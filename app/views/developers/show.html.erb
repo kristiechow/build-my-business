@@ -22,11 +22,11 @@
 
   <h3>Contact Me</h3>
   <% if @developer.slack_id %>
-  <h4>Slack @<%= @developer.slack_id %></h4>
+    <h4>Slack @<%= @developer.slack_id %></h4>
   <% end %>
   <h4>E-mail <%= @developer.uid %></h4>
   <% if @developer.skype_id %>
-  <h4>Skype @<%= @developer.skype_id %></h4>
+    <h4>Skype @<%= @developer.skype_id %></h4>
   <% end %>
   <% if @developer.phone_number %>
   <h4>Phone <%= @developer.phone_number %></h4>
