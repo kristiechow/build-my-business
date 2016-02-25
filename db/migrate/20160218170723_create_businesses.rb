@@ -6,6 +6,7 @@ class CreateBusinesses < ActiveRecord::Migration
       t.string :location, null: false
       t.string :status_update
       t.references :owner, index: true
+      t.string :website
 
       t.timestamps null: false
     end

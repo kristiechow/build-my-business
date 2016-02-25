@@ -1,6 +1,9 @@
 
 <h1><%= @developer.first_name %>'s Projects</h1>
 
+<% if current_user == @developer %>
+<p> * <%= @developer.first_name %> , Keep your business onwers informed, update the status of your projects here:</p>
+<% end %>
 
 <div class= "projects-container">
   <% @projects1.each do |project| %>
@@ -19,7 +22,7 @@
         <%= project.matched_user.business.status %>
       </li>
       <li>
-       Delveloper's update: <%= project.status %> |written on:<%= project.updated_at.strftime("%d %b. %Y") %>
+       Delveloper's update: <p class= "dev-update"> <%= project.status %> </p>|written on:<%= project.updated_at.strftime("%d %b. %Y") %>
      </li>
    </ul>
    <% if @developer == current_user %>
