@@ -13,12 +13,12 @@ class SessionsController < ApplicationController
         new_user = User.create_user_from_omniauth(auth, session[:registration_type])
         session[:user_id] = new_user.id
         redirect_to redirect_edit_path(new_user)
-      else 
+      else
         session[:user_id] = user.id
         redirect_to root_path
       end
     else
-    user = User.where("uid = ? AND provider = ?", params[:uid], "buildmybusiness")[0]
+    user = User.where("uid = ? AND provider = ?", params[:uid], "codetribute")[0]
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
       flash.notice = "Welcome back to Build my Business #{user.first_name}"
