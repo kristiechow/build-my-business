@@ -22,7 +22,7 @@
     <% @business.categories.each do |cat| %>
       <li><h5><%= cat.name %></h5></li>
     <% end %>
-    
+
 
     <%= render partial: 'partials/matching', locals: { user: @owner }%>
 
@@ -43,7 +43,7 @@
   </ul>
   </div>
 
-  <div class='business-images'>
+  <div class='business-images business-images-show'>
     <% @business.photos.each do |photo| %>
      <div >
        <%=image_tag photo.image.url(:square), class: "biz-pic" %>

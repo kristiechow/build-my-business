@@ -7,19 +7,20 @@
 
 .developer-item {
   display: flex;
-  margin-right: 10em;
-  margin-left: 5em;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
 .inner-items {
-  align-self: center;
   border-radius: 50%;
-  flex: 0;
 }
 
 .name-item {
-  align-self: baseline;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  jusify-content: center;
+  align-content: space-around;
 }
 
 
@@ -103,12 +104,12 @@ h5 {
   width: 100%;
   font-size: 5em;
   color: white;
-  }
+}
 
 .progress-box {
  position: relative;
    width: 100%;
-  }
+}
 
 .stairs {
 width: 100%;
@@ -139,27 +140,24 @@ width: 100%;
   opacity: 0.8;
 }
 
-.dev-title{
-   position: absolute;
-   top: 400px;
-   left: 10%;
-   width: 85%;
-   font-size: 5em;
-   color: white;
-  background-color: rgba(3, 10, 16, 0.35);
+ul.slick-dots {
+  margin-bottom: 5%;
 }
 
-.dev-title2{
-   position: absolute;
-   top: 600px;
-   left: 12%;
-   width: 70%;
-   font-size: 5em;
-   color: white;
-    background-color: rgba(3, 10, 16, 0.4);
-    text-align: center;
+.dev-title{
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  width: 85%;
+  font-size: 4em;
+  color: white;
+  background-color: rgba(3, 10, 16, 0.35);
+  text-align: center;
+  word-spacing: 10px;
 }
+
 
 .dev-topbox {
   margin: 2em;
 }
+
