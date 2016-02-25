@@ -2,15 +2,16 @@
 
   <h1>Log in</h1>
 
-  <div id="facebook-link">
-    <%= link_to image_tag("FB-logo.png", class: "logo-button"), "/auth/facebook"%>
-    <%= link_to "Sign Up with Facebook", "/auth/facebook", class: "facebook-button" %>
-  </div>
+    <div id="facebook-link">
+      <%= link_to image_tag("FB-logo.png", class: "logo-button"), "/auth/facebook"%>
+      <%= link_to "Sign Up with Facebook", "/auth/facebook", class: "facebook-button" %>
+    </div>
 
-  <div id="github-link">
-    <%= link_to image_tag("GH-logo.png", class: "logo-button"), "/auth/facebook"%>
-    <%= link_to "Sign Up with Github", "/auth/github", class: "github-button" %>
-  </div>
+    <div id="github-link">
+      <%= link_to image_tag("GH-logo.png", class: "logo-button"), "/auth/facebook"%>
+      <%= link_to "Sign Up with Github", "/auth/github", class: "github-button" %>
+    </div>
+
 
   <%= form_tag session_path do %>
     <ul>
