@@ -207,7 +207,7 @@ input[type="submit"] {
 }
 
 .is-sticky #header {
-  background: #fff;
+  background: #ff4448;
   opacity: 1.0;
   z-index: 1;
 }
@@ -224,6 +224,11 @@ input[type="submit"] {
 
 .is-sticky #navbar li {
   font-size: 0.85em;
+}
+
+.is-sticky #header-title a,
+.is-sticky #navbar li a {
+  color: #fff;
 }
 
 .site {
