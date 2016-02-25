@@ -107,4 +107,5 @@ ian = Owner.create!(first_name: 'Ian', last_name: 'Garcia', uid: 'ian@gmail.com'
 barber = Business.create!(name: "Blue Chip Barber Shop", description: "Family owned barber shop in the Financial District of New York City.", location: "44 New St, New York, NY", owner_id: ian.id, category_ids: [9])
 barber.photos << Photo.create!( business_id: barber.id, image: File.new("#{Rails.root}/app/assets/images/barber1.jpg") )
 barber.photos << Photo.create!( business_id: barber.id, image: File.new("#{Rails.root}/app/assets/images/barber2.jpg") )
+
 barber.photos << Photo.create!( business_id: barber.id, image: File.new("#{Rails.root}/app/assets/images/barber3.jpg") )
