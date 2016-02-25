@@ -1,27 +1,39 @@
 <section>
-
+  <div class='container'>
   <div class='info'>
     <ul>
       <li>
-        <h4> <%=@business.name%> </h4>
+        <h1> <%=@business.name%> </h1>
+      </li>
+      <hr>
+      <li>
+        <h3 class= "titles">  Owned by <%= link_to @business.owner.first_name, owner_path(@business.owner) %></h3>
       </li>
 
       <li>
-        <h3 class= "titles">  Owner: <%= link_to @business.owner.first_name, owner_path(@business.owner) %></h3>
+        <h4 class= >Location <%=@business.location%></h4>
       </li>
+      <hr>
       <li>
-        <h4 class= >Location: <%=@business.location%></h4>
+        <h4>About this business</h4>
+        <h4> <%=@business.description%></h4>
       </li>
-      <li>
-        <h4>Description: <%=@business.description%></h4>
-      </li>
-    </ul>
-
-    <ul> Categories:
+      Categories
     <% @business.categories.each do |cat| %>
       <li><h5><%= cat.name %></h5></li>
     <% end %>
-    </ul>
+    
+
+    <%= render partial: 'partials/matching', locals: { user: @owner }%>
+
+    <li>
+      <h4>Status: <%=@business.status %></h4>
+    </li>
+
+  <% @business.status_updates.each do |update| %>
+    <li><%= render partial: 'partials/status_update', locals: { business: @business }%></li>
+  <% end %>
+  </ul>
   </div>
 
   <div class='business-images'>
@@ -39,20 +51,8 @@
     <% end %>
   </div>
 
-
-  <%= render partial: 'partials/matching', locals: { user: @owner }%>
-
-  <div>
-    <h4>Status: <%=@business.status %></h4>
-  </div>
-
-  <% @business.status_updates.each do |update| %>
-    <%= render partial: 'partials/status_update', locals: { business: @business }%>
-  <% end %>
-
   <div id='business-location'>
-    <div style='width: 800px;'>
-      <div id="map" style='width: 800px; height: 400px;'></div>
+      <div id="map"></div>
     </div>
   </div>
 
@@ -65,5 +65,5 @@
     });
   </script>
 
-
+</div>
 </section>

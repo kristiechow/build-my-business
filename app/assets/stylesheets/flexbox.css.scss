@@ -1,6 +1,8 @@
 .developer-showcase {
+  margin-top: 15px;
   min-height: 50vh;
-  background-color: rgba(0, 0, 0, 0.81);
+  background-color: #f9f9f9;
+  margin-left: 4em;
 }
 
 .developer-item {
@@ -11,8 +13,8 @@
 
 .inner-items {
   align-self: center;
-   border-radius: 50%;
-     flex: 0;
+  border-radius: 50%;
+  flex: 0;
 }
 
 .name-item {
@@ -30,71 +32,56 @@
 .business {
   width: 25%;
   margin: 3%;
-  border-style: ridge;
   flex: auto;
-   border-radius: 10%;
 }
 
-.business-images {
-  border-radius: 10%;
+.business-images, .business-name, .business-info {
+  text-align: center;
+  width: 80%;
+  background-color: #f9f9f9;
 }
-
 
 .projects-container{
-  background-color: #fff;
+  background-color: #f9f9f9;
 }
+
 .project-box {
-  background-color: rgba(51, 46, 46, 0.1);
+  background-color: #f9f9f9;
   border-radius: 5%;
   margin: 2em;
   padding: 2em;
 }
 
-.info {
-    display: flex;
-  flex-wrap: wrap;
-   background-color: rgba(51, 46, 46, 0.1);
-   margin-bottom: 5em;
-   padding: 2em;
-   /*border-radius: 10%;*/
-}
-
 h3  {
-  font-size: 30px;
+  font-size: 1.6em;
   font-weight: bold;
   display: inline-block;
 }
 
 h4 {
-  font-size: 25px;
+  font-size: 1em;
 }
 
 h5 {
-  font-size: 18px;
-}
-
-.business-images {
-  background-color: #fff;
-  opacity: 0.8;
+  font-size: 0.8em;
 }
 
 .biz-pic {
-  border-radius: 10%;
   display: flex;
-
+  width: 90%;
 }
 
 .captions {
   bottom: 50%;
   position: absolute;
   font-size: 80px;
-  color: white;
+  color: #f9f9f9;
   font-family: serif;
   text-align: center;
 }
 
 .slick-arrow {
-  background-color: gray;
+  background-color: #f9f9f9;
 }
 
 .title {
