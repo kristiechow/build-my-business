@@ -1,6 +1,9 @@
 <section>
 
+<div class='container'>
+  <div class='info'>
   <h1> <%= @developer.first_name%> <%= @developer.last_name%></h1>
+  <hr>
   <h3><%= @developer.location %></h3>
   <h4>About Me <%= @developer.description %></h4>
 
@@ -19,7 +22,8 @@
   </ul>
 
   <%= link_to "My projects", "/developers/#{@developer.id}/projects" %>
-
+  <br>
+  <hr>
   <h3>Contact Me</h3>
   <% if @developer.slack_id %>
     <h4>Slack @<%= @developer.slack_id %></h4>
@@ -32,22 +36,37 @@
   <h4>Phone <%= @developer.phone_number %></h4>
   <% end %>
 
+  <% if current_user %>
+    <% if @developer.id != current_user.id %>
+    <%= link_to "Send Message", conversations_path(sender_id: current_user.id, recipient_id: @developer.id), method: "post", "data-sid" => current_user.id, "data-rip" => @developer.id %>
+    <% end %>
+  <% end %>
+
   <% if current_user && @developer.editable_by?(current_user) %>
     <%= link_to 'Edit Profile', edit_developer_path(@developer) %>
   <% end %>
+
+    <%= render partial: 'partials/matching', locals: {user: @developer}%>
+
+    <br>
+    <hr>
+
+  <h2><%= @developer.first_name%>'s Reviews</h2>
 
   <% if current_user && ! @developer.reviewed?(current_user) %>
     <%= link_to "Leave Review", new_developer_review_path(@developer) %>
   <% end %>
 
-  <h2><%= @developer.first_name%>'s Reviews</h2>
-
   <% if @developer.received_reviews %>
     <% @developer.received_reviews.each do |review| %>
+    <div id="review-box">
       <%= render partial: 'partials/review', locals: {review: review}%>
+    </div>
+    <br>
     <% end %>
   <% end %>
 
- <%= render partial: 'partials/matching', locals: {user: @developer}%>
+ </div>
+</div>
 
 </section>
