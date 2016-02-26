@@ -129,5 +129,3 @@ project1 = Match.create!(user: mary, matched_user: kristie, status: "deployed on
 project2 = Match.create!(user: ian, matched_user: kristie, status: "Finished and launched!!", accepted: "true")
 
 project3 = Match.create!(user: william, matched_user: kb, status: "Matched!", accepted: "true")
-
-
