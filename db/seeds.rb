@@ -1,4 +1,4 @@
-skills_list = ['Ruby', 'Rails', 'CSS', 'JavaScript', 'HTML', 'AJAX', 'Responsive Web Design', 'Version control(Git/GitHub)', 'SQL, Database Querying, and Schema Design ', 'Test Driven Development', 'Agile Methodologies']
+skills_list = ['Ruby', 'Rails', 'CSS', 'JavaScript', 'HTML', 'AJAX', 'Responsive Web Design', 'Version control(Git/GitHub)', 'Database Querying & Design ', 'Test Driven Development', 'Agile Methodologies']
 
 skills_list.each do |skill|
   Skill.create!(name: skill)
