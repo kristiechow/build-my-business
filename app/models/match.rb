@@ -4,7 +4,8 @@ class Match < ActiveRecord::Base
 
 
   def update_status
-    if self.user.type == "owner"
+    # binding.pry
+    if self.user.type == "Owner"
       self.user.business.update_attributes(status: "In progress")
     else
       self.matched_user.business.update_attributes(status: "In progress")
