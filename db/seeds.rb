@@ -28,6 +28,7 @@ kristie = Developer.create!(first_name: "Kristie", last_name: 'Chow', uid: 'kris
 song = Owner.create!(first_name: 'Song', last_name: 'Sampson', uid: 'songsampson@gmail.com', password: '123456')
 
 
+
 kung = Owner.create!(first_name: 'Khun', last_name: 'Kung', uid: 'goong@gmail.com', password: '123456', avatar: File.new("#{Rails.root}/app/assets/images/IMG_6601.jpg"), location: "Chaloem Phrakiat Ratchakan Thi 9 Soi 59 Khwaeng Dok Mai, Khet Prawet Krung Thep Maha Nakhon 10250 Thailand", description: "Lifetime hair enthusiast, born and raised in Bangkok", provider: "codetribute")
 
 salon = Business.create!(name: "Kung Hair & Beauty", description: "Family salon specializing in women's hair, nails and styling.", location: "Chaloem Phrakiat Ratchakan Thi 9 Soi 59 Khwaeng Dok Mai, Khet Prawet Krung Thep Maha Nakhon 10250 Thailand", owner_id: kung.id, category_ids: [9])
@@ -37,6 +38,8 @@ salon.photos << Photo.create!( business_id: salon.id, image: File.new("#{Rails.r
 salon.photos << Photo.create!( business_id: salon.id, image: File.new("#{Rails.root}/app/assets/images/salon4.png") )
 salon.photos << Photo.create!( business_id: salon.id, image: File.new("#{Rails.root}/app/assets/images/IMG_6602.jpg") )
 
+kristie.received_reviews << Review.create!( comment: 'Cool person, punctual and awesome skills.', communication_rating: 5, quality_rating: 4, timeliness_rating: 5, review_type: "Developer", reviewee_id: kristie.id, reviewer_id: kung.id )
+kristie.received_reviews << Review.create!( comment: 'I really like the website Kristie made -- clean, professional and easy to use.', communication_rating: 5, quality_rating: 5, timeliness_rating: 4, review_type: "Developer", reviewee_id: kristie.id, reviewer_id: song.id )
 biz = Business.create!(name: Faker::Company.name, description: Faker::Lorem.paragraph, location: Faker::Address.street_address, owner_id: owners.sample.id, category_ids: [cat_list.sample.id])
 biz.photos << Photo.create!( business_id: biz.id, image: File.new("#{Rails.root}/app/assets/images/office-table-home-room.jpeg"))
 
@@ -109,3 +112,7 @@ barber.photos << Photo.create!( business_id: barber.id, image: File.new("#{Rails
 barber.photos << Photo.create!( business_id: barber.id, image: File.new("#{Rails.root}/app/assets/images/barber2.jpg") )
 
 barber.photos << Photo.create!( business_id: barber.id, image: File.new("#{Rails.root}/app/assets/images/barber3.jpg") )
+
+
+status_update = StatusUpdate.create(description: 'Thanks to the beautiful website you built for my business, I have new 10  customers.', business_id: salon.id, percentage_revenue_increase: '5%')
+status_update2 = StatusUpdate.create(description: "In the past few months I've continued to gain more loyal customers and I've hired a new stylist.", business_id: salon.id, percentage_revenue_increase: '10%')
