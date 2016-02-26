@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(version: 20160224143159) do
     t.string   "location",                            null: false
     t.string   "status_update"
     t.integer  "owner_id"
-    t.string   "website"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.float    "latitude"
@@ -52,6 +51,14 @@ ActiveRecord::Schema.define(version: 20160224143159) do
     t.integer  "recipient_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "create_contact_infos", force: :cascade do |t|
+    t.string   "skype_id"
+    t.string   "slack_id"
+    t.string   "phone_number"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "developers_skills", force: :cascade do |t|
