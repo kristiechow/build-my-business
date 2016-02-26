@@ -1,0 +1,15 @@
+<section id='form'>
+  <h1> Complete Your Project by inserting the link to your work: </h1>
+  <%= form_for @business, html: {method: "put"} do |f| %>
+    <ul>
+      <li>
+        <%= f.label :website %>
+        <%= f.text_field :website %>
+      </li>
+
+      <li>
+        <%= f.submit %>
+      </li>
+    </ul>
+  <% end %>
+</section>

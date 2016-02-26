@@ -1,6 +1,7 @@
 
+<div class= "info">
 <h1><%= @developer.first_name %>'s Projects</h1>
-
+</div>
 <% if current_user == @developer %>
 <p> * <%= @developer.first_name %> , Keep your business onwers informed, update the status of your projects here:</p>
 <% end %>
@@ -41,7 +42,7 @@
    <div class= "project-box">
     <ul>
       <li>
-        Business: <%= project.user.business.name %>
+        Business: <%= link_to project.user.business.name, business_path(project.user.business) %>
       </li>
       <li>
         Owner of the business: <%= project.user.first_name %>
