@@ -61,9 +61,6 @@ biz3.photos << Photo.create!( business_id: biz3.id, image: File.new("#{Rails.roo
 songs = Business.create!(name: "Song's Hair Studio", description: 'Beauty Salon', location: '4022 S Conway Rd, Orlando, FL', owner_id: owners.sample.id, category_ids: [9])
 songs.photos << Photo.create!( business_id: songs.id, image: File.new("#{Rails.root}/app/assets/images/hands-people-woman-working copy 2.jpg"))
 
-songser = Business.create!(name: "Song's Dim Sum", description: 'Food and sauces', location: '4012 S Conway Rd, Orlando, FL', owner_id: song.id, category_ids: [9])
-songser.photos << Photo.create!( business_id: songser.id, image: File.new("#{Rails.root}/app/assets/images/hands-people-woman-working copy 2.jpg"))
-
 
 yi = Developer.create!(first_name: 'Yi', last_name: 'Lu', uid: 'yilu@gmail.com', password: '123456', provider: "codetribute", location: Faker::Address.city, description: Faker::Lorem.paragraph, skill_ids: dev_skill_ids, slack_id: 'yilu1021')
 
