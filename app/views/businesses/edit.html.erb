@@ -16,14 +16,14 @@
       </li>
       <li>
         <%= f.label 'Catgories'%>
-        <%= f.collection_check_boxes :category_ids, Category.all, :id, :name do |b| %>
           <ul>
-            <li class='collection-check-box'>
-               <%= b.check_box %>
-               <%= b.label %>
-            </li>
+            <%= f.collection_check_boxes :category_ids, Category.all, :id, :name do |b| %>
+              <li class='collection-check-box'>
+                 <%= b.check_box %>
+                 <%= b.label %>
+              </li>
+            <% end %>
           </ul>
-        <% end %>
       </li>
       <li>
         <%= f.label :photo %>

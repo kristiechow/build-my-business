@@ -36,6 +36,7 @@
   <h4>Phone <%= @developer.phone_number %></h4>
   <% end %>
 
+
   <% if current_user %>
     <% if @developer.id != current_user.id %>
     <%= link_to "Send Message", conversations_path(sender_id: current_user.id, recipient_id: @developer.id), method: "post", "data-sid" => current_user.id, "data-rip" => @developer.id %>
@@ -53,8 +54,10 @@
 
   <h2><%= @developer.first_name%>'s Reviews</h2>
 
-  <% if current_user && ! @developer.reviewed?(current_user) %>
-    <%= link_to "Leave Review", new_developer_review_path(@developer) %>
+  <% if (current_user != @developer) && (current_user && ! @developer.reviewed?(current_user)) %>
+    <div class='dev-review'>
+      <%= link_to "Leave Review", new_developer_review_path(@developer) %>
+    </div>
   <% end %>
 
   <% if @developer.received_reviews %>
