@@ -2,7 +2,7 @@
     <h3>Updates on <%=business.name%></h3>
     <% business.status_updates.each do |update| %>
      <h4><%= update.description %></h4>
-     <h4><%= update.percentage_revenue_increase %></h4>
+     <h4>Revenue Increase: <%= update.percentage_revenue_increase %></h4>
       <% update.photos.each do |photo| %>
         <div>
           <%=image_tag photo.image.url(:square) %>

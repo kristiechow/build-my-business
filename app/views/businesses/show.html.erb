@@ -30,9 +30,10 @@
       <h4>Status: <%=@business.status %></h4>
     </li>
 
-  <% @business.status_updates.each do |update| %>
-    <li><%= render partial: 'partials/status_update', locals: { business: @business }%></li>
-  <% end %>
+  </ul>
+
+    <%= render partial: 'partials/status_update', locals: {business: @business }%>
+
 
   <div>
     <% if @business.editable_by? current_user %>
@@ -40,7 +41,6 @@
       <li><%= link_to 'Submit an Update', new_business_status_update_path(@business) %></li>
     <% end %>
   </div>
-  </ul>
   </div>
 
   <div class='business-images business-images-show'>
@@ -51,7 +51,7 @@
     <% end %>
   </div>
 
-  
+
 
   <div id='business-location'>
       <div id="map"></div>
