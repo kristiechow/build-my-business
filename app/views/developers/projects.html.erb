@@ -29,6 +29,8 @@
    <%= link_to "Update progress of this project", edit_match_path(project) %>
    <% if project.matched_user.business.status != "Completed" %>
    <%= link_to "Complete", "/businesses/#{project.matched_user.business.id}/complete" %>
+   <% else %>
+   <%= project.matched_user.business.website %>
    <% end %>
    <% end %>
  </div>
@@ -58,6 +60,8 @@
     <%= link_to "Update progress of this project", edit_match_path(project) %>
       <% if project.user.business.status != "Completed" %>
         <%= link_to "Complete", "/businesses/#{project.user.business.id}/complete" %>
+ <% else %>
+   <%= link_to project.user.business.website, "#{project.user.business.website}" %>
     <% end %>
     <% end %>
     </div>
