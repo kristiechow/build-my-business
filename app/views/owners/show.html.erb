@@ -34,12 +34,15 @@
     <p><%= @owner.business.description %></p>
     </div>
 
-
-    <%= link_to 'Edit Profile', edit_owner_path(@owner) %>
-    <%= link_to 'Edit Business', edit_business_path(@owner.business) %>
+    <div class='links-to'>
+      <p><%= link_to 'Edit Profile', edit_owner_path(@owner) %></p>
+      <p><%= link_to 'Edit Business', edit_business_path(@owner.business) %></p>
+    </div>
   <% elsif current_user && @owner.editable_by?(current_user) %>
-    <%= link_to 'Edit Profile', edit_owner_path(@owner) %>
-    <%=link_to 'Create Business Page', new_business_path %>
+    <div class='links-to'>
+      <p><%= link_to 'Edit Profile', edit_owner_path(@owner) %></p>
+      <p><%=link_to 'Create Business Page', new_business_path %></p>
+    </div>
   <% end %>
 
 
