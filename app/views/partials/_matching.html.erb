@@ -9,6 +9,7 @@
   <% if user.type == "owner" %>
     <h4>Assigned Developer for this project:</h4>
   <% else %>
+          <hr>
     <h4 class='match-title'>Working with:</h4>
     <ul>
       <% user.received_matches.each do |match| %>
@@ -22,9 +23,9 @@
     <ul>
       <% user.sent_matches.each do |match| %>
         <li>
-          <%= match.matched_user.first_name %>
-          <%= match.status %>
+          <h5 class= "requests"><%= match.matched_user.first_name %> | status:  <%= match.status %> </h5>
         </li>
+           <hr>
       <% end %>
     </ul>
   <% end %>
