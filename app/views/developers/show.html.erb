@@ -21,7 +21,7 @@
   <% end %>
   </ul>
 
-  <%= link_to "My projects", "/developers/#{@developer.id}/projects" %>
+  <p class='project-link'><%= link_to "My projects", "/developers/#{@developer.id}/projects" %></p>
   <br>
   <hr>
   <h3>Contact Me</h3>
@@ -52,7 +52,7 @@
     <br>
     <hr>
 
-  <h2><%= @developer.first_name%>'s Reviews</h2>
+  <h2 class='review-title'><%= @developer.first_name%>'s Reviews</h2>
 
   <% if (current_user != @developer) && (current_user && ! @developer.reviewed?(current_user)) %>
     <div class='dev-review'>

@@ -256,6 +256,7 @@ input[type="submit"] {
   width: 10%;
 }
 
+
 #chat {
   margin: 2em;
   text-align: center;
@@ -265,4 +266,20 @@ input[type="submit"] {
 .msg {
   font-weight: bold;
   font-size: larger;
+
+
+
+.review-title {
+  text-align: center;
+}
+
+.match-title {
+  margin-top: 20px;
+  margin-bottom: 0;
+  font-size: 1.2em;
+}
+
+.project-link {
+  margin-top: 10px;
+  font-size: 1.2em;
 }
