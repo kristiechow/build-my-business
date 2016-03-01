@@ -36,7 +36,8 @@ gem 'omniauth-github'
 gem 'jquery-slick-rails'
 gem 'ransack'
 gem 'jquery-ui-rails'
-gem 'rails_12factor'
+
+gem 'rails_12factor', group: :production
 
 
 # Use Unicorn as the app server
