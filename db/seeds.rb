@@ -18,9 +18,10 @@ cat_list = Category.all
 
 cat_list_ids = Category.pluck(:id)
 
-6.times do
-  Owner.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, uid: Faker::Internet.safe_email, provider: "codetribute", password: '123456', avatar: Faker::Avatar.image, location: Faker::Address.city, description: Faker::Lorem.paragraph)
+3.times do
+  Owner.create!(first_name: "Polly", last_name: "Trule", uid: "polly@email.com", provider: "codetribute", password: '123456', avatar: '/app/assets/images/blank-profile-pic.png', location: "New York, New York", description: 'Proprietor, dreamer, foodie.')
 end
+
 ki_pic = File.new("#{Rails.root}/app/assets/images/13250073.jpg")
 kerry = Owner.create!(first_name: 'Kerry', last_name: "Imai", uid: "kccom", avatar: ki_pic, password: "111111", provider: 'codetribute')
 
@@ -46,54 +47,54 @@ ian = Owner.create!(first_name: 'Ian', last_name: 'Garcia', uid: 'ian@gmail.com'
 
 owners = [song, kung, ian, mary]
 
-biz = Business.create!(name: Faker::Company.name, description: Faker::Lorem.paragraph, location: Faker::Address.street_address, owner_id: owners.sample.id, category_ids: [cat_list.sample.id])
+biz = Business.create!(name: "Cool Cafe", description: "A great cafe to sit with a book, and maybe a friend or two.", location: "11 Bleecker Street, New York", owner_id: owners.sample.id, category_ids: [cat_list.sample.id])
 biz.photos << Photo.create!( business_id: biz.id, image: File.new("#{Rails.root}/app/assets/images/office-table-home-room.jpeg"))
 
-biz1 = Business.create!(name: Faker::Company.name, description: Faker::Lorem.paragraph, location: Faker::Address.street_address, owner_id: owners.sample.id, category_ids: [cat_list.sample.id])
+biz1 = Business.create!(name: "Another Cool Cafe", description: "Really, really great coffee. Sunlit and awesome vibe.", location: "32 Broadway", owner_id: owners.sample.id, category_ids: [cat_list.sample.id])
 biz1.photos << Photo.create!( business_id: biz1.id, image: File.new("#{Rails.root}/app/assets/images/space-desk-workspace-coworking.jpg"))
 
-biz2 = Business.create!(name: Faker::Company.name, description: Faker::Lorem.paragraph, location: Faker::Address.street_address, owner_id: owners.sample.id, category_ids: [cat_list.sample.id])
+biz2 = Business.create!(name: "Dan's Tailor", description: "Go here to get your clothes made. Seriously. Go.", location: '320 West 18th Street, New York', owner_id: owners.sample.id, category_ids: [cat_list.sample.id])
 biz2.photos << Photo.create!( business_id: biz2.id, image: File.new("#{Rails.root}/app/assets/images/people-office-group-team.jpg"))
 
-biz3 = Business.create!(name: Faker::Company.name, description: Faker::Lorem.paragraph, location: Faker::Address.street_address, owner_id: owners.sample.id, category_ids: [cat_list.sample.id])
+biz3 = Business.create!(name: "Carlie's Shoes", description: "Beeeaautiful handmade leather work shoes. Beautiful.", location: '38 Wall Street, New York', owner_id: owners.sample.id, category_ids: [cat_list.sample.id])
 biz3.photos << Photo.create!( business_id: biz3.id, image: File.new("#{Rails.root}/app/assets/images/light-coffee-pen-working.jpg"))
 
 songs = Business.create!(name: "Song's Hair Studio", description: 'Beauty Salon', location: '4022 S Conway Rd, Orlando, FL', owner_id: owners.sample.id, category_ids: [9])
 songs.photos << Photo.create!( business_id: songs.id, image: File.new("#{Rails.root}/app/assets/images/hands-people-woman-working copy 2.jpg"))
 
 
-yi = Developer.create!(first_name: 'Yi', last_name: 'Lu', uid: 'yilu@gmail.com', password: '123456', provider: "codetribute", location: Faker::Address.city, description: Faker::Lorem.paragraph, skill_ids: dev_skill_ids, slack_id: 'yilu1021')
+yi = Developer.create!(first_name: 'Yi', last_name: 'Lu', uid: 'yilu@gmail.com', password: '123456', provider: "codetribute", location: "New York", description: "Dev Bootcamp Graduate. Awesome web developer.", skill_ids: dev_skill_ids, slack_id: 'yilu1021')
 
 
 
 gary_pic = File.new("#{Rails.root}/app/assets/images/gary.jpg")
-gary = Developer.create!(first_name: 'Gary', last_name: 'Tso', uid: 'garytso@gmail.com', password: '123456', location: Faker::Address.city, description: Faker::Lorem.paragraph, provider: "codetribute", skill_ids: dev_skill_ids)
+gary = Developer.create!(first_name: 'Gary', last_name: 'Tso', uid: 'garytso@gmail.com', password: '123456', location: "New York", description: "Dev Bootcamp Graduate, doughtnut lover", provider: "codetribute", skill_ids: dev_skill_ids)
 
 kc_pic = File.new("#{Rails.root}/app/assets/images/kristie.jpg")
-kristie = Developer.create!(first_name: "Kristie", last_name: 'Chow', uid: 'kristie@gmail.com', password: '123456', provider: "codetribute", location: "New York", description: "Newly graduated programmer located in manhattan. I like fashion, coding, and discovering new things around the world.",avatar: kc_pic, skill_ids: dev_skill_ids, slack_id: 'kristie1021')
+kristie = Developer.create!(first_name: "Kristie", last_name: 'Chow', uid: 'kristie@gmail.com', password: '123456', provider: "codetribute", location: "New York", description: "Newly graduated programmer located in Manhattan. I like travel, coding, and discovering new things around the world.",avatar: kc_pic, skill_ids: dev_skill_ids, slack_id: 'kristie1021')
 kristie.received_reviews << Review.create!( comment: 'Cool person, punctual and awesome skills.', communication_rating: 5, quality_rating: 4, timeliness_rating: 5, review_type: "Developer", reviewee_id: kristie.id, reviewer_id: kung.id )
 kristie.received_reviews << Review.create!( comment: 'I really like the website Kristie made -- clean, professional and easy to use.', communication_rating: 5, quality_rating: 5, timeliness_rating: 4, review_type: "Developer", reviewee_id: kristie.id, reviewer_id: song.id )
 
 
 dan_pic = File.new("#{Rails.root}/app/assets/images/dan.jpg")
-dan = Developer.create!(first_name: 'Dan', last_name: 'Andersen', uid: 'danandersen2@gmail.com', password: '123456', avatar: dan_pic, location: Faker::Address.city, description: Faker::Lorem.paragraph, provider: "codetribute", skill_ids: dev_skill_ids, slack_id: 'dandersen2')
+dan = Developer.create!(first_name: 'Dan', last_name: 'Andersen', uid: 'danandersen2@gmail.com', password: '123456', avatar: dan_pic, location: "New York", description: "DBC Grad. Fun lover.", provider: "codetribute", skill_ids: dev_skill_ids, slack_id: 'dandersen2')
 
 mira_pic = File.new("#{Rails.root}/app/assets/images/mira.jpg")
-mira = Developer.create!(first_name: 'Mira', last_name: 'Scarvalone', uid: 'mirascarvalone@gmail.com', password: '123456', avatar: mira_pic, location: Faker::Address.city, description: Faker::Lorem.paragraph, provider: "codetribute", skill_ids: dev_skill_ids, slack_id: 'mirascarvalone')
+mira = Developer.create!(first_name: 'Mira', last_name: 'Scarvalone', uid: 'mirascarvalone@gmail.com', password: '123456', avatar: mira_pic, location: "New York", description: "Dev Bootcamp Graduate. Awesome web developer.", provider: "codetribute", skill_ids: dev_skill_ids, slack_id: 'mirascarvalone')
 
-ed = Developer.create!(first_name: 'Edward', last_name: 'Gemson', uid: 'edwardgemson@gmail.com', password: '123456', location: Faker::Address.city, description: Faker::Lorem.paragraph, provider: "codetribute", skill_ids: dev_skill_ids, slack_id: 'edwardgemson')
+ed = Developer.create!(first_name: 'Edward', last_name: 'Gemson', uid: 'edwardgemson@gmail.com', password: '123456', location: "New York", description: "Dev Bootcamp Graduate. Awesome web developer.", provider: "codetribute", skill_ids: dev_skill_ids, slack_id: 'edwardgemson')
 
-scott = Developer.create!(first_name: 'Scott', last_name: 'Chou', uid: 'scottychou@gmail.com', password: '123456', location: Faker::Address.city, description: Faker::Lorem.paragraph, provider: "codetribute", skill_ids: dev_skill_ids, slack_id: 'scottchou')
+scott = Developer.create!(first_name: 'Scott', last_name: 'Chou', uid: 'scottychou@gmail.com', password: '123456', location: "New York", description: "Dev Bootcamp Graduate. Awesome web developer.", provider: "codetribute", skill_ids: dev_skill_ids, slack_id: 'scottchou')
 
 kb_pic = File.new("#{Rails.root}/app/assets/images/kb.jpg")
-kb = Developer.create!(first_name: 'K.B.', last_name: 'DiAngelo', uid: 'kb-diangleo@gmail.com', password: '123456', avatar: kb_pic, location: Faker::Address.city, description: Faker::Lorem.paragraph, provider: "codetribute", skill_ids: dev_skill_ids, slack_id: 'kaybidee')
+kb = Developer.create!(first_name: 'K.B.', last_name: 'DiAngelo', uid: 'kb-diangleo@gmail.com', password: '123456', avatar: kb_pic, location: "New York", description: "Dev Bootcamp Graduate. Awesome web developer.", provider: "codetribute", skill_ids: dev_skill_ids, slack_id: 'kaybidee')
 
 nums = [3, 4, 5]
 
 devs = Developer.all
 devs.each do |dev|
   3.times do
-    dev.received_reviews << Review.create!(comment: Faker::Lorem.sentence, communication_rating: nums.sample, quality_rating: nums.sample, timeliness_rating: nums.sample, review_type: 'Owner', reviewee_id: dev.id, reviewer_id: owners.sample.id)
+    dev.received_reviews << Review.create!(comment: "Great, polished website. Clean design, quick responses. I love it!", communication_rating: nums.sample, quality_rating: nums.sample, timeliness_rating: nums.sample, review_type: 'Owner', reviewee_id: dev.id, reviewer_id: owners.sample.id)
   end
 end
 
