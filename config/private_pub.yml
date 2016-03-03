@@ -5,6 +5,5 @@ test:
   server: "http://localhost:9292/faye"
   secret_token: "secret"
 production:
-  server: "http://example.com/faye"
-  secret_token: "d7bcb26b448dc7b8cda73a7b46b62a8f079375726243716d6f827dfb4ab28c87"
-  signature_expiration: 3600 # one hour
+  server: ENV['PUBSUB_URL']
+  secret_token: ENV['PUBSUB_SECRET_KEY']
