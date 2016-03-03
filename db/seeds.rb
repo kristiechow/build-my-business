@@ -18,10 +18,6 @@ cat_list = Category.all
 
 cat_list_ids = Category.pluck(:id)
 
-3.times do
-  Owner.create!(first_name: "Polly", last_name: "Trule", uid: "polly@email.com", provider: "codetribute", password: '123456', avatar: File.new("#{Rails.root}/app/assets/images/IMG_6601.jpg"), location: "New York, New York", description: 'Proprietor, dreamer, foodie.')
-end
-
 ki_pic = File.new("#{Rails.root}/app/assets/images/13250073.jpg")
 kerry = Owner.create!(first_name: 'Kerry', last_name: "Imai", uid: "kccom", avatar: ki_pic, password: "111111", provider: 'codetribute')
 
