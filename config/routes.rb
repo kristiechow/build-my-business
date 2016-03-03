@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     get '/logout' => 'session#destroy'
 
   resources :conversations do
-  resources :messages
+    resources :messages
   end
 
   resources :businesses do
