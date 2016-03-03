@@ -26,7 +26,7 @@ song = Owner.create!(first_name: 'Song', last_name: 'Sampson', uid: 'songsampson
 
 
 
-kung = Owner.create!(first_name: 'Khun', last_name: 'Kung', uid: 'goong@gmail.com', password: '123456', avatar: File.new("/app/assets/images/IMG_6601.jpg"), location: "Chaloem Phrakiat Ratchakan Thi 9 Soi 59 Khwaeng Dok Mai, Khet Prawet Krung Thep Maha Nakhon 10250 Thailand", description: "Lifetime hair enthusiast, born and raised in Bangkok", provider: "codetribute")
+kung = Owner.create!(first_name: 'Khun', last_name: 'Kung', uid: 'goong@gmail.com', password: '123456', avatar: File.new("#{Rails.root}/app/assets/images/IMG_6601.jpg"), location: "Chaloem Phrakiat Ratchakan Thi 9 Soi 59 Khwaeng Dok Mai, Khet Prawet Krung Thep Maha Nakhon 10250 Thailand", description: "Lifetime hair enthusiast, born and raised in Bangkok", provider: "codetribute")
 
 salon = Business.create!(name: "Kung Hair & Beauty", description: "Family salon specializing in women's hair, nails and styling.", location: "Chaloem Phrakiat Ratchakan Thi 9 Soi 59 Khwaeng Dok Mai, Khet Prawet Krung Thep Maha Nakhon 10250 Thailand", owner_id: kerry.id, category_ids: [9])
 salon.photos << Photo.create!( business_id: salon.id, image: File.new("#{Rails.root}/app/assets/images/salon1.png") )
