@@ -33,9 +33,11 @@ gem 'gmaps4rails'
 gem 'geocoder'
 gem 'omniauth-facebook'
 gem 'omniauth-github'
-gem "jquery-slick-rails"
+gem 'jquery-slick-rails'
 gem 'ransack'
 gem 'jquery-ui-rails'
+
+gem 'rails_12factor', group: :production
 
 
 # Use Unicorn as the app server
