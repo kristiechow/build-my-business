@@ -38,8 +38,7 @@ class BusinessesController < ApplicationController
   end
 
   def update
-    # binding.pry
-    if current_user == "owner"
+    if current_user.type == "Owner"
     @business = Business.find_by(id: params[:id])
     if @business.update(business_edit_params)
       flash.notice = "Update successful."
