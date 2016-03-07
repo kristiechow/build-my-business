@@ -38,13 +38,20 @@ class BusinessesController < ApplicationController
   end
 
   def update
-    if current_user == "Owner"
+    if current_user.type == "Owner"
     @business = Business.find_by(id: params[:id])
     if @business.update(business_edit_params)
       flash.notice = "Update successful."
       redirect_to business_path(@business)
     else
       render :edit
+    end
+  else
+    @business = Business.find_by(id: params[:id])
+    @business[:status] = "Completed"
+    @business[:website] = params[:business][:website]
+    @business.save
+      redirect_to "/developers/#{current_user.id}/projects"
     end
   end
 
