@@ -18,23 +18,16 @@ cat_list = Category.all
 
 cat_list_ids = Category.pluck(:id)
 
-ki_pic = File.open("https://s3.amazonaws.com/bmb-album/developers/avatars/000/000/003/square/13250073.jpg")
-kerry = Owner.create!(first_name: 'Kerry', last_name: "Imai", uid: "kccom", avatar: ki_pic, password: "111111", provider: 'codetribute')
+kerry = Owner.create!(first_name: 'Kerry', last_name: "Imai", uid: "kccom", password: "111111", provider: 'codetribute')
 
 
 song = Owner.create!(first_name: 'Song', last_name: 'Sampson', uid: 'songsampson@gmail.com', password: '123456')
 
 
 
-kung = Owner.create!(first_name: 'Khun', last_name: 'Kung', uid: 'goong@gmail.com', password: '123456', avatar: File.open("https://s3.amazonaws.com/bmb-album/developers/avatars/000/000/003/square/IMG_6601.JPG"), location: "Chaloem Phrakiat Ratchakan Thi 9 Soi 59 Khwaeng Dok Mai, Khet Prawet Krung Thep Maha Nakhon 10250 Thailand", description: "Lifetime hair enthusiast, born and raised in Bangkok", provider: "codetribute")
+kung = Owner.create!(first_name: 'Khun', last_name: 'Kung', uid: 'goong@gmail.com', password: '123456', location: "Chaloem Phrakiat Ratchakan Thi 9 Soi 59 Khwaeng Dok Mai, Khet Prawet Krung Thep Maha Nakhon 10250 Thailand", description: "Lifetime hair enthusiast, born and raised in Bangkok", provider: "codetribute")
 
 salon = Business.create!(name: "Kung Hair & Beauty", description: "Family salon specializing in women's hair, nails and styling.", location: "Chaloem Phrakiat Ratchakan Thi 9 Soi 59 Khwaeng Dok Mai, Khet Prawet Krung Thep Maha Nakhon 10250 Thailand", owner_id: kerry.id, category_ids: [9])
-salon.photos << Photo.create!( business_id: salon.id, image: File.open("https://s3.amazonaws.com/bmb-album/developers/avatars/000/000/003/square/salon1.png") )
-salon.photos << Photo.create!( business_id: salon.id, image: File.open("https://s3.amazonaws.com/bmb-album/developers/avatars/000/000/003/square/salon2.png") )
-salon.photos << Photo.create!( business_id: salon.id, image: File.open("https://s3.amazonaws.com/bmb-album/developers/avatars/000/000/003/square/salon3.png") )
-salon.photos << Photo.create!( business_id: salon.id, image: File.open("https://s3.amazonaws.com/bmb-album/developers/avatars/000/000/003/square/salon4.png") )
-salon.photos << Photo.create!( business_id: salon.id, image: File.open("https://s3.amazonaws.com/bmb-album/developers/avatars/000/000/003/square/IMG_6602.JPG") )
-
 
 
 mary = Owner.create!(first_name: 'Mary', last_name: 'Joe', uid: 'mary@gmail.com', password: '123456', location: "40 Exchange Place, Exchange Place, New York, NY", description: "Latina mother and proprietor.", provider: "codetribute")
@@ -44,81 +37,63 @@ ian = Owner.create!(first_name: 'Ian', last_name: 'Garcia', uid: 'ian@gmail.com'
 owners = [song, kung, ian, mary]
 
 biz = Business.create!(name: "Cool Cafe", description: "A great cafe to sit with a book, and maybe a friend or two.", location: "11 Bleecker Street, New York", owner_id: owners.sample.id, category_ids: [cat_list.sample.id])
-biz.photos << Photo.create!( business_id: biz.id, image: File.open("https://s3.amazonaws.com/bmb-album/developers/avatars/000/000/003/square/guy-with-ipad.jpg"))
 
 biz1 = Business.create!(name: "Another Cool Cafe", description: "Really, really great coffee. Sunlit and awesome vibe.", location: "32 Broadway", owner_id: owners.sample.id, category_ids: [cat_list.sample.id])
-biz1.photos << Photo.create!( business_id: biz1.id, image: File.open("https://s3.amazonaws.com/bmb-album/developers/avatars/000/000/003/square/hands-people-woman-working+copy+2.jpg"))
 
 biz2 = Business.create!(name: "Dan's Tailor", description: "Go here to get your clothes made. Seriously. Go.", location: '320 West 18th Street, New York', owner_id: owners.sample.id, category_ids: [cat_list.sample.id])
-biz2.photos << Photo.create!( business_id: biz2.id, image: File.open("https://s3.amazonaws.com/bmb-album/developers/avatars/000/000/003/square/light-coffee-pen-working.jpg"))
 
 biz3 = Business.create!(name: "Carlie's Shoes", description: "Beeeaautiful handmade leather work shoes. Beautiful.", location: '38 Wall Street, New York', owner_id: owners.sample.id, category_ids: [cat_list.sample.id])
-biz3.photos << Photo.create!( business_id: biz3.id, image: File.open("https://s3.amazonaws.com/bmb-album/developers/avatars/000/000/003/square/office-table-home-room.jpeg"))
 
 songs = Business.create!(name: "Song's Hair Studio", description: 'Beauty Salon', location: '4022 S Conway Rd, Orlando, FL', owner_id: owners.sample.id, category_ids: [9])
-songs.photos << Photo.create!( business_id: songs.id, image: File.open("https://s3.amazonaws.com/bmb-album/developers/avatars/000/000/003/square/startup-photos.jpg"))
 
 
 yi = Developer.create!(first_name: 'Yi', last_name: 'Lu', uid: 'yilu@gmail.com', password: '123456', provider: "codetribute", location: "New York", description: "Dev Bootcamp Graduate. Awesome web developer.", skill_ids: dev_skill_ids, slack_id: 'yilu1021')
 
 
-
-gary_pic = File.open("https://s3.amazonaws.com/bmb-album/developers/avatars/000/000/003/square/gary.jpg")
 gary = Developer.create!(first_name: 'Gary', last_name: 'Tso', uid: 'garytso@gmail.com', password: '123456', location: "New York", description: "Dev Bootcamp Graduate, doughtnut lover", provider: "codetribute", skill_ids: dev_skill_ids)
 
-kc_pic = File.open("https://s3.amazonaws.com/bmb-album/developers/avatars/000/000/008/square/kristie.jpg")
-kristie = Developer.create!(first_name: "Kristie", last_name: 'Chow', uid: 'kristie@gmail.com', password: '123456', provider: "codetribute", location: "New York", description: "Newly graduated programmer located in Manhattan. I like travel, coding, and discovering new things around the world.",avatar: kc_pic, skill_ids: dev_skill_ids, slack_id: 'kristie1021')
+
+kristie = Developer.create!(first_name: "Kristie", last_name: 'Chow', uid: 'kristie@gmail.com', password: '123456', provider: "codetribute", location: "New York", description: "Newly graduated programmer located in Manhattan. I like travel, coding, and discovering new things around the world.", skill_ids: dev_skill_ids, slack_id: 'kristie1021')
 kristie.received_reviews << Review.create!( comment: 'Cool person, punctual and awesome skills.', communication_rating: 5, quality_rating: 4, timeliness_rating: 5, review_type: "Developer", reviewee_id: kristie.id, reviewer_id: kung.id )
 kristie.received_reviews << Review.create!( comment: 'I really like the website Kristie made -- clean, professional and easy to use.', communication_rating: 5, quality_rating: 5, timeliness_rating: 4, review_type: "Developer", reviewee_id: kristie.id, reviewer_id: song.id )
 
 
-dan_pic = File.open("https://s3.amazonaws.com/bmb-album/developers/avatars/000/000/003/square/dan.jpg")
-dan = Developer.create!(first_name: 'Dan', last_name: 'Andersen', uid: 'danandersen2@gmail.com', password: '123456', avatar: dan_pic, location: "New York", description: "DBC Grad. Fun lover.", provider: "codetribute", skill_ids: dev_skill_ids, slack_id: 'dandersen2')
+dan = Developer.create!(first_name: 'Dan', last_name: 'Andersen', uid: 'danandersen2@gmail.com', password: '123456', location: "New York", description: "DBC Grad. Fun lover.", provider: "codetribute", skill_ids: dev_skill_ids, slack_id: 'dandersen2')
 
-mira_pic = File.open("https://s3.amazonaws.com/bmb-album/developers/avatars/000/000/004/square/mira.jpg")
-mira = Developer.create!(first_name: 'Mira', last_name: 'Scarvalone', uid: 'mirascarvalone@gmail.com', password: '123456', avatar: mira_pic, location: "New York", description: "Dev Bootcamp Graduate. Awesome web developer.", provider: "codetribute", skill_ids: dev_skill_ids, slack_id: 'mirascarvalone')
+mira = Developer.create!(first_name: 'Mira', last_name: 'Scarvalone', uid: 'mirascarvalone@gmail.com', password: '123456', location: "New York", description: "Dev Bootcamp Graduate. Awesome web developer.", provider: "codetribute", skill_ids: dev_skill_ids, slack_id: 'mirascarvalone')
 
 ed = Developer.create!(first_name: 'Edward', last_name: 'Gemson', uid: 'edwardgemson@gmail.com', password: '123456', location: "New York", description: "Dev Bootcamp Graduate. Awesome web developer.", provider: "codetribute", skill_ids: dev_skill_ids, slack_id: 'edwardgemson')
 
 scott = Developer.create!(first_name: 'Scott', last_name: 'Chou', uid: 'scottychou@gmail.com', password: '123456', location: "New York", description: "Dev Bootcamp Graduate. Awesome web developer.", provider: "codetribute", skill_ids: dev_skill_ids, slack_id: 'scottchou')
 
-kb_pic = File.open("https://s3.amazonaws.com/bmb-album/developers/avatars/000/000/007/square/kb.jpg")
-kb = Developer.create!(first_name: 'K.B.', last_name: 'DiAngelo', uid: 'kb-diangleo@gmail.com', password: '123456', avatar: kb_pic, location: "New York", description: "Dev Bootcamp Graduate. Awesome web developer.", provider: "codetribute", skill_ids: dev_skill_ids, slack_id: 'kaybidee')
+kb = Developer.create!(first_name: 'K.B.', last_name: 'DiAngelo', uid: 'kb-diangleo@gmail.com', password: '123456', location: "New York", description: "Dev Bootcamp Graduate. Awesome web developer.", provider: "codetribute", skill_ids: dev_skill_ids, slack_id: 'kaybidee')
 
 nums = [3, 4, 5]
 
 devs = Developer.all
 devs.each do |dev|
   3.times do
-    dev.received_reviews << Review.create!(comment: "Great, polished website. Clean design, quick responses. I love it!", communication_rating: nums.sample, quality_rating: nums.sample, timeliness_rating: nums.sample, review_type: 'Owner', reviewee_id: dev.id, reviewer_id: owners.sample.id)
+    dev.received_reviews << Review.create!(comment: "Great, polished website. Clean design, quick response. I love it!", communication_rating: nums.sample, quality_rating: nums.sample, timeliness_rating: nums.sample, review_type: 'Owner', reviewee_id: dev.id, reviewer_id: owners.sample.id)
   end
 end
 
 
 william = Owner.create!(first_name: "Williams", last_name: 'Pinto', uid: 'williamspinto@email.com', password: '123456', provider: "codetribute")
 braza_biz = Business.create!(name: 'Brazas Chicken Inc', description: 'Peruvian & other Latin American chicken & ceviche dishes.', location: '4797 S Orange Ave, Orlando, FL', owner_id: william.id, category_ids: [5])
-braza_pic = File.open("https://s3.amazonaws.com/bmb-album/developers/avatars/000/000/003/square/peruvian.jpg")
-Photo.create!(image: braza_pic, business_id: braza_biz.id)
 
 
 shoe = Business.create!(name: "Mary's Shine and Repair", description: "Effective and well stocked shoe repair and shine.", location: "40 Exchange Place, Exchange Place, New York, NY", owner_id: mary.id, category_ids: [7,9], status: "Completed", website: "www.devbootcamp.com")
-shoe.photos << Photo.create!( business_id: shoe.id, image: File.open("https://s3.amazonaws.com/bmb-album/developers/avatars/000/000/003/square/shoe1.jpg") )
-shoe.photos << Photo.create!( business_id: shoe.id, image: File.open("https://s3.amazonaws.com/bmb-album/developers/avatars/000/000/003/square/shoe2.jpg") )
-shoe.photos << Photo.create!( business_id: shoe.id, image: File.open("https://s3.amazonaws.com/bmb-album/developers/avatars/000/000/003/square/shoe3.jpg") )
 
 
 barber = Business.create!(name: "Blue Chip Barber Shop", description: "Family owned barber shop in the Financial District of New York City.", location: "44 New St, New York, NY", owner_id: ian.id, category_ids: [9], status: "Completed", website: "espezua.github.io")
-barber.photos << Photo.create!( business_id: barber.id, image: File.open("https://s3.amazonaws.com/bmb-album/developers/avatars/000/000/003/square/barber1.jpg") )
-barber.photos << Photo.create!( business_id: barber.id, image: File.open("https://s3.amazonaws.com/bmb-album/developers/avatars/000/000/003/square/barber2.jpg") )
-barber.photos << Photo.create!( business_id: barber.id, image: File.open("https://s3.amazonaws.com/bmb-album/developers/avatars/000/000/003/square/barber3.jpg") )
 
 
 
 status_update = StatusUpdate.create(description: 'Thanks to the beautiful website you built for my business, I have new 10  customers.', business_id: salon.id, percentage_revenue_increase: '5%')
 status_update2 = StatusUpdate.create(description: "In the past few months I've continued to gain more loyal customers and I've hired a new stylist.", business_id: salon.id, percentage_revenue_increase: '10%')
 
-project1 = Match.create!(user: mary, matched_user: kristie, status: "deployed on Hiroku =)", accepted: "true")
+project1 = Match.create!(user: mary, matched_user: kristie, status: "deployed on Heroku :)", accepted: "true")
 
-project2 = Match.create!(user: ian, matched_user: kristie, status: "Finished and launched!!", accepted: "true")
+project2 = Match.create!(user: ian, matched_user: kristie, status: "Finished and launched!", accepted: "true")
 
 project3 = Match.create!(user: william, matched_user: kb, status: "Matched!", accepted: "true")
