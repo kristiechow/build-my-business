@@ -4,9 +4,10 @@ Codetribute connects passionate individuals seeking to do better in what they lo
 
 ## Features
 * Google Maps API
-* Reviews
-* Matching users
+* Reviews on Developers
+* Matching between developers and businesses
 * Live chat
+* Business status updates
 
 ## Team
 * [Kristie Chow](https://github.com/kristiechow)
