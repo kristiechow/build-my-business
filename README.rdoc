@@ -8,16 +8,16 @@ Team
 * Kerry Choy
 
 Built With:
-• Ruby on Rails for the backend framework 
-• Animsition and Sticky jQuery plugins with CSS3 for a custom, responsive web design
-• Ransack for search bar functionality 
-• Paperclip for uploading images
-• Gmaps4rails for showing a business location
-• Private Pub for instant messaging
-• Test Driven Development using Rspec
-• OmniAuth for OAuth integration
-• Private Pub for instant messaging
-• Test Driven Development using Rspec
-• CircleCI and SimpleCov for continuous integration and coverage analysis
-• GitHub for version control
-• Heroku for continuous deployment
+* Ruby on Rails for the backend framework 
+* Animsition and Sticky jQuery plugins with CSS3 for a custom, responsive web design
+* Ransack for search bar functionality 
+* Paperclip for uploading images
+* Gmaps4rails for showing a business location
+* Private Pub for instant messaging
+* Test Driven Development using Rspec
+* OmniAuth for OAuth integration
+* Private Pub for instant messaging
+* Test Driven Development using Rspec
+* CircleCI and SimpleCov for continuous integration and coverage analysis
+* GitHub for version control
+* Heroku for continuous deployment
