@@ -9,9 +9,9 @@ Codetribute connects passionate individuals seeking to do better in what they lo
 * Live chat
 
 ## Team
-* Kristie Chow
-* Jenna Espezua
-* Kerry Choy
+* [Kristie Chow](https://github.com/kristiechow)
+* [Jenna Espezua](https://github.com/espezua)
+* [Kerry Choy](https://github.com/kerryimai)
 
 ## Technologies
 * [Ruby on Rails](http://rubyrails.org/) for the backend framework 
@@ -26,3 +26,4 @@ Codetribute connects passionate individuals seeking to do better in what they lo
 * CircleCI and SimpleCov for continuous integration and coverage analysis
 * [Heroku](https://www.heroku.com/) for continuous deployment
 * GitHub for version control
+
