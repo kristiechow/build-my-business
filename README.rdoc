@@ -1,28 +1,23 @@
-== README
+== Codetribute
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Codetribute connects passionate individuals seeking to do better in what they love. It provides free services to help small businesses expand their online presence by connecting web developers with determined proprietors. By minimizing the space between business owners and skilled developers, Codetribute is making more of the Internet accessible -- for less.
 
-Things you may want to cover:
+Team
+* Kristie Chow
+* Jenna Espezua
+* Kerry Choy
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Built With:
+• Ruby on Rails for the backend framework 
+• Animsition and Sticky jQuery plugins with CSS3 for a custom, responsive web design
+• Ransack for search bar functionality 
+• Paperclip for uploading images
+• Gmaps4rails for showing a business location
+• Private Pub for instant messaging
+• Test Driven Development using Rspec
+• OmniAuth for OAuth integration
+• Private Pub for instant messaging
+• Test Driven Development using Rspec
+• CircleCI and SimpleCov for continuous integration and coverage analysis
+• GitHub for version control
+• Heroku for continuous deployment
