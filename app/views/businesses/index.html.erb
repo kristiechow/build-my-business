@@ -17,7 +17,7 @@
     <section class='business'>
       <div>
         <% if  business.photos.first != nil %>
-        <%=image_tag business.photos.first.image.url(:square), class: "business-images" %>
+        <%=image_tag business.photos.first.image_file_name, class: "business-images" %>
         <% end %>
       </div>
       <div class='business-name'>
