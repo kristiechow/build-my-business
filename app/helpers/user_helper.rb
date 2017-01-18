@@ -2,7 +2,7 @@ module UserHelper
 
 
   def has_avatar? user
-    user.avatar.present?
+    user.avatar.instance.avatar_file_name.present?
   end
 
   def editable_by? user

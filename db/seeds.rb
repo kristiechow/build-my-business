@@ -55,7 +55,7 @@ biz3 = Business.create!(name: "Carlie's Shoes", description: "Beeeaautiful handm
 biz3.photos << Photo.create!( business_id: biz3.id, image: File.new("#{Rails.root}/app/assets/images/light-coffee-pen-working.jpg"))
 
 songs = Business.create!(name: "Song's Hair Studio", description: 'Beauty Salon', location: '4022 S Conway Rd, Orlando, FL', owner_id: owners.sample.id, category_ids: [9])
-songs.photos << Photo.create!( business_id: songs.id, image: File.new("#{Rails.root}/app/assets/images/hands-people-woman-working copy 2.jpg"))
+songs.photos << Photo.create!( business_id: songs.id, image: File.new("#{Rails.root}/app/assets/images/hands-people-woman-working.jpg"))
 
 
 yi = Developer.create!(first_name: 'Yi', last_name: 'Lu', uid: 'yilu@gmail.com', password: '123456', provider: "codetribute", location: "New York", description: "Dev Bootcamp Graduate. Awesome web developer.", skill_ids: dev_skill_ids, slack_id: 'yilu1021')

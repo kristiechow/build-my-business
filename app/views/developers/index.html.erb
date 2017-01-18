@@ -11,7 +11,7 @@
   <div class= "developer-item">
     <% if has_avatar? developer %>
       <div>
-        <%= image_tag (developer.avatar.url(:square)), class: "inner-items" %>
+        <%= image_tag ( developer.avatar.instance.avatar_file_name), class: "inner-items" %>
       </div>
     <% else %>
       <div>

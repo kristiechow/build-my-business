@@ -18,6 +18,8 @@
       <div>
         <% if  business.photos.first != nil %>
         <%=image_tag business.photos.first.image_file_name, class: "business-images" %>
+        <% else %>
+            <%= image_tag "blank-profile-pic.png", class: "business-images" %>
         <% end %>
       </div>
       <div class='business-name'>
