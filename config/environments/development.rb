@@ -41,14 +41,15 @@ Rails.application.configure do
 
 
   Paperclip.options[:command_path] = "/usr/local/bin/convert"
+  Paperclip::Attachment.default_options
+  # config.paperclip_defaults = {
+  #   :storage => :s3,
+  #   :s3_credentials => {
+  #     :bucket => ENV['AWS_BUCKET'],
+  #     :access_key_id => ENV['AMA_KEY'],
+  #     :secret_access_key => ENV['AMA_SECRET']
+  #   }
+  # }
 
-  config.paperclip_defaults = {
-  :storage => :s3,
-  :s3_credentials => {
-    :bucket => ENV['AMA_BUCKET'],
-    :access_key_id => ENV['AMA_KEY'],
-    :secret_access_key => ENV['AMA_SECRET']
-  }
-}
 
 end
