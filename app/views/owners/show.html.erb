@@ -7,14 +7,16 @@
   <h4>About Me <%= @owner.description %></h4>
 
 
-  <% if has_avatar? @owner %>
-    <%= link_to image_tag(@owner.avatar.url(:thumb)), @owner.avatar.url %>
+  <% if has_avatar?(@owner) %>
+    <%= image_tag(@owner.avatar.instance.avatar_file_name, class: 'user-profile-pg') %>
   <% elsif @auth &&  @owner.id == current_user.id %>
-      <%= image_tag(@auth['info']['image'], class: 'profile-pic') %>
+      <%= image_tag(@auth['info']['image'], class: 'user-profile-pg') %>
   <% else %>
-    <%= image_tag "blank-profile-pic.png", class: 'profile-pic' %>
+    <%= image_tag "blank-profile-pic.png", class: 'user-profile-pg' %>
   <% end %>
+
   <hr>
+
   <h3>Contact Me</h3>
   <% if @owner.slack_id %>
     <h4>Slack @<%= @owner.slack_id %></h4>
